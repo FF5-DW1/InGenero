@@ -21,7 +21,8 @@
 
 {{-- CONTENIDO --}}
 
-    @yield('content')
+    <x-nosotras/>
+    {{-- @yield('content') --}}
 
 
     <footer>
