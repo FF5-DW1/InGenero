@@ -19,9 +19,10 @@
 
     </header>
 
-    {{-- CONTENIDO --}}
+    <x-god-mother-profile/>
 
-    <section class="flex-col w-full flex items-center justify-center">
+
+    {{-- <section class="flex-col w-full flex items-center justify-center">
 
 
         <div class="relative max-w-screen-xl">
@@ -81,7 +82,7 @@
 
         {{-- carrusel perfiles --}}
 
-        <div class="bg-red-500 w-full">
+        {{-- <div class="bg-red-500 w-full">
 
             <h2 class="text-3xl font-semibold text-center">Nuestras estrellas</h2>
 
@@ -185,8 +186,7 @@
                 </button>
             </div>
         </div>
-    </section>
-
+    </section> --}} 
 
 
 {{-- SCRIPTS --}}
