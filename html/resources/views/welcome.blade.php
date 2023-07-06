@@ -15,7 +15,7 @@
 
     <header>
 
-        <x-navigation-bar />
+        <x-navigation-bar/>
 
     </header>
 
