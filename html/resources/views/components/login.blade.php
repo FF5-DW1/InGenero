@@ -1,4 +1,35 @@
-<div class="md:flex md:justify-center md:gap-10 md:items-center ">
+
+
+ivon
+{{-- <!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InGenero</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <x-navigation-bar/>
+
+    </header>
+
+
+
+
+
+
+{{-- login --}}
+
+{{-- <div class="md:flex md:justify-center md:gap-10 md:items-center ">
     <div class="md:w-6/12 p-5">
         <img src="{{ asset('img/login.jpg') }}" alt="Imagen login de usuarios" >
     </div>
@@ -59,3 +90,11 @@
         </form>
     </div>
 </div>
+{{-- SCRIPTS --}}
+
+ <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+<script src="{{ asset('index.js') }}">
+
+< /body>
+
+</html>   
