@@ -19,34 +19,22 @@
 
     </header>
 
-    <x-login/>
+{{-- CONTENIDO --}}
+
+    @yield('content')
+
+
+    <footer>
 
 
 
-
-{{-- login --}}
-
+    </footer>
 
 {{-- SCRIPTS --}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="{{ asset('index.js') }}"> 
+    <script src="{{ asset('index.js') }}">
 
-</body> 
+< /body>
 
-</html> 
+</html>
