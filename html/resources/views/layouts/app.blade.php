@@ -26,7 +26,7 @@
 
     <footer>
 
-
+        <x-footer-form/>
 
     </footer>
 
