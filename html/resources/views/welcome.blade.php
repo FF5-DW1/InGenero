@@ -135,19 +135,26 @@
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden md:h-96">
                     <!-- Perfil 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div
-                            class="max-w-xs bg-transparent border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <p>Patricia Nogal</p>
+                    <div class="duration-700 ease-in-out flex items-center justify-center" data-carousel-item>
+                        <div class="max-w-xs bg-white p-6 rounded-xl flex-col items-center justify-center">
+                            <p class="">Patricia Nogal</p>
                             <a href="#">
                                 <img class="rounded-t-lg" src="/img/imagenhero.jpg" alt="imagen perfil" />
+                            </a>
+                            <a href="#"
+                                class=" rounded-3xl inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 dark:bg-zinc-600 dark:hover:bg-zinc-700 dark:focus:ring--800">
+                                Perfil
+                                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                     <!-- Perfil 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div
-                            class="max-w-xs bg-transparent border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="duration-700 ease-in-out flex items-center justify-center" data-carousel-item>
+                        <div class="max-w-xs bg-transparent">
                             <p>Patricia Nogal</p>
                             <a href="#">
                                 <img class="rounded-t-lg" src="/img/imagenhero.jpg" alt="imagen perfil" />
@@ -155,9 +162,8 @@
                         </div>
                     </div>
                     <!-- Perfil 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div
-                            class="max-w-xs bg-transparent border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="duration-700 ease-in-out flex items-center justify-center" data-carousel-item>
+                        <div class="max-w-xs bg-transparent">
                             <p>Patricia Nogal</p>
                             <a href="#">
                                 <img class="rounded-t-lg" src="/img/imagenhero.jpg" alt="imagen perfil" />
@@ -165,9 +171,8 @@
                         </div>
                     </div>
                     <!-- Perfil 4 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div
-                            class="max-w-xs bg-transparent border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="duration-700 ease-in-out flex items-center justify-center" data-carousel-item>
+                        <div class="max-w-xs bg-transparent">
                             <p>Patricia Nogal</p>
                             <a href="#">
                                 <img class="rounded-t-lg" src="/img/imagenhero.jpg" alt="imagen perfil" />
@@ -175,9 +180,8 @@
                         </div>
                     </div>
                     <!-- Perfil 5 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div
-                            class="max-w-xs bg-transparent border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="duration-700 ease-in-out flex items-center justify-center" data-carousel-item>
+                        <div class="max-w-xs bg-transparent">
                             <p>Patricia Nogal</p>
                             <a href="#">
                                 <img class="rounded-t-lg" src="/img/imagenhero.jpg" alt="imagen perfil" />
@@ -228,6 +232,7 @@
             </div>
         </div>
     </section>
+    
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('index.js') }}">
