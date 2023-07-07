@@ -4,4 +4,15 @@
     border-color: transparent;
 }
 
+.w-3\.5 {
+    width: 29.875rem;
+}
+.w-96 {
+    width: 41rem;
+}
+
+.pb-8 {
+    padding-bottom: 8rem;
+}
+
 /* VIDEO */
