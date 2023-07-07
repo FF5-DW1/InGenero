@@ -1,13 +1,18 @@
 @extends('layouts.app') 
 
 @section('content')
+
+<!-- ENCABEZADO IMAGEN ADMIN -->
 <div class="md:flex md:justify-center md:items-center">
+    
+    <img src="app/public/img/imagenhero.jpg" alt="Administrador">
+
     <div class="md:w-6/12 lg:w-4/12 bg-white p-6">
         <h1 class="text-2xl mb-4">Crear un perfil Estrella</h1>
         <form action="{{ route('register') }}" method="POST" novalidate>
             @csrf
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Nombre:</label>
+                <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                 <input 
                     id="name"
                     name="name"
@@ -21,7 +26,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Apellidos:</label>
+                <label for="name" class="block mb-2 text-gray-500">Apellidos</label>
                 <input 
                     id="last_name"
                     name="last_name"
@@ -34,7 +39,7 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Nacionalidad:</label>
+                <label for="name" class="block mb-2 text-gray-500">Nacionalidad</label>
                 <input 
                     id="nationality"
                     name="nationality"
@@ -47,7 +52,7 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Fecha de Nacimiento:</label>
+                <label for="name" class="block mb-2 text-gray-500">Fecha de Nacimiento</label>
                 <input 
                     id="date"
                     name="date"
@@ -59,7 +64,7 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Altura:</label>
+                <label for="name" class="block mb-2 text-gray-500">Altura</label>
                 <input 
                     id="height"
                     name="height"
@@ -71,7 +76,7 @@
                 @enderror
             </div>      
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Peso:</label>
+                <label for="name" class="block mb-2 text-gray-500">Peso</label>
                 <input 
                     id="weight"
                     name="weight"
@@ -83,7 +88,7 @@
                 @enderror
             </div>  
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Color de ojos:</label>
+                <label for="name" class="block mb-2 text-gray-500">Color de ojos</label>
                 <input 
                     id="eyes_color"
                     name="eyes_color"
@@ -96,7 +101,7 @@
             </div>  
             
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Color de pelo:</label>
+                <label for="name" class="block mb-2 text-gray-500">Color de pelo</label>
                 <input 
                     id="hair_color"
                     name="hair_color"
@@ -108,7 +113,7 @@
                 @enderror
             </div>  
             <div class="mb-4">
-                <label for="name" class="block mb-2 text-gray-500">Info. Adicional:</label>
+                <label for="name" class="block mb-2 text-gray-500">Info. Adicional</label>
                 <input 
                     id="aditional_info"
                     name="aditional_info"
@@ -120,7 +125,7 @@
                 @enderror
             </div>  
             <div class="mb-6">
-                <label for="name" class="block mb-2 text-gray-500">Habilidades artísticas:</label>
+                <label for="name" class="block mb-2 text-gray-500">Habilidades artísticas</label>
                 <input 
                     id="artistic_skills"
                     name="artistic_skills"
@@ -132,16 +137,18 @@
                 @enderror
             </div> 
 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
+            <p>Foto / Video / VideoBook de Perfil</p>
 
-
-                <p>Foto / Video / VideoBook de Perfil</p>
+            <button type="submit" class="bg-gray-400 hover:bg-gray-500 text-black font-bold py-2 px-4 rounded">
+                    Buscar
+            </button>
 
             <input
             type="submit"
             value="Publicar"
             class="md:w-6/12 bg-black hover:bg-gray-900 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg"
             />
-
+<!-- FOOTER -->
 
 </form>
 </div>
