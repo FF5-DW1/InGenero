@@ -22,3 +22,6 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('auth.register-controller');})->name('register');
+
+    Route::get('/admincpm', function () {
+        return view('auth.admincpm-controller');})->name('admincpm');
