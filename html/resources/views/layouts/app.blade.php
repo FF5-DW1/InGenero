@@ -14,7 +14,7 @@
 <body>
 
     <header>
-
+        
         <x-navigation-bar/>
 
     </header>
@@ -26,7 +26,7 @@
 
     <footer>
 
-
+        <x-footer-form/>
 
     </footer>
 
