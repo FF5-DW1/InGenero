@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="flex-col w-full flex items-center justify-center">
+    <section class="flex-col w-full flex items-center justify-center mt-14">
 
 
         <div class="relative max-w-screen-xl">
