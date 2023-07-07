@@ -1,18 +1,13 @@
 @extends('layouts.app') 
 
 @section('content')
-<div class="md:flex md:justify-center md:w-6-12 md:items-center">
-    <!-- <div class="md:w-6/12 p-5">
-        <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen registro de usuarios" >
-    </div> -->
-        <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-        <h1>Crear un perfil Estrella</h1>
+<div class="md:flex md:justify-center md:items-center">
+    <div class="md:w-6/12 lg:w-4/12 bg-white p-6">
+        <h1 class="text-2xl mb-4">Crear un perfil Estrella</h1>
         <form action="{{ route('register') }}" method="POST" novalidate>
             @csrf
-            <div class="md:w-6/12 bg-white"">
-            <label for="name" class="mb-2 block text-gray-500">
-                Nombre
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Nombre:</label>
                 <input 
                     id="name"
                     name="name"
@@ -25,10 +20,8 @@
                 @enderror
             </div>
 
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="last_name" class="mb-2 block text-gray-500 font-bold ">
-                    Apellidos
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Apellidos:</label>
                 <input 
                     id="last_name"
                     name="last_name"
@@ -40,10 +33,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="nationality" class="mb-2 block text-gray-500 font-bold">
-                    Nacionalidad
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Nacionalidad:</label>
                 <input 
                     id="nationality"
                     name="nationality"
@@ -55,10 +46,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="date" class="mb-2 block text-gray-500 font-bold">
-                    Fecha de Nacimiento
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Fecha de Nacimiento:</label>
                 <input 
                     id="date"
                     name="date"
@@ -69,10 +58,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="height" class="mb-2 block text-gray-500 font-bold">
-                    Altura
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Altura:</label>
                 <input 
                     id="height"
                     name="height"
@@ -83,10 +70,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>      
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="weight" class="mb-2 block text-gray-500 font-bold">
-                    Peso
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Peso:</label>
                 <input 
                     id="weight"
                     name="weight"
@@ -97,10 +82,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>  
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="eyes_color" class="mb-2 block text-gray-500 font-bold">
-                    Color de ojos
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Color de ojos:</label>
                 <input 
                     id="eyes_color"
                     name="eyes_color"
@@ -112,10 +95,8 @@
                 @enderror
             </div>  
             
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="hair_color" class="mb-2 block text-gray-500 font-bold">
-                    Color de pelo
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Color de pelo:</label>
                 <input 
                     id="hair_color"
                     name="hair_color"
@@ -126,10 +107,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>  
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="aditional_info" class="mb-2 block text-gray-500 font-bold">
-                    Info. Adicional
-                </label>
+            <div class="mb-4">
+                <label for="name" class="block mb-2 text-gray-500">Info. Adicional:</label>
                 <input 
                     id="aditional_info"
                     name="aditional_info"
@@ -140,10 +119,8 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                 @enderror
             </div>  
-            <div class="md:w-6/12 md:flex md:justify-center md:items-center bg-white p-6">
-                <label for="artistic_skills" class="mb-2 block text-gray-500 font-bold">
-                    Habilidades Artísticas
-                </label>
+            <div class="mb-6">
+                <label for="name" class="block mb-2 text-gray-500">Habilidades artísticas:</label>
                 <input 
                     id="artistic_skills"
                     name="artistic_skills"
