@@ -4,15 +4,33 @@
     border-color: transparent;
 }
 
-.w-3\.5 {
-    width: 29.875rem;
-}
-.w-96 {
-    width: 41rem;
-}
+/* MEDIA QUERY DE FOOTER */
 
-.pb-8 {
-    padding-bottom: 8rem;
-}
+@media (max-width: 640px) {
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .md\:w-1\/4 {
+            width: 100%;
+        }
+        .md\:w-1\/2 {
+            width: 100%;
+        }
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
 
-/* VIDEO */
+        .logo {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+
