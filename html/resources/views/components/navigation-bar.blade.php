@@ -1,5 +1,5 @@
-<div class="">
-    <nav class="bg-white fixed w-full z-50 top-0 border-gray-200 dark:bg-gray-900 flex justify-between">
+<div class="w-full">
+    <nav class="bg-white fixed w-full z-50 top-0  border-gray-200 dark:bg-gray-900 flex justify-between">
         <div>
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <button data-collapse-toggle="navbar-default" type="button"
