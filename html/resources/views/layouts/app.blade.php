@@ -20,8 +20,8 @@
     </header>
 
 {{-- CONTENIDO --}}
-    <x-god-mother-profile/>
-    {{-- @yield('content') --}}
+
+    @yield('content')
 
 
 
