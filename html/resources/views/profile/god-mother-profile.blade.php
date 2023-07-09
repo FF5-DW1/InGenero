@@ -3,16 +3,15 @@
 @section('content')
 <div >
     {{-- banner --}}
-    <div class="py-10 sticky top-0 md:mb-30 lg:mb-50">
-        <div class="absolute w-full bg-no-repeat">
+    <div class="py-10 mt-10 sticky top-0 bg-cover bg-center lg:h-800 w-1920" style="background-image: url('https://media.istockphoto.com/id/672272950/es/foto/cortina-roja-teatro.jpg?s=612x612&w=0&k=20&c=WtYe1vRRlGoLbBQ0m8FJMBhsKQ0o1M5ckKhqchw_IRw=');">
+        {{-- <div class="absolute w-full bg-no-repeat">
             <img src="{{ asset('img/madrina_banner.jpg') }}" alt="" class="w-full">
-        </div>
-        <div class="text-center m-5 relative lg:w-3/4 lg:text-left max-w-full">
-            <h1 class="mb-4 text-2xl font-extrabold leading-none text-white lg:text-4xl py-4 sm:px-8 lg:px-20">Nuestras madrinas</h1>
+        </div> --}}
+        <div class="text-center m-5 lg:my-12 relative lg:w-3/4 lg:text-left max-w-full">
+            <h1 class="m-4 text-2xl font-extrabold leading-none text-white lg:text-4xl py-4 sm:px-8 lg:px-20">Nuestras madrinas</h1>
             <p class="mb-8 text-white lg:text-xl sm:px-8 lg:px-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl.</p>
         </div>
     </div>
-
 
     {{-- todos los cards + boton más --}}
     <div class="relative bg-white justify-center items-center pt-5 pb-10 lg:pt-20">
