@@ -3,7 +3,7 @@
 @section('content')
 <div >
     {{-- banner --}}
-    <div class="mb-10 py-10 sticky top-0 md:mb-30 lg:mb-50">
+    <div class="py-10 sticky top-0 md:mb-30 lg:mb-50">
         <div class="absolute w-full bg-no-repeat">
             <img src="{{ asset('img/madrina_banner.jpg') }}" alt="" class="w-full">
         </div>
@@ -15,10 +15,10 @@
 
 
     {{-- todos los cards + boton más --}}
-    <div>
-        <div class="relative bg-white justify-center items-center pt-10
-                    grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg">
-            <div class="max-w-xs bg-gray-100 border border-gray-700 rounded-xl shadow m-5 mx-auto scale-100">
+    <div class="relative bg-white justify-center items-center pt-5 pb-10 lg:pt-20">
+        <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg">
+            
+            <div class="max-w-xs bg-gray-100 border border-gray-700 rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Inma Cuesta</h4>
                 </div>
