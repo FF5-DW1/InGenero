@@ -3,7 +3,7 @@
 @section('content')
 <div >
     {{-- banner --}}
-    <div class="mb-10 py-10 sticky top-0 md:mb-30 lg:mb-50">
+    <div class="py-10 sticky top-0 md:mb-30 lg:mb-50">
         <div class="absolute w-full bg-no-repeat">
             <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full">
         </div>
@@ -28,7 +28,7 @@
             </div>
         </form>
 
-        <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg">
+        <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg pt-5 pb-10">
 
             <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto scale-100">
                 <div class="text-center m-5">
