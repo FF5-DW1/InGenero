@@ -8,9 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'banner_perfiles': "url('/img/banner_profiles.webp')",
-      }
     },
   },
   plugins: [
