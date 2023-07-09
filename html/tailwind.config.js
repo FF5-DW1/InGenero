@@ -7,10 +7,13 @@ export default {
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'banner_perfiles': "url('/img/banner_profiles.webp')",
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
   ],
 }
-
