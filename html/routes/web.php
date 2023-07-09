@@ -25,10 +25,6 @@ Route::get('/register', function () {
     return view('auth.register-controller');
 })->name('register');
 
-Route::get('/profilemadrina', function () {
-    return view('profile.god-mother-profile');
-})->name('godmother');
-
 Route::get('/profiles', function () {
     return view('profile.profiles');
 })->name('profiles');
