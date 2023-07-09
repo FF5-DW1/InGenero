@@ -24,3 +24,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register-controller');
 })->name('register');
+
+Route::get('/nosotras', function () {
+    return view('components.nosotras');
+})->name('nosotras');
