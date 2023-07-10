@@ -1,4 +1,4 @@
-<footer class="bg-green-200 text-zinc py-10">
+<footer class="bg-green-200 text-zinc py-10 relative z-50">
     <div class="w-full md:w-1/4 mb-6">
         <img src="img\logoencabezado.png" alt="Logo" class="logo w-36 h-auto">
     </div>
