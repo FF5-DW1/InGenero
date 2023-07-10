@@ -26,5 +26,5 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/nosotras', function () {
-    return view('components.nosotras');
+    return view('layouts.nosotras');
 })->name('nosotras');
