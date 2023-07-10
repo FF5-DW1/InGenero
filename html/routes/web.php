@@ -28,3 +28,7 @@ Route::get('/register', function () {
 Route::get('/profile', function () {
     return view('profile.star-profile');
 })->name('star');
+
+Route::get('/admincpm', function () {
+    return view('auth.admincpm-controller');
+})->name('admincpm');
