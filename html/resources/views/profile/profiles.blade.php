@@ -3,18 +3,17 @@
 @section('content')
 <div >
     {{-- banner --}}
-    <div class="py-10 mt-10 sticky top-0 bg-cover bg-center bg-black bg-opacity-50 lg:h-800 w-1920" style="background-image: url('https://framerusercontent.com/images/wWJI8qjviPbPxgWPgNRcVA9a9E.jpg?scale-down-to=2048');">
-        {{-- <div class="absolute w-full bg-no-repeat">
-            <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full">
-        </div> --}}
+    <div class="py-10 mt-10 sticky top-0 w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('img/banner_profiles.webp')">
         <div class="text-center m-5 lg:my-12 relative lg:w-3/4 lg:text-left max-w-full">
-            <h1 class="mb-4 text-2xl font-extrabold leading-none text-white lg:text-4xl py-4 sm:px-8 lg:px-20">Nuestras estrellas</h1>
+            <h1 class="m-4 text-2xl font-extrabold leading-none text-white lg:text-4xl py-4 sm:px-8 lg:px-20">Nuestras estrellas</h1>
             <p class="mb-8 text-white lg:text-xl sm:px-8 lg:px-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl.</p>
         </div>
     </div>
 
+
+
     {{-- todos los cards + boton más --}}
-    <div class="relative bg-white justify-center items-center pt-10 pb-10">
+    <div class="mt-20 relative bg-white justify-center items-center pt-10 pb-10">
         <form>   
             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
             <div class="relative m-4 lg:mx-32 lg:my-14">
