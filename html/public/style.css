@@ -4,33 +4,13 @@
     border-color: transparent;
 }
 
-/* MEDIA QUERY DE FOOTER */
+/* @font-face {
+    font-family: 'InGenero';
+    src: url('/static/Urbanist-Italic.ttf');
+}
 
-@media (max-width: 640px) {
-        .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        .w-full {
-            width: 100%;
-        }
-        .md\:w-1\/4 {
-            width: 100%;
-        }
-        .md\:w-1\/2 {
-            width: 100%;
-        }
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .logo {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    }
+.p{
+    font-family: InGenero;
+} */
 
 

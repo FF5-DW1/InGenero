@@ -28,3 +28,11 @@ Route::get('/register', function () {
 Route::get('/profiles', function () {
     return view('profile.profiles');
 })->name('profiles');
+
+Route::get('/profilemadrina', function () {
+    return view('profile.god-mother-profile');
+})->name('godmother');
+
+Route::get('/profile', function () {
+    return view('profile.star-profile');
+})->name('star');

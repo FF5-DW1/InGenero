@@ -8,6 +8,8 @@
     <title>InGenero</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 
 </head>
 
@@ -23,8 +25,7 @@
 
     @yield('content')
 
-
-
+    
     <footer>
 
         <x-footer-form/>
@@ -33,9 +34,10 @@
 
 {{-- SCRIPTS --}}
 
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="{{ asset('index.js') }}">
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+<script src="{{ asset('index.js') }}"></script>
 
-< /body>
+
+</body>
 
 </html>
