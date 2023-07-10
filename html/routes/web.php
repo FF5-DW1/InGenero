@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,15 @@ Route::get('/profile', function () {
 Route::get('/admincpm', function () {
     return view('auth.admincpm-controller');
 })->name('admincpm');
+
+// Route::get('/logout', function () {
+//     return view('auth.logout-controller');
+// })->name('logout');
+
+
+
+Route::get('/registeradmin',[RegisteradminController::class,'index'])->name('
+registeradmin');
+Route::post('/registeradmin',[RegisteradminController::class,'store']);
+
+// Route::get('/loginadmin',[RegisterController::class,'login']);

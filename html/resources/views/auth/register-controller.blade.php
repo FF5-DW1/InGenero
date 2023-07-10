@@ -18,44 +18,74 @@
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                     <input id="name" name="name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('name')
+                    <p>El nombre es obligatorio</p>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Apellidos</label>
                     <input id="last_name" name="last_name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('last_name')
+                    <p>Los apellidos son obligatorios</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Nacionalidad</label>
                     <input id="nationality" name="nationality" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('nationality')
+                    <p>La nacionalidad es obligatoria</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Fecha de Nacimiento</label>
                     <input id="date" name="date" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('date')
+                    <p>La fecha de nacimiento es obligatoria</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Altura</label>
                     <input id="height" name="height" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('height')
+                    <p>La altura es obligatoria</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Peso</label>
                     <input id="weight" name="weight" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('weight')
+                    <p>El peso es obligatorio</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Color de ojos</label>
                     <input id="eyes_color" name="eyes_color" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('eyes_color')
+                    <p>El color de ojos es obligatorio</p>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Color de pelo</label>
                     <input id="hair_color" name="hair_color" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('hair_color')
+                    <p>El color de pelo es obligatorio</p>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Info. Adicional</label>
                     <input id="aditional_info" name="aditional_info" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('aditional_info')
+                    <p>La información adicional es obligatoria</p>
+                    @enderror
                 </div>
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-gray-500">Habilidades artísticas</label>
                     <input id="artistic_skills" name="artistic_skills" type="text" class="border-green-300 p-6 w-full rounded-lg bg-green-100" />
+                    @error('artistic_skills')
+                    <p>Las habilidades artísticas son obligatorias</p>
+                    @enderror
                 </div>
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                 <div>
