@@ -10,8 +10,6 @@
         </div>
     </div>
 
-
-
     {{-- todos los cards + boton más --}}
     <div class="mt-20 relative bg-white justify-center items-center pt-10 pb-10">
         <form>   
@@ -29,7 +27,7 @@
 
         <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg pt-5 pb-10">
 
-            <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto scale-100">
+            <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Patricia Nogal</h4>
                 </div>
@@ -43,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
+            <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Ana Garcia</h4>
                 </div>
@@ -57,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
+            <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Juan Jimenez</h4>
                 </div>
@@ -71,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
+            <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Maria Rodriguez</h4>
                 </div>
@@ -85,7 +83,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
+            <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Pedro Diaz</h4>
                 </div>
@@ -99,7 +97,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
+            <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Judith Romero</h4>
                 </div>
