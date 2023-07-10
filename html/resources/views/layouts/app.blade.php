@@ -32,8 +32,8 @@
 
 {{-- SCRIPTS --}}
 
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="{{ asset('index.js') }}">
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+<script src="{{ asset('index.js') }}">
 
 < /body>
 
