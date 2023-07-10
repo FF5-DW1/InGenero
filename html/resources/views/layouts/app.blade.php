@@ -23,7 +23,7 @@
 
     @yield('content')
 
-
+    
     <footer>
 
         <x-footer-form/>
@@ -33,8 +33,9 @@
 {{-- SCRIPTS --}}
 
 <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-<script src="{{ asset('index.js') }}">
+<script src="{{ asset('index.js') }}"></script>
 
-< /body>
+
+</body>
 
 </html>
