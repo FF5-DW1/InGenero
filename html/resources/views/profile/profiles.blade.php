@@ -34,8 +34,8 @@
                 <div class="text-center m-5">
                     <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Patricia Nogal</h4>
                 </div>
-                <div class="content-center">
-                    <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto" src="{{ asset('img/foto_patricia2.jpg') }}" alt="imagen madrinas" />
+                <div class="content-center w-[318px] h-[176px] object-contain overflow-hidden">
+                    <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto  " src="{{ asset('img/foto_patricia.jpg') }}" alt="imagen madrinas" />
                 </div>
                 <div class="text-center m-10">
                     <a href="#" class="center inline-flex items-center px-7 py-1.5 text-sm font-medium text-center text-black bg-white rounded-2xl border-solid border-2 border-black hover:bg-black hover:text-white">
