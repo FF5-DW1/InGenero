@@ -3,9 +3,10 @@
 @section('content')
 
 <!-- ENCABEZADO IMAGEN ADMIN -->
-<div class="md:flex md:justify-center md:items-center">
-    
     <img src="app/public/img/imagenhero.jpg" alt="Administrador">
+
+
+<div class="md:flex md:justify-center md:items-center">
 
     <div class="md:w-6/12 lg:w-4/12 bg-white p-6">
         <h1 class="text-2xl mb-4">Crear un perfil Estrella</h1>
@@ -149,7 +150,10 @@
             class="md:w-6/12 bg-black hover:bg-gray-900 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg"
             />
 <!-- FOOTER -->
-
+            <footer class="mb-6" mt-50 bg-green-200>
+                <p>In Género-Todos los derechos reservados @2023</p>
+            <img src="html/app/public/img/logo1.png">
+            </footer>
 </form>
 </div>
 </div>
