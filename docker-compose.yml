@@ -17,7 +17,7 @@ services:
         restart: always
         depends_on:
             - php
-            - mysql
+            - db
         networks:
             - ingenero
 
@@ -33,10 +33,10 @@ services:
         networks:
             - ingenero
 
-    mysql:
+    db:
         image: mysql:latest
         volumes: 
-            - ./mysql:/var/lib/mysql
+            - ./db:/var/lib/mysql
         ports:
             - 3306:3306
         restart: always
@@ -51,9 +51,9 @@ services:
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         environment:
-            PMA_HOST: mysql
-            PMA_USER: admin
-            PMA_PASSWORD: secret
+            PMA_HOST: db
+            PMA_USER: root
+            PMA_PASSWORD:
         ports:
             - "38001:80"
         restart: always
@@ -61,4 +61,4 @@ services:
             - ingenero
         depends_on:
             - php
-            - mysql
+            - db
