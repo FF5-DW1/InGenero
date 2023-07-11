@@ -1,20 +1,12 @@
 
- @extends('layouts.app')
-
 
  @section('content')
      <div class="flex justify-center w-full items-center min-h-screen">
-      
-         <div class="w-96  max-w-sm">
-         
+         <div class="w-96 max-w-sm">
              <div class="text-black text-3xl font-bold -mt-8 my-8 mx-8 ms-8 me-8 text-center "><br> Iniciar sesión</div>
  
              <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('login') }}">
                  @csrf
-
-                 @if(session('mensaje'))
-                 <p class="text-red-400 text-xs italic">{{ session('mensaje') }}</p>
-                 @endif
                  <!-- Resto del formulario -->
  
                  <div class="mb-4">
@@ -50,6 +42,19 @@
                      <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}">
                          ¿No tienes una cuenta? ¡Contáctanos!
                      </a>
+
+                
+                 </div>
+ 
+             </form>
+         </div>
+     </div>
+ @endsection
+ 
+
+
+
+
 
                 
                  </div>

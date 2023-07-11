@@ -1,5 +1,3 @@
-
-
 <div class="w-full">
     <nav class="bg-green-200 fixed w-full z-50 top-0  border-gray-200 dark:bg-gray-900 flex justify-between">
         <div>

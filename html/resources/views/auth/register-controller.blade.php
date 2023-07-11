@@ -1,17 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.app_forms')
 
 @section('content')
 
 <!-- ENCABEZADO IMAGEN ADMIN -->
-<div class="relative">
-    <div class="py-10 mt-10 bg-cover bg-center h-80">
-        <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full h-full object-cover">
-        <div class="absolute bottom-0 right-0 m-5 text-right">
-            <h1 class="text-4xl font-extrabold leading-none text-white lg:text-2xl">Administrador@</h1>
+<div >
+    <div class="relative py-8 mt-10 bg-cover bg-center h-80">
+        <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full h-full object-cover opacity-60">
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 class="text-4xl font-bold leading-none text-black lg:text-2xl">Administrador@</h1>
         </div>
-
+    </div>
     <div class="flex justify-center">
-        <div class="md:w-6/12 lg:w-4/12 mt-10">
+        <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
             <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
             <form action="{{ route('register') }}" method="POST" novalidate>
                 @csrf
@@ -19,7 +19,7 @@
                     <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                     <input id="name" name="name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
                     @error('name')
-                    <p>El nombre es obligatorio</p>
+                    <span class="text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -27,16 +27,15 @@
                     <label for="name" class="block mb-2 text-gray-500">Apellidos</label>
                     <input id="last_name" name="last_name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
                     @error('last_name')
-                    <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
-                    @enderror"
-
-                  
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Nacionalidad</label>
+            
                     <input id="nationality" name="nationality" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
                     @error('nationality')
-                    <p>La nacionalidad es obligatoria</p>
+                    <span class="text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -102,7 +101,7 @@
             </form>
         </div>
     </div>
-    <footer class="py-10 mt-10 fixed top-0 bg-cover bg-center lg:h-800 w-full  bg-green-100 flex flex-col items-center justify-center">
+    <footer class="py-10 mt-10 top-0 bg-cover bg-center lg:h-800 w-full relative bg-green-100 flex flex-col items-center justify-center">
         <img src="img/logo 1.png" class="logo w-36 h-auto">
         <img src="img/firma_distrito_centro_madrid_pantoneazul 1.png" class="logo w-36 h-auto">
         <p class="text-center">In Género-Todos los derechos reservados @2023</p>

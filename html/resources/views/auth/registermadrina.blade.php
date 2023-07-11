@@ -49,7 +49,7 @@
                 </form>
             </div>
         </div>
-        <footer class="py-10 mt-10 fixed top-0 bg-cover bg-center lg:h-800 w-full relative bg-green-100 flex flex-col items-center justify-center">
+        <footer class="py-10 mt-10 top-0 bg-cover bg-center lg:h-800 w-full relative bg-green-100 flex flex-col items-center justify-center">
             <img src="img/logo 1.png" class="logo w-36 h-auto">
             <img src="img/firma_distrito_centro_madrid_pantoneazul 1.png" class="logo w-36 h-auto">
             <p class="text-center">In Género-Todos los derechos reservados @2023</p>
