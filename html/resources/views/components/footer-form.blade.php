@@ -1,5 +1,5 @@
 
-<div class="flex justify-center items-center bg-green-200">
+<div class="flex justify-center p-4 items-center bg-green-200">
 <footer class="bg-green-200 text-zinc py-10 flex-col justify-center items-center">
     <div class="max-w-screen-xl">
         <div class="w-full md:w-1/4 mb-6">
