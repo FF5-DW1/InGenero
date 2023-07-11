@@ -18,11 +18,18 @@
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                         <input id="name" name="name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                        @error('name')
+                    <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
+                    @enderror"
                     </div>
 
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Apellidos</label>
                         <input id="last_name" name="last_name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                        @error('last_name')
+                        <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
+                        @enderror"
+
                     </div>
 
                     <div class="mb-4">

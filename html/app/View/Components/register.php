@@ -24,10 +24,10 @@ class register extends Component
         return view('components.register');
     }
 
-    public function store():
-    {
-      dd('Post...');
-    }
+    // public function store():
+    // {
+    //   dd('Post...');
+    // }
 
 
 }

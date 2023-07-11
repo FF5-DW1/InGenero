@@ -26,6 +26,8 @@ Route::get('/register', function () {
     return view('auth.register-controller');
 })->name('register');
 
+Route::view('/privada',"secret")->name('privada');
+
 Route::get('/profile', function () {
     return view('profile.star-profile');
 })->name('star');

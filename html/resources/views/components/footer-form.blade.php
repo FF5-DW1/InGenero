@@ -15,10 +15,18 @@
                     <div class="w-full md:w-1/2 mb-4">
                         <label for="name" class="block mb-1">Nombre</label>
                         <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        @error('name')
+                        <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
+                        @enderror"
+
                     </div>
                     <div class="w-full md:w-1/2 mb-4">
                         <label for="email" class="block mb-1">Correo electrónico</label>
                         <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        @error('email')
+                        <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
+                        @enderror"
+
                     </div>
                     <div class="w-full mb-4">
                         <label for="message" class="block mb-1">Mensaje</label>

@@ -11,6 +11,10 @@
  
              <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('login') }}">
                  @csrf
+
+                 @if(session('mensaje'))
+                 <p class="text-red-400 text-xs italic">{{ session('mensaje') }}</p>
+                 @endif
                  <!-- Resto del formulario -->
  
                  <div class="mb-4">

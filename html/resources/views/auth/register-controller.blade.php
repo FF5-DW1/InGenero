@@ -27,8 +27,10 @@
                     <label for="name" class="block mb-2 text-gray-500">Apellidos</label>
                     <input id="last_name" name="last_name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
                     @error('last_name')
-                    <p>Los apellidos son obligatorios</p>
-                    @enderror
+                    <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
+                    @enderror"
+
+                  
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Nacionalidad</label>
@@ -84,8 +86,8 @@
                     <label for="name" class="block mb-2 text-gray-500">Habilidades artísticas</label>
                     <input id="artistic_skills" name="artistic_skills" type="text" class="border-green-300 p-6 w-full rounded-lg bg-green-100" />
                     @error('artistic_skills')
-                    <p>Las habilidades artísticas son obligatorias</p>
-                    @enderror
+                    <p class="bg-red-200 text-black my-2 rounded-lg text-sm p-2 text-center">{{ $message}}</p>
+                    @enderror"
                 </div>
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                 <div>
@@ -100,7 +102,7 @@
             </form>
         </div>
     </div>
-    <footer class="py-10 mt-10 fixed top-0 bg-cover bg-center lg:h-800 w-full relative bg-green-100 flex flex-col items-center justify-center">
+    <footer class="py-10 mt-10 fixed top-0 bg-cover bg-center lg:h-800 w-full  bg-green-100 flex flex-col items-center justify-center">
         <img src="img/logo 1.png" class="logo w-36 h-auto">
         <img src="img/firma_distrito_centro_madrid_pantoneazul 1.png" class="logo w-36 h-auto">
         <p class="text-center">In Género-Todos los derechos reservados @2023</p>
