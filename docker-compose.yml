@@ -38,7 +38,7 @@ services:
         volumes: 
             - ./db:/var/lib/mysql
         ports:
-            - 3306:3306
+            - 9095:3306
         restart: always
         environment:
             - MYSQL_DATABASE=ingenero
@@ -52,8 +52,8 @@ services:
         image: phpmyadmin/phpmyadmin
         environment:
             PMA_HOST: db
-            PMA_USER: root
-            PMA_PASSWORD:
+            PMA_USER: admin
+            PMA_PASSWORD: secret
         ports:
             - "38001:80"
         restart: always
