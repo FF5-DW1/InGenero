@@ -56,8 +56,22 @@
                                 <a href="#"
                                     class="enlace block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 dark:text-white md:dark:hover:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">¡Contáctanos!</a>
                             </li>
+                            <li> 
+                                @if (Auth::check() && Auth::user()->isAdmin())
+                                <a href="{{ route('logout') }} " class="enlace block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 dark:text-white md:dark:hover:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                        Cerrar sesión
+                                    </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    </form   
+                                @endif
+                               
+                            </li>
                         </ul>
                     </div>
+                   
         
                 </div>
             </div>
