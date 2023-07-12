@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,9 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/login', function () {
-    return view('auth.login-controller');
-})->name('login');
+//rutas de login 
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']); 
 
 Route::get('/register', function () {
     return view('auth.register-controller');
@@ -40,3 +41,5 @@ Route::get('/profilemadrina', function () {
 Route::get('/profile', function () {
     return view('profile.star-profile');
 })->name('star');
+
+

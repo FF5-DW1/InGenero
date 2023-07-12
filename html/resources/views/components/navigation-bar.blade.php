@@ -1,3 +1,10 @@
+<header>
+    @auth
+        Log in
+        {{Auth::user()->email}}
+    @endauth
+</header>
+
 <div class="flex justify-center items-center bg-white">
     
         <nav class="bg-white fixed w-full z-50 top-0 border-gray-200 dark:bg-gray-900 flex justify-between max-w-[1280px]">
@@ -22,7 +29,7 @@
                                     aria-current="page">Register</a>
                             </li>
                             <li>
-                                <a href="/login"
+                                <a href={{route('login')}}
                                     class="enlace block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 dark:text-white md:dark:hover:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                     aria-current="page">Login</a>
                             </li>
