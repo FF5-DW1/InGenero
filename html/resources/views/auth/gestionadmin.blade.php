@@ -10,24 +10,23 @@
         </div>
     </div>
     <div class="flex flex-col items-center">
-        <div class="w-10/12 md:w-6/12 lg:w-4/12 mb-4">
-            <h1 class="text-2xl text-left">Editar un perfil</h1>
+        <div class="w-10/12 md:w-6/12 lg:w-4/12 mb-2">
+            <h1 class="text-2xl mb-4">Editar un perfil</h1>
+            <form>
+                <label for="búsqueda" class="mb-1 mt-1 text-sm font-medium text-gray-900 sr-only dark:text-white">A quién buscas...</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search" id="búsqueda" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="A quién buscas..." required>
+                </div>
+            </form>
         </div>
 
-        <form>
-            <label for="búsqueda" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">A quién buscas...</label>
-            <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                </div>
-                <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="A quién buscas..." required>
-                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-green-100 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"></button>
-            </div>
-        </form>
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="relative overflow-x-auto mt-4">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 bg-green-100">
                 <thead class="text-xs text-gray-700 uppercase bg-green-100 dark:text-gray-400">
                     <tr>
@@ -57,7 +56,11 @@
                             1
                         </th>
                         <td class="px-6 py-4">
-                            Botón
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
+                            </label>
                         </td>
                         <td class="px-6 py-4">
                             Madrid, Ivón
@@ -65,17 +68,25 @@
                         <td class="px-6 py-4">
                             Estrella
                         </td>
-                        <td class="px-6 py-4 text-right">
-                            <!-- BOTONES DE EDICCIÓN -->
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
+                        <th scope="col" class="px-6 py-3 flex items-center">
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                        </th>
                     </tr>
                     <tr class="bg-green-100 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             2
                         </th>
                         <td class="px-6 py-4">
-                            Botón
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
+                            </label>
                         </td>
                         <td class="px-6 py-4">
                             Pérez, Sabina
@@ -83,16 +94,25 @@
                         <td class="px-6 py-4">
                             Madrina
                         </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
+                        <th scope="col" class="px-6 py-3 flex items-center">
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                        </th>
                     </tr>
                     <tr class="bg-green-100 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             3
                         </th>
                         <td class="px-6 py-4">
-                            Botón
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
+                            </label>
                         </td>
                         <td class="px-6 py-4">
                             Garcia, Patricia
@@ -100,16 +120,25 @@
                         <td class="px-6 py-4">
                             Estrella
                         </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
+                        <th scope="col" class="px-6 py-3 flex items-center">
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                        </th>
                     </tr>
                     <tr class="bg-green-100 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             4
                         </th>
                         <td class="px-6 py-4">
-                            Botón
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
+                            </label>
                         </td>
                         <td class="px-6 py-4">
                             Caballero, Pablo
@@ -117,16 +146,25 @@
                         <td class="px-6 py-4">
                             Padrino
                         </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
+                        <th scope="col" class="px-6 py-3 flex items-center">
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                        </th>
                     </tr>
                     <tr class="bg-green-100 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             5
                         </th>
                         <td class="px-6 py-4">
-                            Botón
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
+                            </label>
                         </td>
                         <td class="px-6 py-4">
                             Carrasco, Eduardo
@@ -134,9 +172,42 @@
                         <td class="px-6 py-4">
                             Estrella
                         </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <th scope="col" class="px-6 py-3 flex items-center">
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                        </th>
+                    </tr>
+
+                    <!---------------------- MÁS PERFILES QUE AÑADIR ------------------------------------>
+                    <tr class="bg-green-100 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            6
+                        </th>
+                        <td class="px-6 py-4">
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
+                            </label>
                         </td>
+                        <td class="px-6 py-4">
+                            Apellidos, Nombre
+                        </td>
+                        <td class="px-6 py-4">
+                            Estrella
+                        </td>
+                        <th scope="col" class="px-6 py-3 flex items-center">
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                            <a href="#" class="ml-4">
+                                <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2" style="width: 30px; height: 26px;">
+                            </a>
+                        </th>
                     </tr>
                 </tbody>
             </table>
