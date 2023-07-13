@@ -14,5 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
 });
+
+Route::get('/login', function () {
+    return view('auth.login-controller');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register-controller');
+})->name('register');
+
+Route::get('/nosotras', function () {
+    return view('layouts.nosotras');
+})->name('nosotras');
+
+Route::get('/profiles', function () {
+    return view('profile.profiles');
+})->name('profiles');
+
+Route::get('/profilemadrina', function () {
+    return view('profile.god-mother-profile');
+})->name('godmother');
+
+Route::get('/profile', function () {
+    return view('profile.star-profile');
+})->name('star');
