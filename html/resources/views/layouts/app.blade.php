@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    {{-- <div class="preloader">
+    <div class="preloader">
         <div class="wrapper-triangle">
           <div class="pen">
             <div class="line-triangle">
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-      </div> --}}
+      </div>
 
     <header>
         

@@ -24,8 +24,6 @@
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
                     <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('bat/rd-mailform.php') }}">
-                      
-                        @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name" required>
