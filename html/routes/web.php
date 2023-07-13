@@ -40,3 +40,5 @@ Route::get('/profilemadrina', function () {
 Route::get('/profile', function () {
     return view('profile.star-profile');
 })->name('star');
+
+Route::get('/footer', 'MessagesController@index');
