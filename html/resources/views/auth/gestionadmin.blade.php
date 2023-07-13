@@ -13,7 +13,7 @@
         <div class="w-10/12 md:w-6/12 lg:w-4/12 mb-2">
             <h1 class="text-2xl mb-4">Editar un perfil</h1>
             <form>
-                <label for="búsqueda" class="mb-1 mt-1 text-sm font-medium text-gray-900 sr-only dark:text-white">A quién buscas...</label>
+                <label for="búsqueda" class="mb-1 mt-1 text-sm font-medium text-gray-900 sr-only">A quién buscas...</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -26,8 +26,8 @@
         </div>
 
 
-        <div class="relative overflow-x-auto mt-4">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 bg-green-100">
+        <div class="relative overflow-x-auto mt-4 mb-4">
+            <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400 bg-green-100">
                 <thead class="text-xs text-gray-700 uppercase bg-green-100 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
@@ -45,9 +45,6 @@
                         <th scope="col" class="px-6 py-3">
                             Acciones
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            <span class="sr-only">Edit</span>
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,7 +53,7 @@
                             1
                         </th>
                         <td class="px-6 py-4">
-                            <label class="relative inline-flex items-center cursor-pointer">
+                            <label class="relative inline-flex cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer">
                                 <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
                                 <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
@@ -68,7 +65,7 @@
                         <td class="px-6 py-4">
                             Estrella
                         </td>
-                        <th scope="col" class="px-6 py-3 flex items-center">
+                        <th scope="col" class="px-6 py-3 flex">
                             <a href="#" class="ml-4">
                                 <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
                             </a>
@@ -94,7 +91,7 @@
                         <td class="px-6 py-4">
                             Madrina
                         </td>
-                        <th scope="col" class="px-6 py-3 flex items-center">
+                        <th scope="col" class="px-6 py-3 flex">
                             <a href="#" class="ml-4">
                                 <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
                             </a>
@@ -120,7 +117,7 @@
                         <td class="px-6 py-4">
                             Estrella
                         </td>
-                        <th scope="col" class="px-6 py-3 flex items-center">
+                        <th scope="col" class="px-6 py-3 flex">
                             <a href="#" class="ml-4">
                                 <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
                             </a>
@@ -146,7 +143,7 @@
                         <td class="px-6 py-4">
                             Padrino
                         </td>
-                        <th scope="col" class="px-6 py-3 flex items-center">
+                        <th scope="col" class="px-6 py-3 flex">
                             <a href="#" class="ml-4">
                                 <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
                             </a>
@@ -160,7 +157,7 @@
                             5
                         </th>
                         <td class="px-6 py-4">
-                            <label class="relative inline-flex items-center cursor-pointer">
+                            <label class="relative inline-flex cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer">
                                 <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-red-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
                                 <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
@@ -172,7 +169,7 @@
                         <td class="px-6 py-4">
                             Estrella
                         </td>
-                        <th scope="col" class="px-6 py-3 flex items-center">
+                        <th scope="col" class="px-6 py-3 flex">
                             <a href="#" class="ml-4">
                                 <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2" style="width: 30px; height: 26px;">
                             </a>
