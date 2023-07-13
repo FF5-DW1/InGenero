@@ -38,7 +38,7 @@ services:
         volumes: 
             - ./db:/var/lib/mysql
         ports:
-            - 9095:3306
+            - 3300:3306
         restart: always
         environment:
             - MYSQL_DATABASE=ingenero
