@@ -17,17 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('principal');
 });
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 //rutas de login 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']); 
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/login', [LoginController::class, 'logout'])->name('login');
 
 
 Route::get('/register', function () {
-    return view('auth.register-controller');
-})->name('register');
+    return view('auth.form-create-star');
+})->name('createstar');
 
 Route::get('/nosotras', function () {
     return view('layouts.nosotras');
