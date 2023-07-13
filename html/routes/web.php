@@ -41,4 +41,6 @@ Route::get('/profile', function () {
     return view('profile.star-profile');
 })->name('star');
 
-Route::get('/footer', 'MessagesController@index');
+// Route::get('/footer-form', 'MessagesController@index');
+Route::post('/mensaje', 'MessagesController@store')->name('mensaje.store');
+
