@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('principal');
 });
+
+Route::get('/gestionadmin', function () {
+    return view('auth.gestionadmin');
+})->name('gestionadmin');
 
 Route::get('/login', function () {
     return view('auth.login-controller');
@@ -40,3 +45,5 @@ Route::get('/profilemadrina', function () {
 Route::get('/profile', function () {
     return view('profile.star-profile');
 })->name('star');
+
+
