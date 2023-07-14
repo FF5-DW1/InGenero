@@ -21,11 +21,14 @@ Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 //rutas de login 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']); 
 
 Route::post('/login', [LoginController::class, 'logout'])->name('login');
 
+
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/register', function () {
     return view('auth.form-create-star');

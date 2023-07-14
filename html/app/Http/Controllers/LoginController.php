@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-   /*  //función de la ruta para ir formulario
-    public function login(){
+    //función de la ruta para ir formulario
+    public function index(){
         return view('auth.login');
     }
 
@@ -19,25 +19,26 @@ class LoginController extends Controller
         $validated =$request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
-        ]); */
+        ]);
         //comprobar pass Hash
-        /* if (Auth::attempt($validated)) {
+        if (Auth::attempt($validated)) {
             
             //Si ok, login
             //regenero sesion
             $request->session()->regenerate();
             //redirige donde quiera
-            return redirect()->intended('profile');
+            return redirect()->route('profile', auth()->user()->username);
     
             //dd($validated);
             //Si ko, redirect back to login
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',
             ])->onlyInput('email'); 
-        } */
+        }
+    }
+}
 
-
-       /*  $credentials = $request->only('email', 'password');
+        /* $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
@@ -53,9 +54,5 @@ class LoginController extends Controller
             // Redirigir al formulario de inicio de sesión con un mensaje de error
             }
         }
+ */
 
-    public function logout(){
-            Auth::logout();
-            return redirect('/login');
-        } */
-}
