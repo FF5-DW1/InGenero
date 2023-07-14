@@ -40,7 +40,7 @@
               <ul class="rd-navbar-nav">
                 <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="profiles">Perfiles</a>
+                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="nosotras">Nosotr@s</a>
                 </li>

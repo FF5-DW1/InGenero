@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('formprofiles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique();//de la tabla users - seeders
             $table->string('name');
             $table->string('last_name');
             $table->string('nationality');
@@ -25,11 +24,9 @@ return new class extends Migration
             $table->text('additional_info')->nullable();
             $table->text('artistic_skills')->nullable();
             $table->string('profile_media')->nullable();
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-        
     }
 
     /**

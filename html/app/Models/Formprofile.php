@@ -10,6 +10,7 @@ class Formprofile extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'name',
         'last_name',
         'nationality',
