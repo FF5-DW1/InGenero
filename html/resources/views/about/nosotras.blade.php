@@ -232,17 +232,9 @@
                         <h5 class="quote-modern-author">Jonathan Perez</h5>
                         <p class="quote-modern-status">Espectador</p>
                       </article>
-                    </div>
-                    <div class="item">
-                      <!-- Quote Modern-->
-                      <article class="quote-modern">
                         <h5 class="quote-modern-text"><span class="q">Fluctuss sunt eras de neuter plasmator. Heuretes noster brabeuta est. Nixus, visus, et mensa. Primus, magnum tatas rare locus de altus, camerarius clabulare.</span></h5>
                         <h5 class="quote-modern-author">Ana Becerra</h5>
                         <p class="quote-modern-status">Director</p>
-                      </article>
-                    </div>
-                  </div>
-                  <div class="slick-slider child-carousel" id="child-carousel-5" data-arrows="true" data-for=".carousel-parent" data-items="4" data-sm-items="4" data-md-items="4" data-lg-items="4" data-xl-items="4" data-slide-to-scroll="1">
                     <div class="item"><img class="img-circle" src="images/team-5-83x83.jpg" alt="" width="83" height="83"/>
                     </div>
                     <div class="item"><img class="img-circle" src="images/team-6-83x83.jpg" alt="" width="83" height="83"/>
