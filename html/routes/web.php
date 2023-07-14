@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,22 +17,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('principal');
-});
+})->name('inicio');
+
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
+Route::get('/apoyo', function () {
+    return view('donaciones.apoyo');
+})->name('apoyo');
 
 Route::get('/gestionadmin', function () {
     return view('auth.gestionadmin');
 })->name('gestionadmin');
 
 Route::get('/login', function () {
-    return view('auth.login-controller');
+    return view('auth.login');
 })->name('login');
 
 Route::get('/register', function () {
-    return view('auth.register-controller');
+    return view('auth.register');
 })->name('register');
 
 Route::get('/nosotras', function () {
-    return view('layouts.nosotras');
+    return view('about.nosotras');
 })->name('nosotras');
 
 Route::get('/profiles', function () {
