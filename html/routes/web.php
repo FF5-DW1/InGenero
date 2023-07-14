@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\FormprofileController;
+use App\Models\Formprofile;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,22 +24,24 @@ Route::get('/login', function () {
     return view('auth.login-controller');
 })->name('login');
 
-Route::get('/register', function () {
-    return view('auth.register-controller');
-})->name('register');
-
 Route::get('/nosotras', function () {
     return view('layouts.nosotras');
 })->name('nosotras');
-
-Route::get('/profiles', function () {
-    return view('profile.profiles');
-})->name('profiles');
 
 Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
 })->name('godmother');
 
-Route::get('/profile', function () {
-    return view('profile.star-profile');
-})->name('star');
+
+
+// // Route::get('/formprofile', 'FormprofileController@createForm');
+// // Route::post('/formprofile', 'FormprofileController@storeForm');
+
+
+// Route::get('/starprofile/{id}', 'FormprofileController@showStarprofile');
+
+Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
+Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
+Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
+Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
+Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');

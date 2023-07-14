@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('starprofiles', function (Blueprint $table) {
+        Schema::create('formprofiles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique();//usando de otra tabla
+            $table->unsignedBigInteger('user_id')->unique();//de la tabla users - seeders
             $table->string('name');
             $table->string('last_name');
             $table->string('nationality');
@@ -29,6 +29,7 @@ return new class extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
+        
     }
 
     /**
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('starprofiles');
+        Schema::dropIfExists('formprofiles');
     }
 };
