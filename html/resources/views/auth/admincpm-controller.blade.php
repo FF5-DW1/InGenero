@@ -7,7 +7,7 @@
     <div class="w-96 content-center max-w-sm">
 
         <div class="text-black text-3xl font-bold -mt-8 my-8 mx-8 ms-8 me-8 text-center "><br> Crear Perfil</div>
-        {{-- <div class="CrearPerfilAdmin w-[613px] h-[450px] mx-auto"> --}}
+        {{-- <div class="CrearPerfilAdminc w-[613px] h-[450px] mx-auto"> --}}
         <br>
         <div class=" h-70 min-w-max content-center rounded-lg ">
             <div class="flex flex-col items-center pb-10">
