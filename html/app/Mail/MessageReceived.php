@@ -12,13 +12,15 @@ use Illuminate\Queue\SerializesModels;
 class MessageReceived extends Mailable
 {
     use Queueable, SerializesModels;
+    public $subject ='Mensaje recibido';
 
+    public $msg;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($msg)
     {
-        //
+      $this->msg = $msg;
     }
 
     /**
@@ -46,8 +48,22 @@ class MessageReceived extends Mailable
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
-    public function attachments(): array
+    public function build()
     {
-        return [];
+        return $this->view('emails.message-received');
     }
+
+
 }
+
+// * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+// */
+// public function attachments(): array
+// {
+// * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+// */
+// public function attachments(): array
+// {
+//    return [];
+// }
+// }
