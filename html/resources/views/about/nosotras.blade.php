@@ -97,8 +97,8 @@
               <!-- Team Modern-->
               <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-01-270x236.jpg" alt="" width="270" height="236"/></a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Richard Peterson</a></h6>
-                  <div class="team-modern-status">Head Chef</div>
+                  <h6 class="team-modern-name"><a href="#">Javier Campos</a></h6>
+                  <div class="team-modern-status">InGenero co-founder</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                     <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -109,45 +109,42 @@
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay="0s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-02-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-01-270x236.jpg" alt="" width="270" height="236"/></a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Amelia Lee</a></h6>
-                  <div class="team-modern-status">Manager</div>
+                  <h6 class="team-modern-name"><a href="#">Javier Campos</a></h6>
+                  <div class="team-modern-status">InGenero co-founder</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                     <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                     <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                    <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
                   </ul>
                 </div>
               </article>
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInRight" data-wow-delay=".1s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-03-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-01-270x236.jpg" alt="" width="270" height="236"/></a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Sam Peterson</a></h6>
-                  <div class="team-modern-status">Head Baker</div>
+                  <h6 class="team-modern-name"><a href="#">Javier Campos</a></h6>
+                  <div class="team-modern-status">InGenero co-founder</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                     <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                     <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                    <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
                   </ul>
                 </div>
               </article>
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-04-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-01-270x236.jpg" alt="" width="270" height="236"/></a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Jane Smith</a></h6>
-                  <div class="team-modern-status">Pizza Chef</div>
+                  <h6 class="team-modern-name"><a href="#">Javier Campos</a></h6>
+                  <div class="team-modern-status">InGenero co-founder</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                     <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                     <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                    <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
                   </ul>
                 </div>
               </article>
@@ -159,23 +156,19 @@
         <div class="container">
           <div class="row row-60 justify-content-center justify-content-xxl-between">
             <div class="col-lg-6 col-xxl-5 position-static">
-              <h3>Our history</h3>
+              <h3>Línea de vida</h3>
               <div class="tabs-custom" id="tabs-5">
                 <div class="tab-content tab-content-1">
-                  <div class="tab-pane fade" id="tabs-5-1">
-                    <h5 class="font-weight-normal text-transform-none text-spacing-75">PizzaHouse Establishment and First Happy Clients</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                  </div>
                   <div class="tab-pane fade" id="tabs-5-2">
-                    <h5 class="font-weight-normal text-transform-none text-spacing-75">Organizing a Free Pizza Delivery Service in Los Angeles</h5>
+                    <h5 class="font-weight-normal text-transform-none text-spacing-75">Fundación de asociación InGenero </h5>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
                   </div>
                   <div class="tab-pane fade" id="tabs-5-3">
-                    <h5 class="font-weight-normal text-transform-none text-spacing-75">Offering an Extended Range of Pizzas, Burgers, and Salads</h5>
+                    <h5 class="font-weight-normal text-transform-none text-spacing-75">Nacimiento de "Vivir es puro teatro"</h5>
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                   </div>
                   <div class="tab-pane fade show active" id="tabs-5-4">
-                    <h5 class="font-weight-normal text-transform-none text-spacing-75">Partnering with Organic Farms Located in California</h5>
+                    <h5 class="font-weight-normal text-transform-none text-spacing-75">Crecer y ayudar todo lo que podamos en el desarrollo de nuevas estrellas</h5>
                     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
                   </div>
                 </div>
@@ -195,11 +188,11 @@
             </div>
             <div class="col-md-9 col-lg-6 position-static index-1">
               <div class="bg-image-right-1 bg-image-right-lg"><img src="images/our_history-1110x710.jpg" alt="" width="1110" height="710"/>
-                <div class="link-play-modern"><a class="icon mdi mdi-play" data-lightgallery="item" href="https://www.youtube.com/watch?v=1UWpbtUupQQ"></a>
-                  <div class="link-play-modern-title">How we<span>Work</span></div>
+                <div class="link-play-modern"><a class="icon mdi mdi-play" data-lightgallery="item" href="https://www.youtube.com/watch?v=UR7LAW-VBBk"></a>
+                  <div class="link-play-modern-title">Videobook<span>Conjunto</span></div>
                   <div class="link-play-modern-decor"></div>
                 </div>
-                <div class="box-transform" style="background-image: url(images/our_history-1110x710.jpg);"></div>
+                <div class="box-transform" style="background-image: url(img4k/pexels-photo-458379.jpeg);"></div>
               </div>
             </div>
           </div>
@@ -212,7 +205,7 @@
           <div class="row row-60 justify-content-center flex-lg-row-reverse">
             <div class="col-md-8 col-lg-6 col-xl-5">
               <div class="offset-left-xl-70">
-                <h3 class="heading-3">What People Say</h3>
+                <h3 class="heading-3">OPINIONES COLABORADORES</h3>
                 <div class="slick-quote">
                   <!-- Slick Carousel-->
                   <div class="slick-slider carousel-parent" data-autoplay="true" data-swipe="true" data-items="1" data-child="#child-carousel-5" data-for="#child-carousel-5" data-slide-effect="true">
@@ -220,32 +213,32 @@
                       <!-- Quote Modern-->
                       <article class="quote-modern">
                         <h5 class="quote-modern-text"><span class="q">Torus accelerares, tanquam ferox cacula. Fluctuss experimentum in burdigala! Ubi est peritus classis? Peregrinatione superbe ducunt ad magnum verpa.</span></h5>
-                        <h5 class="quote-modern-author">Stephen Adams,</h5>
-                        <p class="quote-modern-status">Regular Client</p>
+                        <h5 class="quote-modern-author">Ramon Garcia,</h5>
+                        <p class="quote-modern-status">Patreon</p>
                       </article>
                     </div>
                     <div class="item">
                       <!-- Quote Modern-->
                       <article class="quote-modern">
                         <h5 class="quote-modern-text"><span class="q">Gluten, fluctus, et galatae. Germanus classiss ducunt ad brodium. Pol, a bene cedrium. Tabess unda in neuter avenio! Orexiss sunt adelphiss de rusticus parma.</span></h5>
-                        <h5 class="quote-modern-author">Sam Peterson,</h5>
-                        <p class="quote-modern-status">Regular Client</p>
+                        <h5 class="quote-modern-author">Samantha Ruiz,</h5>
+                        <p class="quote-modern-status">Madrina</p>
                       </article>
                     </div>
                     <div class="item">
                       <!-- Quote Modern-->
                       <article class="quote-modern">
                         <h5 class="quote-modern-text"><span class="q">Pol, silva! Grandis contencios ducunt ad torus. Monss congregabo in nobilis tectum! Velox, fatalis victrixs sapienter talem de emeritis, festus torus.</span></h5>
-                        <h5 class="quote-modern-author">Jane McMillan,</h5>
-                        <p class="quote-modern-status">Regular Client</p>
+                        <h5 class="quote-modern-author">Jonathan Perez</h5>
+                        <p class="quote-modern-status">Espectador</p>
                       </article>
                     </div>
                     <div class="item">
                       <!-- Quote Modern-->
                       <article class="quote-modern">
                         <h5 class="quote-modern-text"><span class="q">Fluctuss sunt eras de neuter plasmator. Heuretes noster brabeuta est. Nixus, visus, et mensa. Primus, magnum tatas rare locus de altus, camerarius clabulare.</span></h5>
-                        <h5 class="quote-modern-author">Will Jones,</h5>
-                        <p class="quote-modern-status">Regular Client</p>
+                        <h5 class="quote-modern-author">Ana Becerra</h5>
+                        <p class="quote-modern-status">Director</p>
                       </article>
                     </div>
                   </div>
