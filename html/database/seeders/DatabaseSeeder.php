@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
         ]);
 
-        \App\Models\Formprofile::insert([
+        /* \App\Models\Formprofile::insert([
             'name' => "raul",
             'last_name' => "rodriguez",
             'nationality' => "mexico",
@@ -32,6 +32,6 @@ class DatabaseSeeder extends Seeder
             'additional_info' => "tatoo",
             'artistic_skills' => "danza",
             'profile_media' => "url",
-        ]);
+        ]); */
     }
 }

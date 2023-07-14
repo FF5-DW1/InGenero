@@ -36,7 +36,7 @@
                 <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2">
                     ¿Olvidaste la contraseña?
                 </a>
-                <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}">
+                {{-- <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}"> --}}
                     ¿No tienes una cuenta? ¡Contáctanos!
                 </a>
 
