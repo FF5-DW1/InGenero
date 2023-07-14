@@ -41,31 +41,54 @@
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Fecha de Nacimiento</label>
                     <input id="date" name="date" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('date')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Altura</label>
                     <input id="height" name="height" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('height')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Peso</label>
                     <input id="weight" name="weight" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('weight must be a number')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Color de ojos</label>
                     <input id="eyes_color" name="eyes_color" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('eyes_color')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+
                 </div>
 
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Color de pelo</label>
                     <input id="hair_color" name="hair_color" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('hair_color')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">Info. Adicional</label>
                     <input id="aditional_info" name="aditional_info" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+                    @error('aditional_info')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-gray-500">Habilidades artísticas</label>
                     <input id="artistic_skills" name="artistic_skills" type="text" class="border-green-300 p-6 w-full rounded-lg bg-green-100" />
+                    @error('artistic_skills')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                 <div>

@@ -1,8 +1,8 @@
 
 <div class="flex justify-center p-4 items-center bg-green-200">
 <footer class="bg-green-200 text-zinc py-10 flex-col justify-center items-center">
-    <a href="{{ route('footer-form') }}">Mostrar formulario de pie de página</a>
-
+   
+ {{-- <a href="{{ route('footer-form') }}">Mostrar formulario de pie de página</a> --}}
     <div class="max-w-screen-xl">
         <div class="w-full md:w-1/4 mb-6">
             <img src="img\logoencabezado.png" alt="Logo" class="logo w-36 h-auto">
