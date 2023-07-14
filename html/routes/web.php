@@ -32,14 +32,6 @@ Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
 })->name('godmother');
 
-
-
-// // Route::get('/formprofile', 'FormprofileController@createForm');
-// // Route::post('/formprofile', 'FormprofileController@storeForm');
-
-
-// Route::get('/starprofile/{id}', 'FormprofileController@showStarprofile');
-
 Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
 Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
 Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
