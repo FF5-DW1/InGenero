@@ -1,5 +1,7 @@
 "use strict";
 
+console.log("¡Mi JavaScript se está ejecutando!");
+
 (function () {
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
@@ -1303,3 +1305,12 @@
 		}
 	});
 }());
+
+
+
+
+
+
+
+
+

@@ -175,7 +175,7 @@
           <div class="col-sm-9 col-md-7 col-lg-5">
             <div class="cta-modern">
               <h3 class="cta-modern-title cta-modern-title-2 oh-desktop"><span class="d-inline-block wow fadeInLeft">AMADRINA UNA ESTRELLA</span></h3>
-              <p class="cta-modern-text cta-modern-text-2 oh-desktop" data-wow-delay=".1s"><span class="cta-modern-decor cta-modern-decor-2 wow slideInLeft"></span><span class="d-inline-block wow slideInUp">Puedes emparejarte con una o más actrices para ver su evolución de manera más personal,<br>PUEDES SER UN GRAN APOYO PARA ELLAS</span></p><a class="button button-lg button-secondary button-winona wow fadeInRight" href="contacts.html" data-wow-delay=".2s">AMADRINA</a>
+              <p class="cta-modern-text cta-modern-text-2 oh-desktop" data-wow-delay=".1s"><span class="cta-modern-decor cta-modern-decor-2 wow slideInLeft"></span><span class="d-inline-block wow slideInUp">Puedes emparejarte con una o más actrices para ver su evolución de manera más personal,<br>PUEDES SER UN GRAN APOYO PARA ELLAS</span></p><a class="button button-lg button-secondary button-winona wow fadeInRight" href="contacto" data-wow-delay=".2s">AMADRINA</a>
             </div>
           </div>
         </div>

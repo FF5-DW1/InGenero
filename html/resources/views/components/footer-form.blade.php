@@ -8,7 +8,7 @@
             <li><a href="about-us.html">Nosotr@s</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Patreon</a></li>
-            <li><a href="contacts.html">Contacto</a></li>
+            <li><a href="contacto">Contacto</a></li>
           </ul>
         </div>
       </div>
