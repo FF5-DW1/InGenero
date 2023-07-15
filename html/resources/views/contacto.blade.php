@@ -23,14 +23,31 @@
             <div class="row row-60 justify-content-center">
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('bat/rd-mailform.php') }}">
+                    {{-- <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('bat/rd-mailform.php') }}"> --}}
+                        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact_mail" method="post" action="{{ url('contact_mail')}}">
+                            {{-- {{csrf_field()}} --}}
+                            @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name" required>
+
+                            @error('last_name')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
+
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="tu correo" required>
+
+                            @error('last_name')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
+
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Formprofile;
-
+use App\Controllers;
 class FormprofileController extends Controller
 {
     public function createForm()
@@ -63,4 +63,11 @@ class FormprofileController extends Controller
         $formprofile = Formprofile::find($id);
         return view('profile.starprofile', ['formprofile' => $formprofile]);
     }
+
+
+   
+    
+
+
+
 }

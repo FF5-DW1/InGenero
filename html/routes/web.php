@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormprofileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -64,3 +65,7 @@ Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
 Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
 Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+
+// Route::post('/enviar-correo', 'ContactController@enviarCorreo')->name('enviar.correo');
+Route::post('contact_mail', [HomeController::class,'contact_mail_send']);
+
