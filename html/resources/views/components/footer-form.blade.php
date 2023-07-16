@@ -11,7 +11,8 @@
                 <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer maximus felis nec justo pretium, et auctor metus posuere.</p>
             </div>
             <div class="w-full md:w-1/2 mb-6">
-                <form class="flex-col">
+                <form class="flex-col" method="POST" action="{{ route('enviar-correo') }}" >
+                @csrf
                     <div class="w-full md:w-1/2 mb-4">
                         <label for="name" class="block mb-1">Nombre</label>
                         <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
