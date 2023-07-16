@@ -27,10 +27,23 @@
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name" required>
+                            @error('name')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
+
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" required>
+
+                            @error('email')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
+
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>

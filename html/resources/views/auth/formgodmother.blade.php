@@ -18,16 +18,31 @@
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                         <input id="name" name="name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+
+                        @error('name')
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
+
                     </div>
 
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Apellidos</label>
                         <input id="last_name" name="last_name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
+
+                        @error('last_name')
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
+
                     </div>
 
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Descripción</label>
                         <input id="description" name="description" type="text" class="border-green-300 p-14 w-full rounded-lg bg-green-100" />
+                        
                     </div>
                     <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                     <div>
