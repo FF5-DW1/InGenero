@@ -66,6 +66,14 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                         value="{{ $formprofile->nationality }}"  
                     />
+
+                    @error('nationality')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
+
                 </div>
             
                 <div class="mb-4">
@@ -79,6 +87,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->date_of_birth }}"
                     />
+
+                    @error('date_of_birth')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -92,6 +107,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->height }}"
                     />
+
+                    @error('heigth')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -105,6 +127,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->weight }}"
                     />
+
+                    @error('weight')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -118,6 +147,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->eyes_color }}"
                     />
+
+                    @error('eyes_color')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -131,6 +167,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->hair_color }}"
                     />
+
+                    @error('hair_color')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -157,6 +200,13 @@
                         class="border-green-300 p-6 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->artistic_skills }}"
                     />
+
+                    @error('artistic_skills')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->

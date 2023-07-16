@@ -25,6 +25,10 @@
                         </span>
                     @enderror
 
+                    @if ($errors->has('name'))
+    <span class="text-danger">{{ $errors->first('name') }}</span>
+@endif
+
                     </div>
 
                     <div class="mb-4">
@@ -37,12 +41,21 @@
                         </span>
                     @enderror
 
+                    @if ($errors->has('last_name'))
+    <span class="text-danger">{{ $errors->first('last_name') }}</span>
+@endif
+
                     </div>
 
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Descripción</label>
                         <input id="description" name="description" type="text" class="border-green-300 p-14 w-full rounded-lg bg-green-100" />
                         
+                        @if ($errors->has('description'))
+                        <span class="text-danger">{{ $errors->first('description') }}</span>
+                    @endif
+
+
                     </div>
                     <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                     <div>

@@ -48,7 +48,14 @@
                         <div class="form-group">
                             <label for="message">Mensaje</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+
+                            @error('message')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
                         </div>
+                        
                         <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"">Enviar</button>
                     </form>
                 </div>
