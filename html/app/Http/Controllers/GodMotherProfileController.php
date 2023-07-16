@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class GodMotherProfileController extends Controller
 {
-
+ 
+    
 }
 
 
