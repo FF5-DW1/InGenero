@@ -14,9 +14,10 @@
     <div class="flex justify-center">
         <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
             <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
-            <form action="{{ route('formprofile') }}" method="POST" enctype="multipart/form-data" novalidate>
+            <form method="POST" action="{{ route('storeForm') }}" enctype="multipart/form-data">
                 @csrf
-
+                <input type="hidden" name="id" value="{{ $formprofile->id }}">
+            
                 {{-- NOMBRE OBLIGATORIO --}}
                 <div class="mb-4">
                     <label for="name" class="block mb-2 text-gray-500">
@@ -27,7 +28,7 @@
                         name="name" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100 @error('name') border-red @enderror" 
-                        value="{{ old('name') }}"
+                        value="{{ $formprofile->name }}"
                     />
                     @error('name')
                         <span class="text-red-500">
@@ -35,7 +36,7 @@
                         </span>
                     @enderror
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="last_name" class="block mb-2 text-gray-500">
                         Apellidos
@@ -45,7 +46,7 @@
                         name="last_name" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100 @error('last_name') border-red @enderror"
-                        value="{{ old('last_name') }}" 
+                        value="{{ $formprofile->last_name }}" 
                     />
                     @error('last_name')
                         <span class="text-red-500">
@@ -53,7 +54,7 @@
                         </span>
                     @enderror
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="nationality" class="block mb-2 text-gray-500">
                         Nacionalidad
@@ -63,10 +64,10 @@
                         name="nationality" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100"
-                        value="{{ old('nationality') }}"  
+                        value="{{ $formprofile->nationality }}"  
                     />
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="date_of_birth" class="block mb-2 text-gray-500">
                         Fecha de Nacimiento
@@ -76,9 +77,10 @@
                         name="date_of_birth" 
                         type="date" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->date_of_birth }}"
                     />
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="height" class="block mb-2 text-gray-500">
                         Altura
@@ -88,9 +90,10 @@
                         name="height" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->height }}"
                     />
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="weight" class="block mb-2 text-gray-500">
                         Peso
@@ -100,9 +103,10 @@
                         name="weight" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->weight }}"
                     />
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="eyes_color" class="block mb-2 text-gray-500">
                         Color de ojos
@@ -112,9 +116,10 @@
                         name="eyes_color" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->eyes_color }}"
                     />
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="hair_color" class="block mb-2 text-gray-500">
                         Color de pelo
@@ -124,9 +129,10 @@
                         name="hair_color" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->hair_color }}"
                     />
                 </div>
-
+            
                 <div class="mb-4">
                     <label for="additional_info" class="block mb-2 text-gray-500">
                         Info. Adicional
@@ -136,9 +142,10 @@
                         name="additional_info" 
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->additional_info }}"
                     />
                 </div>
-
+            
                 <div class="mb-6">
                     <label for="artistic_skills" class="block mb-2 text-gray-500">
                         Habilidades artísticas
@@ -148,9 +155,10 @@
                         name="artistic_skills" 
                         type="text" 
                         class="border-green-300 p-6 w-full rounded-lg bg-green-100" 
+                        value="{{ $formprofile->artistic_skills }}"
                     />
                 </div>
-
+            
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                 <div class="mb-4">
                     <p>Foto / Video / VideoBook de Perfil</p>
@@ -165,11 +173,11 @@
                         multiple
                     />
                 </div>
-
+            
                 <input 
-                    type="submit" 
-                    value="Publicar" 
-                    class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" 
+                type="submit" 
+                value="{{ isset($formprofile) ? 'Actualizar Perfil' : 'Publicar' }}" 
+                class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" 
                 />
             </form>
         </div>

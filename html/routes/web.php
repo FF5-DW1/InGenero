@@ -64,3 +64,15 @@ Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
 Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
 Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+
+
+
+// Ruta para cargar la vista de gestión de administradores
+Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
+
+// Ruta para editar un perfil específico
+Route::get('editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
+
+Route::post('/store-form', [FormprofileController::class, 'storeForm'])->name('storeForm');
+
+Route::post('/updateForm/{id}', 'FormprofileController@updateForm')->name('updateForm');

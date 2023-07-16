@@ -36,7 +36,7 @@
                             <label for="message">Mensaje</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"">Enviar</button>
                     </form>
                 </div>
                 <div class="col-lg-4">

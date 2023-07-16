@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('formprofiles', function (Blueprint $table) {
             $table->id();
+            // $table->unsignedBigInteger('user_id')->unique();//de la tabla users - seeders
             $table->string('name');
             $table->string('last_name');
             $table->string('nationality');
