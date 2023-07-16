@@ -65,6 +65,9 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                         value="{{ old('nationality') }}"  
                     />
+                    @error('nationality')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -77,6 +80,9 @@
                         type="date" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                     />
+                    @error('date_of_birth')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -89,6 +95,10 @@
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                     />
+                    @error('height')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+                    
                 </div>
 
                 <div class="mb-4">
@@ -101,6 +111,9 @@
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                     />
+                    @error('weight')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -113,6 +126,9 @@
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                     />
+                    @error('eyes_color')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -125,6 +141,11 @@
                         type="text" 
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                     />
+
+                    @error('hair_color')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+
                 </div>
 
                 <div class="mb-4">
@@ -149,6 +170,10 @@
                         type="text" 
                         class="border-green-300 p-6 w-full rounded-lg bg-green-100" 
                     />
+
+                    @error('artistic_skills')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
