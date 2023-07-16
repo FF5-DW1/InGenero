@@ -11,7 +11,7 @@
             <!-- RD Navbar Toggle -->
             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
             <!-- RD Navbar Brand -->
-            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark" src="img/logoencabezado.png" alt="" width="198" height="66"/></a></div>
+            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark" src="{{ asset('img/logoencabezado.png') }}" alt="" width="198" height="66"/></a></div>
           </div>
           <div class="rd-navbar-right rd-navbar-nav-wrap">
             <div class="rd-navbar-aside">
@@ -22,12 +22,7 @@
                     <div class="unit-body"><a class="phone" href="tel:#">+34 667564756</a></div>
                   </div>
                 </li>
-                <li>
-                  <div class="unit unit-spacing-xs">
-                    <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                    <div class="unit-body"><a class="address" href="#">Calle Ciprian 224 56 /45</a></div>
-                  </div>
-                </li>
+                
               </ul>
               <ul class="list-share-2">
                 <li><a target="en _blank" class="icon mdi mdi-facebook" href="https://www.facebook.com/asociacionIngenero/?locale=es_ES"></a></li>
@@ -40,7 +35,7 @@
               <ul class="rd-navbar-nav">
                 <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="profiles">Perfiles</a>
+                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="nosotras">Nosotr@s</a>
                 </li>

@@ -28,7 +28,36 @@
             <div id="barraBusquedaPerfiles">
                 <form class="formularioBusqueda" action="{{ route('getprofiles') }}" method="GET" novalidate>
                     <label for="search" class="sr-only">Buscar</label>
-                    <input type="search" placeholder="Busqueda de perfiles..." required name="search" id="search" />
+                    <input type="search" placeholder="Busqueda por nombre..." required name="search" id="search" />
+            
+                    <!--altura -->
+                    
+                        <select name="height" id="height">
+                            <option value="">Seleccione altura</option>
+                            <option value="150">150</option>
+                            <option value="180">180</option>
+                        </select>
+                    
+            
+                    <!--habilidades -->
+                    
+                        <select name="artistic_skills" id="artistic_skills">
+                            <option value="">Seleccione habilidad</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Singing">Singing</option>
+                        </select>
+                    
+            
+                    <!--nacionalidad -->
+                    
+                        <select name="nationality" id="nationality">
+                            <option value="">Seleccione nacionalidad</option>
+                            <option value="España">España</option>
+                            <option value="USA">USA</option>
+                            <option value="Argentina">Argentina</option>
+                        </select>
+                    
+            
                     <button type="submit">Buscar</button>
                 </form>
             </div>

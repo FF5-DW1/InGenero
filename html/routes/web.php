@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
+// Route::get('/', function () {
+//     return view('principal');
+// });
 
-Route::get('/', function () {
-    return view('principal');
-});
 
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
@@ -58,6 +59,10 @@ Route::get('/nosotras', function () {
 Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
 })->name('godmother');
+
+Route::get('/profiles', function () {
+    return view('profiles');
+})->name('profiles');
 
 Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
 Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
