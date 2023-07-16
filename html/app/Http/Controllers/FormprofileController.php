@@ -7,10 +7,14 @@ use App\Models\Formprofile;
 
 class FormprofileController extends Controller
 {
-    public function createForm()
-    {
+    public function index(){
         return view('auth.formprofile');
     }
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
 
     public function storeForm(Request $request)
     {

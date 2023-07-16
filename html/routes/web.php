@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormprofileController;
-use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,28 +22,24 @@ Route::get('/', function () {
     return view('principal');
 });
 
-/* Route::get('/register', [RegisterController::class, 'create']);
-Route::post('/register', [RegisterController::class, 'store']); */
-
-//rutas de login 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']); 
-
-/* Route::post('/login', [LogoutController::class, 'logout']); */
 
 
-/* Route::post('/login', [LoginController::class, 'store']);
-Route::post('/logout', [LogoutController::class, 'store'])->name('logout'); */
+Route::get('/login', [LoginController::class, 'index'])->name('login'); 
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+// Ruta de cierre de sesión
+//Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 
-Route::get('/contacto', function () {
+
+/* Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
 
 Route::get('/apoyo', function () {
     return view('donaciones.apoyo');
 })->name('apoyo');
-
+ */
 /* Route::get('/gestionadmin', function () {
     return view('auth.gestionadmin');
 })->name('gestionadmin'); */
@@ -54,17 +50,16 @@ Route::get('/apoyo', function () {
 
 Route::get('/nosotras', function () {
     return view('about.nosotras');
-})->name('nosotras');
+})->name('nosotras')->middleware('auth');
 
 /* Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
 })->name('godmother'); */
 
-Route::get('/formprofile', [FormprofileController::class, 'createForm'])
-->name('formprofile')
-->middleware('auth');
+Route::get('/formprofile', [FormprofileController::class, 'index'])->name('formprofile')->middleware('auth');
 
-Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
+
+/* Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
 Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
 Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
-Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles'); */

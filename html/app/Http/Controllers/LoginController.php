@@ -5,56 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LoginController extends Controller 
 {
-    //función de la ruta para ir formulario
     public function index(){
+        //visualiza el formulario login.blade.php
         return view('auth.login');
-    }
-
-    //funcion comprobar el login
-    public function authenticate(Request $request){
-        //validar datos, email y pass
        
-         $validated =$request->validate([
+    }
+    public function authenticate(Request $request){
+        //Validar
+        $validados = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        //dd($validated);
-        //comprobar pass Hash
-        if (Auth::attempt($validated)) {
-            
-            //Si ok, login
-            //regenero sesion
-            $request->session()->regenerate();
-            //redirige donde quiera
-            dd("Se ha redirigido correctamente");
-            return redirect()->route('formporfile', auth()->user()->username);
-    
-            //dd($validated);
-            //Si ko, redirect back to login
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ])->onlyInput('email'); 
+        //dd( $validados);
+        //Comprobar pass 
+        if (Auth::attempt($validados)){
+           //si login ok regenero la seccion
+           $request->session()->regenerate();
+            //se redireciona a la home
+            dd($validados);
+        
+            return redirect()->intended(route('auth.formprofile'))
+            ->withSuccess('Logado Correctamente');
         }
+        //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
+        return back()->withErrors([
+            'email' => 'Los datos ingresados no coinciden con el registro.',
+        ])->onlyInput('email');
     }
 }
-
-        /* $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            if ($user->isAdmin()) {
-                // Usuario autenticado y es administrador
-                // Redirigir a la página de administrador
-            } else {
-                // Usuario autenticado pero no es administrador
-                // Redirigir a la página de acceso denegado o mostrar un error
-            }
-        } else {
-            // Credenciales inválidas
-            // Redirigir al formulario de inicio de sesión con un mensaje de error
-            }
-        }
- */
-

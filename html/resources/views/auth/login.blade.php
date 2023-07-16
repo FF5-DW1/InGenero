@@ -8,6 +8,13 @@
 
         <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('login') }}">
             @csrf
+            
+            <!-- si no está autenticado->mensaje de error-->
+            @if(session('mensaje'))
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                    {{ session('mensaje') }}
+                </p>
+            @endif
             <!-- Resto del formulario -->
 
             <div class="mb-4">
