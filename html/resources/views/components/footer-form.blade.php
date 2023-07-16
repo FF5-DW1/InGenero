@@ -13,14 +13,20 @@
                 <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer maximus felis nec justo pretium, et auctor metus posuere.</p>
             </div>
             <div class="w-full md:w-1/2 mb-6">
-                <form class="flex-col">
+                <form class="flex-col >
                     <div class="w-full md:w-1/2 mb-4">
                         <label for="name" class="block mb-1">Nombre</label>
                         <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        @error('name')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="w-full md:w-1/2 mb-4">
                         <label for="email" class="block mb-1">Correo electrónico</label>
                         <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        @if ($errors->has('email'))
+                        <p class="text-red-500 text-xs italic">{{ $errors->first('email') }}</p>
+                    @endif
                     </div>
                     <div class="w-full mb-4">
                         <label for="message" class="block mb-1">Mensaje</label>
