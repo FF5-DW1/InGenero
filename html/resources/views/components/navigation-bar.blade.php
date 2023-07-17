@@ -55,7 +55,7 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <span>{{ Auth::user()->name }}</span>
-                        <button type="submit" class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg">Cerrar sesión</button>
+                        <button type="submit" class="button button-sm button-primary button-winona button-shadow-2 fadeInUp animated">Cerrar sesión</button>
                     </form>
                   </li>
                 @endauth
