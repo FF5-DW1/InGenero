@@ -52,8 +52,8 @@ services:
         image: phpmyadmin/phpmyadmin
         environment:
             PMA_HOST: db
-            PMA_USER: root
-            PMA_PASSWORD:
+            PMA_USER: admin
+            PMA_PASSWORD: secret
         ports:
             - "38001:80"
         restart: always

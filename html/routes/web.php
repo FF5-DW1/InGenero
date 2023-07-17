@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FormprofileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,11 +15,26 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
+
+// Route::get('/', function () {
+//     return view('principal');
+// });
 
 
-Route::get('/', function () {
-    return view('principal');
-})->name('inicio');
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']);
+
+//rutas de login 
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']); 
+
+Route::post('/login', [LoginController::class, 'logout'])->name('login');
+
+
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
 
 Route::get('/contacto', function () {
     return view('contacto');
@@ -35,24 +52,32 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-
 Route::get('/nosotras', function () {
     return view('about.nosotras');
 })->name('nosotras');
-
-Route::get('/profiles', function () {
-    return view('profile.profiles');
-})->name('profiles');
 
 Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
 })->name('godmother');
 
-Route::get('/profile', function () {
-    return view('profile.star-profile');
-})->name('star');
+Route::get('/profiles', function () {
+    return view('profiles');
+})->name('profiles');
+
+Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
+Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
+Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
+Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
+Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
 
 
+
+// Ruta para cargar la vista de gestión de administradores
+Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
+
+// Ruta para editar un perfil específico
+Route::get('editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
+
+Route::post('/store-form', [FormprofileController::class, 'storeForm'])->name('storeForm');
+
+Route::post('/updateForm/{id}', 'FormprofileController@updateForm')->name('updateForm');

@@ -8,7 +8,7 @@
             <li><a href="about-us.html">Nosotr@s</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Patreon</a></li>
-            <li><a href="contacts.html">Contacto</a></li>
+            <li><a href="contacto">Contacto</a></li>
           </ul>
         </div>
       </div>
@@ -19,7 +19,7 @@
       <div class="row row-30 align-items-center">
         <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
           <div class="row row-30 align-items-center text-lg-center">
-            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="img/logoencabezado.png" alt="" width="198" height="66"/></a></div>
+            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="{{ asset('img/logoencabezado.png') }}" alt="" width="198" height="66"/></a></div>
           </div>
         </div>
         <div class="col-sm-6 col-md-12 col-lg-8 col-xl-8 oh-desktop">
