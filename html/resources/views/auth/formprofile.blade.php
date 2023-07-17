@@ -14,9 +14,9 @@
     <div class="flex justify-center">
         <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
             <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
-            <form method="POST" action="{{ route('storeForm') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('formprofile') }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="id" value="{{ $formprofile->id }}">
+                <input type="hidden" name="id" value="{{ $formprofile->id }}"/>
             
                 {{-- NOMBRE OBLIGATORIO --}}
                 <div class="mb-4">
@@ -68,10 +68,10 @@
                     />
 
                     @error('nationality')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
 
                 </div>
@@ -89,10 +89,10 @@
                     />
 
                     @error('date_of_birth')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
                 </div>
             
@@ -109,10 +109,10 @@
                     />
 
                     @error('heigth')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
                 </div>
             
@@ -129,10 +129,10 @@
                     />
 
                     @error('weight')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
                 </div>
             
@@ -149,10 +149,10 @@
                     />
 
                     @error('eyes_color')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
                 </div>
             
@@ -169,10 +169,10 @@
                     />
 
                     @error('hair_color')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
                 </div>
             
@@ -202,10 +202,10 @@
                     />
 
                     @error('artistic_skills')
-                    <span class="text-red-500">
-                        {{ $message }}
-                    </span>
-                @enderror
+                        <span class="text-red-500">
+                            {{ $message }}
+                        </span>
+                    @enderror
 
                 </div>
             
