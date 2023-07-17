@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FormprofileController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +29,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 // Ruta de cierre de sesión
-//Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
 

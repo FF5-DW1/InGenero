@@ -44,8 +44,21 @@
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="nosotras">Nosotr@s</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="contacto">Contacto</a>
-                </li>
+                
+                @if (Auth::guest())
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacto">Contacto</a>
+                  </li> 
+                @endif
+                  
+                @auth
+                  <li class="rd-nav-item">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <span>{{ Auth::user()->name }}</span>
+                        <button type="submit" class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg">Cerrar sesión</button>
+                    </form>
+                  </li>
+                @endauth
               </ul>
             </div>
           </div>

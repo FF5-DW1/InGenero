@@ -19,19 +19,21 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
         //dd( $validados);
+
+        $remember = ($request->has('remember') ? true : false);
         //Comprobar pass 
-        if (Auth::attempt($validados)){
+        if (Auth::attempt($validados, $remember)){
            //si login ok regenero la seccion
            $request->session()->regenerate();
-            //se redireciona a la home
-            dd($validados);
+            
+            //dd($validados);
         
-            return redirect()->intended(route('auth.formprofile'))
-            ->withSuccess('Logado Correctamente');
+            return redirect()->intended(route('formprofile'));
+            //->withSuccess('Logado Correctamente');
         }
-        //return redirect("/")->withSuccess('Los datos introducidos no son correctos');
-        return back()->withErrors([
+        return redirect("/")->withSuccess('Los datos introducidos no son correctos');
+        /* return back()->withErrors([
             'email' => 'Los datos ingresados no coinciden con el registro.',
-        ])->onlyInput('email');
+        ])->onlyInput('email'); */
     }
 }
