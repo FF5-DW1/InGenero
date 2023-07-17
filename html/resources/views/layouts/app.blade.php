@@ -53,12 +53,8 @@
     </div>
 
     <header>
-        @auth
-            Log in
-            {{ Auth::user()->email }}
-        @endauth
-
-        <x-navigation-bar />
+        
+        <x-navigation-bar/>
 
     </header>
 

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormprofileController;
+use App\Http\Controllers\LogoutController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,24 +23,26 @@ Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name(
 
 
 
-Route::get('/register', [RegisterController::class, 'create']);
-Route::post('/register', [RegisterController::class, 'store']);
-
-//rutas de login 
-// Route::get('/login', [LoginController::class, 'index'])->name('login');
-// Route::post('/login', [LoginController::class, 'authenticate']); 
-
-// Route::post('/login', [LoginController::class, 'logout'])->name('login');
 
 
-// Route::post('/login', [LoginController::class, 'store']);
-// Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::get('/login', [LoginController::class, 'index'])->name('login'); 
+Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::prefix('/')->group(function () {
+// Ruta de cierre de sesión
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
+
+/* Route::prefix('/')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);
     Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-});
+}); */
 
 
 
@@ -58,17 +62,19 @@ Route::get('/gestionadmin', function () {
     return view('auth.gestionadmin');
 })->name('gestionadmin');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
 
 Route::get('/nosotras', function () {
     return view('about.nosotras');
-})->name('nosotras');
+})->name('nosotras')->middleware('auth');
 
 Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
 })->name('godmother');
+
+Route::get('/formprofile', [FormprofileController::class, 'index'])->name('formprofile')->middleware('auth');
+
+
+Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
 
 Route::get('/profiles', function () {
     return view('profiles');
