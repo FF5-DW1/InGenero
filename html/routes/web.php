@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormprofileController;
+use App\Http\Controllers\GodMotherProfileController;
 use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
 
-
-
-
-
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
@@ -36,14 +33,6 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
-
-
-/* Route::prefix('/')->group(function () {
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::post('/login', [LoginController::class, 'authenticate']);
-    Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-}); */
-
 
 
 // Mostrar formulario de contacto
@@ -67,18 +56,19 @@ Route::get('/nosotras', function () {
     return view('about.nosotras');
 })->name('nosotras')->middleware('auth');
 
-Route::get('/profilemadrina', function () {
-    return view('profile.god-mother-profile');
-})->name('godmother');
 
+//igual linea 72
 Route::get('/formprofile', [FormprofileController::class, 'index'])->name('formprofile')->middleware('auth');
 
-
+//igual linea 75
 Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
 
-Route::get('/profiles', function () {
-    return view('profiles');
-})->name('profiles');
+// Route::get('/profiles', function () {
+//     return view('profiles');
+// })->name('profiles');
+
+
+// -----------------  Rutas para perfiles de estrellas  -------------------
 
 // Ruta para cargar el formulario de creación de perfil
 Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
@@ -103,3 +93,20 @@ Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'
 
 // Ruta para obtener todos los perfiles
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+
+
+// -----------------  Rutas para madrinas  -------------------
+
+// Ruta para cargar el formulario de creación de perfil
+Route::get('/formmadrinas', [GodMotherProfileController::class, 'createGodMotherForm'])->name('formMadrinas');
+
+// Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
+Route::post('/storeFormMadrinas', [GodMotherProfileController::class, 'storeGodMotherForm'])->name('storeFormMadrinas');
+
+// Ruta para obtener todos los perfiles
+Route::get('/godmotherprofiles', [GodMotherProfileController::class, 'getAllGodMothers'])->name('godmotherprofiles');
+
+Route::get('/editarmadrina/{id}', [GodMotherProfileController::class, 'editarmadrina'])->name('editarmadrina');
+
+Route::put('/updatemadrina/{id}', [GodMotherProfileController::class, 'updateGodMotherForm'])->name('updatemadrina');
+

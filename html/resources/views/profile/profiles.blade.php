@@ -11,7 +11,7 @@
             return 'avatar.jpg';
         }
     @endphp
-    {{-- banner --}}
+    {{-- barra de busqueda --}}
     <section class="bg-gray-7">
         <div class="breadcrumbs-custom box-transform-wrap context-dark">
             <div class="container">
@@ -65,13 +65,10 @@
     </section>
 
 
-
-
-    
-    
+    {{-- todos los cards --}}
     <section id="contenedorDivPerfiles">
         <div id="contenedorPerfiles">
-            {{-- todos los cards + boton más --}}
+    
             @foreach ($profiles as $item)
                 <div id="card" class="wow slideInRight" data-wow-delay="0.3s">
                     <img class="wow fadeIn" data-wow-delay="0.3s" src="{{ asset('img/' . getImage($item->profile_media)) }}"

@@ -21,7 +21,6 @@
                         @method('PUT')
                     @endif
 
-                    {{-- NOMBRE OBLIGATORIO --}}
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">
                             Nombre

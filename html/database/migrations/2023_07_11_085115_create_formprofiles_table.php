@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('formprofiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+            // $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->string('last_name');
             $table->string('nationality');
@@ -25,7 +26,6 @@ return new class extends Migration
             $table->text('additional_info')->nullable();
             $table->text('artistic_skills')->nullable();
             $table->string('profile_media')->nullable();
-            // $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }           
