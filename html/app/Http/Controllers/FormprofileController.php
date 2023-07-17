@@ -9,10 +9,13 @@ class FormprofileController extends Controller
 {
     public function createForm()
     {
-        return view('auth.formprofile');
+    // Crear una nueva instancia de Formprofile para pasarla a la vista
+    $formprofile = new Formprofile();
+
+    return view('auth.formprofile', compact('formprofile'));
     }
 
-    
+
 
     public function storeForm(Request $request)
     {
@@ -22,7 +25,7 @@ class FormprofileController extends Controller
             'last_name' => 'required|string|max:255',
             // Agrega aquí la validación para el resto de campos que desees
         ]);
-    
+
         // Si hay un campo oculto 'id' en el formulario, entonces estamos editando un perfil existente
         // De lo contrario, estamos creando un nuevo perfil
         if ($request->has('id')) {
@@ -32,7 +35,7 @@ class FormprofileController extends Controller
             // Crear nuevo perfil
             $formprofile = new Formprofile();
         }
-    
+
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
@@ -44,7 +47,7 @@ class FormprofileController extends Controller
         $formprofile->hair_color = $request->input('hair_color');
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
-    
+
         // También puedes manejar la carga de la imagen aquí si es necesario
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";
@@ -55,10 +58,10 @@ class FormprofileController extends Controller
             }
             $formprofile->profile_media = $imagestosave;
         }
-    
+
         // Guardar los cambios en la base de datos
         $formprofile->save();
-    
+
         // Después de guardar, redirecciona a la página de perfil o a donde desees
         return redirect('/starprofile/' . $formprofile->id)->with('success', 'Perfil actualizado exitosamente');
     }
@@ -67,16 +70,52 @@ class FormprofileController extends Controller
 
 
 
+    
+
+
     public function searchForm(Request $request)
     {
-        if ($request->input('search')) {
-            $profiles = Formprofile::where('name', 'LIKE', '%' . $request->input('search') . '%')->paginate();
-            return view('profile.profiles', ['profiles' => $profiles]);
+        $search = $request->input('search');
+        $nationality = $request->input('nationality');
+        $artistic_skills = $request->input('artistic_skills');
+        $height = $request->input('height');
+    
+        // Verificar si no hay campos de búsqueda
+        if (!$search && !$nationality && !$artistic_skills && !$height) {
+            // Devolver todos los perfiles sin filtros
+            $profiles = Formprofile::paginate();
+        } else {
+            // Aplicar los filtros de búsqueda según los campos proporcionados
+            $query = Formprofile::query();
+    
+            if ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%');
+            }
+    
+            if ($nationality) {
+                $query->where('nationality', $nationality);
+            }
+    
+            if ($artistic_skills) {
+                $query->where('artistic_skills', 'LIKE', '%' . $artistic_skills . '%');
+            }
+    
+            if ($height) {
+                $query->where('height', $height);
+            }
+    
+            $profiles = $query->paginate();
         }
-        // si no hay nada en la busca, retorna todos. Ver como llamar la funcion abajo - ver todos en un boton
-        $profiles = Formprofile::paginate();
+    
         return view('profile.profiles', ['profiles' => $profiles]);
     }
+
+
+
+
+
+
+
 
     public function getAllProfiles()
     {

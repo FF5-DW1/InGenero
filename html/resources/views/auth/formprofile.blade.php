@@ -14,9 +14,11 @@
     <div class="flex justify-center">
         <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
             <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
-            <form method="POST" action="{{ route('storeForm') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ isset($formprofile->id) ? route('updateForm', ['id' => $formprofile->id]) : route('storeForm') }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="id" value="{{ $formprofile->id }}">
+                @if (isset($formprofile->id))
+                    @method('PUT')
+                @endif
             
                 {{-- NOMBRE OBLIGATORIO --}}
                 <div class="mb-4">
@@ -66,6 +68,14 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                         value="{{ $formprofile->nationality }}"  
                     />
+
+                    @error('nationality')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
+
                 </div>
             
                 <div class="mb-4">
@@ -79,6 +89,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->date_of_birth }}"
                     />
+
+                    @error('date_of_birth')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -92,6 +109,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->height }}"
                     />
+
+                    @error('heigth')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -105,6 +129,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->weight }}"
                     />
+
+                    @error('weight')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -118,6 +149,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->eyes_color }}"
                     />
+
+                    @error('eyes_color')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -131,6 +169,13 @@
                         class="border-green-300 p-2 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->hair_color }}"
                     />
+
+                    @error('hair_color')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <div class="mb-4">
@@ -157,6 +202,13 @@
                         class="border-green-300 p-6 w-full rounded-lg bg-green-100" 
                         value="{{ $formprofile->artistic_skills }}"
                     />
+
+                    @error('artistic_skills')
+                    <span class="text-red-500">
+                        {{ $message }}
+                    </span>
+                @enderror
+
                 </div>
             
                 <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
@@ -176,7 +228,7 @@
             
                 <input 
                 type="submit" 
-                value="{{ isset($formprofile) ? 'Actualizar Perfil' : 'Publicar' }}" 
+                value="{{ isset($formprofile->id) ? 'Actualizar Perfil' : 'Publicar' }}" 
                 class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" 
                 />
             </form>
