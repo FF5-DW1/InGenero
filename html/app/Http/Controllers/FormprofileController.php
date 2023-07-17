@@ -9,7 +9,10 @@ class FormprofileController extends Controller
 {
     public function createForm()
     {
-        return view('auth.formprofile');
+    // Crear una nueva instancia de Formprofile para pasarla a la vista
+    $formprofile = new Formprofile();
+
+    return view('auth.formprofile', compact('formprofile'));
     }
 
 

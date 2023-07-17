@@ -8,6 +8,13 @@
 
         <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('login') }}">
             @csrf
+            
+            <!-- si no está autenticado->mensaje de error-->
+            @if(session('mensaje'))
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                    {{ session('mensaje') }}
+                </p>
+            @endif
             <!-- Resto del formulario -->
 
             <div class="mb-4">
@@ -47,7 +54,7 @@
                 <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2">
                     ¿Olvidaste la contraseña?
                 </a>
-                <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}">
+                {{-- <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}"> --}}
                     ¿No tienes una cuenta? ¡Contáctanos!
                 </a>
 

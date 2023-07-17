@@ -14,9 +14,11 @@
     <div class="flex justify-center">
         <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
             <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
-            <form method="POST" action="{{ route('formprofile') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ isset($formprofile->id) ? route('updateForm', ['id' => $formprofile->id]) : route('storeForm') }}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="id" value="{{ $formprofile->id }}"/>
+                @if (isset($formprofile->id))
+                    @method('PUT')
+                @endif
             
                 {{-- NOMBRE OBLIGATORIO --}}
                 <div class="mb-4">
@@ -226,7 +228,7 @@
             
                 <input 
                 type="submit" 
-                value="{{ isset($formprofile) ? 'Actualizar Perfil' : 'Publicar' }}" 
+                value="{{ isset($formprofile->id) ? 'Actualizar Perfil' : 'Publicar' }}" 
                 class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" 
                 />
             </form>

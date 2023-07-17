@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('formprofiles', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('user_id')->unique();//de la tabla users - seeders
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('last_name');
             $table->string('nationality');
@@ -26,10 +26,9 @@ return new class extends Migration
             $table->text('artistic_skills')->nullable();
             $table->string('profile_media')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-        
-    }
+    }           
+
 
     /**
      * Reverse the migrations.
