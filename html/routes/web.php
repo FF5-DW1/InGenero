@@ -38,11 +38,11 @@ Route::get('/contacto', function () {
 })->name('contacto');
 
 
-Route::prefix('/')->group(function () {
+/* Route::prefix('/')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);
     Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-});
+}); */
 
 
 
