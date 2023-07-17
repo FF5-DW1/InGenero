@@ -25,7 +25,7 @@
         <div class="bg-rose-600 p-4 mt-28">
             <div class="max-w-2xl mx-auto bg-rose-600 overflow-hidden">
                 <section>
-                    <div class="text-3xl text-white font-bold mb-2 justify-center mt-10 ">
+                    <div class="text-3xl text-white font-bold mb-2 justify-center mt-10">
                         <h1>{{ $formprofile->name }}</h1>
                     </div>
                     @if (count($images) > 1)
