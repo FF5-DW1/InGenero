@@ -69,3 +69,6 @@ Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name(
 // Route::post('/enviar-correo', 'ContactController@enviarCorreo')->name('enviar.correo');
 Route::post('contact_mail', [HomeController::class,'contact_mail_send']);
 
+Route::get('/formgodmother', function () {
+    return view('auth.formgodmother');
+})->name('formgodmother');

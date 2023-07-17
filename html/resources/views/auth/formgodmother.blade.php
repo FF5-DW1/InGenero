@@ -13,14 +13,20 @@
         <div class="flex justify-center">
             <div class="md:w-6/12 lg:w-4/12 mt-10">
                 <h1 class="text-2xl mb-4 text-left">Crear un perfil Madrina</h1>
-                <form action="{{ route('register') }}" method="POST" novalidate>
+                <form action="{{ route('formgodmother') }}" method="POST" novalidate>
                     @csrf
                     <div class="mb-4">
                         <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                         <input id="name" name="name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
-                        @error('name')
+                        {{-- @error('name')
                         <span class="text-red-500">{{ $message }}</span>
-                        @enderror
+                        @enderror --}}
+
+
+                        @if ($errors->has('name'))
+                        <p class="text-red-500 text-xs italic">{{ $errors->first('name') }}</p>
+                    @endif
+
                     </div>
 
                     <div class="mb-4">
