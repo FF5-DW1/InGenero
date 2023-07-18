@@ -23,20 +23,33 @@
             <div class="row row-60 justify-content-center">
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('bat/rd-mailform.php') }}">
+                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ route('contact.send') }}">
+                        @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name" required>
+                            @error('name')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" required>
+                            @error('email')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+
+                            @error('message')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight">Enviar</button>
                     </form>
                 </div>
                 <div class="col-lg-4">

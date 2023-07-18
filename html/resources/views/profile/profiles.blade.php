@@ -1,77 +1,91 @@
 @extends('layouts.app')
 
 @section('content')
-@php
-    function getImage($stringImage) {
-        if ($stringImage){
-            $image =  explode("*", $stringImage);
-            return $image[0];
+    @php
+        function getImage($stringImage)
+        {
+            if ($stringImage) {
+                $image = explode('*', $stringImage);
+                return $image[0];
+            }
+            return 'avatar.jpg';
         }
-        return "avatar.jpg";
-    }
-@endphp
-<div >
-  
+    @endphp
     {{-- banner --}}
-    <div class="py-10 mt-10 sticky top-0 w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('img/banner_profiles.webp')">
-        <div class="text-center m-5 lg:my-12 relative lg:w-3/4 lg:text-left max-w-full">
-            <h1 class="m-4 text-2xl font-extrabold leading-none text-white lg:text-4xl py-4 sm:px-8 lg:px-20">Nuestras estrellas</h1>
-            <p class="mb-8 text-white lg:text-xl sm:px-8 lg:px-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis risusrue nisl.</p>
-        </div>
-    </div>
-    {{-- todos los cards + boton más --}}
-    <div class="mt-20 relative bg-white justify-center items-center pt-10 pb-10">
-        <form action="{{ route('getprofiles') }}" method="GET" novalidate>   
-            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
-            <div class="relative m-4 lg:mx-32 lg:my-14">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                    </svg>
-                </div>
-                <input 
-                    type="search" 
-                    class="border-none block w-full p-4 pl-10 text-sm text-gray-600 rounded-2xl bg-rose-50 focus:ring-rose-300 focus:border-rose-300" 
-                    placeholder="Busqueda de perfiles..." 
-                    required
-                    name="search"
-                    id="search"
-                />
-                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-rose-400 hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-rose-200 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-200 dark:hover:bg-rose-500 dark:focus:ring-rose-500">Buscar</button>
+    <section class="bg-gray-7">
+        <div class="breadcrumbs-custom box-transform-wrap context-dark">
+            <div class="container">
+                <h3 class="breadcrumbs-custom-title">Perfiles</h3>
+                <div class="breadcrumbs-custom-decor"></div>
             </div>
-        </form>
+            <div class="box-transform" style="background-image: url(img4k/pexels-photo-6896196.jpeg);"></div>
+        </div>
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Inicio</a></li>
+                <li class="active">Perfiles</li>
+            </ul>
+            <div id="barraBusquedaPerfiles">
+                <form class="formularioBusqueda" action="{{ route('getprofiles') }}" method="GET" novalidate>
+                    <label for="search" class="sr-only">Buscar</label>
+                    <input type="search" placeholder="Busqueda por nombre..." required name="search" id="search" />
+            
+                    <!--altura -->
+                    
+                        <select name="height" id="height">
+                            <option value="">Seleccione altura</option>
+                            <option value="150">150</option>
+                            <option value="180">180</option>
+                        </select>
+                    
+            
+                    <!--habilidades -->
+                    
+                        <select name="artistic_skills" id="artistic_skills">
+                            <option value="">Seleccione habilidad</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Singing">Singing</option>
+                        </select>
+                    
+            
+                    <!--nacionalidad -->
+                    
+                        <select name="nationality" id="nationality">
+                            <option value="">Seleccione nacionalidad</option>
+                            <option value="España">España</option>
+                            <option value="USA">USA</option>
+                            <option value="Argentina">Argentina</option>
+                        </select>
+                    
+            
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-        <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg pt-5 pb-10">
 
+
+
+    
+    
+    <section id="contenedorDivPerfiles">
+        <div id="contenedorPerfiles">
+            {{-- todos los cards + boton más --}}
             @foreach ($profiles as $item)
-                <div class="lg:max-w-sm md:max-w-xs max-w-xs bg-rose-400 border rounded-xl shadow m-5 mx-auto">
-                    <div class="text-center m-5">
-                        <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ $item->name }}</h4>
-                    </div>
-                    <div class="content-center w-[318px] h-[176px] object-contain overflow-hidden">
-                        <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto  " src="{{ asset('img/' . getImage($item->profile_media)) }}" alt="imagen madrinas" />
-                    </div>
-                    <div class="text-center m-10">
-                        <a href="{{ route('starprofile', ['id' => $item->id]) }}" class="center inline-flex items-center px-7 py-1.5 text-sm font-medium text-center text-black bg-white rounded-2xl border-solid border-2 border-black hover:bg-black hover:text-white">
+                <div id="card" class="wow slideInRight" data-wow-delay="0.3s">
+                    <img class="wow fadeIn" data-wow-delay="0.3s" src="{{ asset('img/' . getImage($item->profile_media)) }}"
+                        alt="imagen madrinas" />
+                    <div>
+                        <h4 class="">{{ $item->name }}</h4>
+                        <p>Lorem ipsum dolor sit amet</p>
+                        <a href="{{ route('starprofile', ['id' => $item->id]) }}" id="botonPerfiles"
+                            class="button button-md button-secondary-2 button-winona wow fadeInUp">
                             Perfil
                         </a>
                     </div>
                 </div>
             @endforeach
         </div>
-
-        {{-- boton más  --}}
-        <div class="text-center m-10">
-            <a href="#" class="center mt-5 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg hover:bg-rose-400 hover:text-black">
-                Ver más
-                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-</div>
+    </section>
 @endsection
-
-
-
