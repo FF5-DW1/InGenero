@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormprofileController;
+use App\Http\Controllers\GodMotherProfileController;
 use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
 
-
-
-
-
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
@@ -38,11 +35,14 @@ Route::get('/contacto', function () {
 })->name('contacto');
 
 
-/* Route::prefix('/')->group(function () {
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::post('/login', [LoginController::class, 'authenticate']);
-    Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-}); */
+Route::get('/apoyo', function () {
+    return view('donaciones.apoyo');
+})->name('apoyo');
+
+
+Route::get('/nosotras', function () {
+    return view('about.nosotras');
+})->name('nosotras')->middleware('auth');
 
 
 // // Mostrar formulario de contacto
@@ -54,29 +54,8 @@ Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('c
 // REVISAR
 Route::post('/contacto/enviar', 'ContactController@sendContactForm')->name('contact.send');
 
-Route::get('/apoyo', function () {
-    return view('donaciones.apoyo');
-})->name('apoyo');
 
-Route::get('/gestionadmin', function () {
-    return view('auth.gestionadmin');
-})->name('gestionadmin');
-
-
-Route::get('/nosotras', function () {
-    return view('about.nosotras');
-})->name('nosotras');
-
-
-
-Route::get('/formprofile', [FormprofileController::class, 'index'])->name('formprofile')->middleware('auth');
-
-
-Route::post('/formprofile', [FormprofileController::class, 'storeForm']);
-
-Route::get('/profiles', function () {
-    return view('profiles');
-})->name('profiles');
+// ---------------------  Rutas para perfiles de estrellas  -----------------------
 
 // Ruta para cargar el formulario de creación de perfil
 Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
@@ -84,7 +63,7 @@ Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('
 // Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
 Route::post('/storeForm', [FormprofileController::class, 'storeForm'])->name('storeForm');
 
-// Ruta para cargar la vista de gestión de administradores
+// Ruta para cargar la vista de gestión de administradores para perfiles estrellas
 Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
 
 // Ruta para editar un perfil específico
@@ -101,4 +80,3 @@ Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'
 
 // Ruta para obtener todos los perfiles
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
-
