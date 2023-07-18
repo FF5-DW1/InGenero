@@ -161,6 +161,7 @@ class FormprofileController extends Controller
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
         $formprofile->nationality = $request->input('nationality');
+        $formprofile->profile_media = $request->input('profile_media');
         // Agrega aquí el resto de campos que deseas actualizar
 
         // También puedes manejar la carga de la imagen aquí si es necesario

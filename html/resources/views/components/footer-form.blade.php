@@ -46,7 +46,7 @@
   <div class="footer-modern-line-3">
     <div class="container">
       <div class="row row-10 justify-content-between">
-        <div class="col-md-6"><span>Calle Ciprian 224 56 /45</span></div>
+        
         <div class="col-md-auto">
           <!-- Rights-->
           <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span><span> Design&nbsp;by&nbsp;InGeneroTeam</span></p>
