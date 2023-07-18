@@ -38,14 +38,14 @@
                         <div id="image-carousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicadores del carrusel -->
                             <ol class="carousel-indicators">
-                                @foreach ($images as $index => $item)
+                                @foreach (array_filter($images) as $index => $item)
                                     <li data-target="#image-carousel" data-slide-to="{{ $index }}"
                                         class="{{ $index === 0 ? 'active' : '' }}"></li>
                                 @endforeach
                             </ol>
                             <!-- Imágenes del carrusel -->
                             <div class="carousel-inner">
-                                @foreach ($images as $index => $item)
+                                @foreach (array_filter($images) as $index => $item)
                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                         <img src="{{ asset('img/' . $item) }}" class="d-block w-100 rounded-lg"
                                             alt="Foto {{ $index + 1 }}">
