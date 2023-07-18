@@ -38,11 +38,11 @@ Route::get('/contacto', function () {
 })->name('contacto');
 
 
-Route::prefix('/')->group(function () {
+/* Route::prefix('/')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);
     Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-});
+}); */
 
 
 // // Mostrar formulario de contacto
@@ -65,11 +65,9 @@ Route::get('/gestionadmin', function () {
 
 Route::get('/nosotras', function () {
     return view('about.nosotras');
-})->name('nosotras')->middleware('auth');
+})->name('nosotras');
 
-Route::get('/profilemadrina', function () {
-    return view('profile.god-mother-profile');
-})->name('godmother');
+
 
 Route::get('/formprofile', [FormprofileController::class, 'index'])->name('formprofile')->middleware('auth');
 

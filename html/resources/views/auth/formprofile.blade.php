@@ -33,7 +33,7 @@
                         value="{{ $formprofile->name }}"
                     />
                     @error('name')
-                        <span class="text-red-500">
+                        <span class="form-error">
                             {{ $message }}
                         </span>
                     @enderror
@@ -229,7 +229,7 @@
                 <input 
                 type="submit" 
                 value="{{ isset($formprofile->id) ? 'Actualizar Perfil' : 'Publicar' }}" 
-                class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" 
+                class="form-submit" 
                 />
             </form>
         </div>

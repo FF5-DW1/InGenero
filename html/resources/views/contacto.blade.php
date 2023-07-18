@@ -70,21 +70,7 @@
                                     <div class="unit-body"><a class="phone" href="tel:#">+34 665786789</a></div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                                <p class="aside-contacts-title">E-mail</p>
-                                <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                                    <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
-                                    <div class="unit-body"><a class="mail" href="mailto:infoingenero@outlook.org">infoingenero@outlook.org</a></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                                <p class="aside-contacts-title">Dirección</p>
-                                <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                                    <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                                    <div class="unit-body"><a class="address" href="#">Calle Ciprian <br
-                                                class="d-md-none">Madrid, 56, 2230</a></div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

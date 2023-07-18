@@ -37,7 +37,7 @@
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="nosotras">Nosotr@s</a>
+                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
                 </li>
                 
                 @if (Auth::guest())
