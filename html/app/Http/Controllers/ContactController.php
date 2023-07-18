@@ -15,9 +15,7 @@ class ContactController extends Controller
 
     public function sendContactForm(Request $request)
     {
-
-        dd('Llegó al controlador');
-
+        
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
@@ -29,7 +27,7 @@ class ContactController extends Controller
         $message = $request->input('message');
 
         // Enviar el correo
-        Mail::to('pablete_98@hotmail.es')->send(new ContactFormMail($name, $email, $message));
+        Mail::to('edcarrasmar@gmail.com')->send(new ContactFormMail($name, $email, $message));
 
         // Redirigir o mostrar un mensaje de éxito
         return redirect()->back()->with('success', '¡Gracias! Tu mensaje ha sido enviado correctamente.');
