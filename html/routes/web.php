@@ -45,14 +45,13 @@ Route::prefix('/')->group(function () {
 });
 
 
-
-// Mostrar formulario de contacto
+// // Mostrar formulario de contacto
 Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
 
-// Enviar formulario de contacto
+// // Enviar formulario de contacto
 Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
 
-
+Route::post('/contacto/enviar', 'ContactController@sendContactForm')->name('contact.send');
 
 Route::get('/apoyo', function () {
     return view('donaciones.apoyo');
@@ -103,3 +102,4 @@ Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'
 
 // Ruta para obtener todos los perfiles
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+
