@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Formprofile;
+use Illuminate\Support\Facades\Auth;
 
 class FormprofileController extends Controller
 {
@@ -25,7 +26,9 @@ class FormprofileController extends Controller
             'last_name' => 'required|string|max:255',
             // Agrega aquí la validación para el resto de campos que desees
         ]);
-
+        
+        //Obtener un usuario autenticado
+        $user = Auth::user();
         // Si hay un campo oculto 'id' en el formulario, entonces estamos editando un perfil existente
         // De lo contrario, estamos creando un nuevo perfil
         if ($request->has('id')) {
@@ -35,6 +38,9 @@ class FormprofileController extends Controller
             // Crear nuevo perfil
             $formprofile = new Formprofile();
         }
+
+        //Asignar un user_id al fomulario
+        $formprofile->user_id = $user->id;
 
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
@@ -65,12 +71,6 @@ class FormprofileController extends Controller
         // Después de guardar, redirecciona a la página de perfil o a donde desees
         return redirect('/starprofile/' . $formprofile->id)->with('success', 'Perfil actualizado exitosamente');
     }
-
-
-
-
-
-    
 
 
     public function searchForm(Request $request)
@@ -111,12 +111,6 @@ class FormprofileController extends Controller
     }
 
 
-
-
-
-
-
-
     public function getAllProfiles()
     {
         $profiles = Formprofile::paginate();
@@ -128,8 +122,6 @@ class FormprofileController extends Controller
         $formprofile = Formprofile::find($id);
         return view('profile.starprofile', ['formprofile' => $formprofile]);
     }
-
-
 
 
     public function gestionadmin()

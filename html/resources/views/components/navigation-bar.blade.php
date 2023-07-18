@@ -37,15 +37,16 @@
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="nosotras">Nosotr@s</a>
-                </li>
-                
                 @if (Auth::guest())
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacto">Contacto</a>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contacto') }}">Contacto</a>
                   </li> 
                 @endif
                   
                 @auth
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('formprofile') }}">Crear perfil</a>
+                  </li>
                   <li class="rd-nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf

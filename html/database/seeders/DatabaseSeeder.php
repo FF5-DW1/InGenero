@@ -14,11 +14,11 @@ class DatabaseSeeder extends Seeder
     {
         // // \App\Models\User::factory(10)->create();
 
-         \App\Models\User::factory()->create([
+        /* \App\Models\User::factory()->create([
              'name' => 'Test User',
              'email' => 'test@example.com',
         ]);
-
+        */
         /* \App\Models\Formprofile::insert([
             'name' => "raul",
             'last_name' => "rodriguez",
@@ -32,5 +32,10 @@ class DatabaseSeeder extends Seeder
             'artistic_skills' => "danza",
             'profile_media' => "url",
         ]); */
+
+        \App\Models\Formprofile::factory(10)->create();
+
+
+
     }
 }
