@@ -168,6 +168,6 @@ class FormprofileController extends Controller
         $formprofile->save();
 
         // Después de guardar, redirecciona a la página de perfil o a donde desees
-        return redirect()->route('editarperfil', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
+        return redirect()->route('starprofile', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
     }
 }

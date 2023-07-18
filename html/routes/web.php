@@ -65,7 +65,7 @@ Route::get('/gestionadmin', function () {
 
 Route::get('/nosotras', function () {
     return view('about.nosotras');
-})->name('nosotras')->middleware('auth');
+})->name('nosotras');
 
 Route::get('/profilemadrina', function () {
     return view('profile.god-mother-profile');
