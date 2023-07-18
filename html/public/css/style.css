@@ -649,18 +649,28 @@ p [style*='max-width'] {
 */
 .brand {
 	display: inline-block;
+
 }
 
 .brand .brand-logo-light {
 	display: none;
+
 }
 
 .brand .brand-logo-dark {
 	display: block;
+	
 }
 
 .brand > * + * {
 	margin-top: 0;
+
+}
+
+@media (min-width: 1000px){
+	.logo {
+		margin-left: -16px;
+	}
 }
 
 /*
