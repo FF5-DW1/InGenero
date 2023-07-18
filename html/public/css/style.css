@@ -65,6 +65,10 @@
 
 /* perfiles */
 
+#informacionPerfil{
+	margin-top: 20px;
+}
+
 #botonPerfiles{
 	padding: 10px;
 
@@ -76,7 +80,7 @@
 	margin-left: auto;
     margin-right: auto;
 	background-color:  #ff4c49;
-	padding: 60px 0px 60px 0px;
+	padding: 40px 0px 40px 0px;
 }
 
 
@@ -304,10 +308,20 @@
 }
 
 /* View Perfil individual */
-
+@media (max-width: 991px){
+	#encabezadoPerfil{
+		margin-top: 80px;
+		background-color: #ff5050;
+	}
+}
 #encabezadoPerfil{
 	background-color: #ff5050;
 }
+
+
+/* profile */
+
+
 
 /* APOYO VIEW */
 

@@ -161,6 +161,7 @@ class FormprofileController extends Controller
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
         $formprofile->nationality = $request->input('nationality');
+        $formprofile->profile_media = $request->input('profile_media');
         // Agrega aquí el resto de campos que deseas actualizar
 
         // También puedes manejar la carga de la imagen aquí si es necesario
@@ -168,6 +169,6 @@ class FormprofileController extends Controller
         $formprofile->save();
 
         // Después de guardar, redirecciona a la página de perfil o a donde desees
-        return redirect()->route('editarperfil', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
+        return redirect()->route('starprofile', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
     }
 }
