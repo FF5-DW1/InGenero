@@ -174,12 +174,18 @@
                     <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
                     <div class="mb-4">
                         <p>Foto / Video / VideoBook de Perfil</p>
-                        {{-- <label for="profile_photo" class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded mb-8 mt-4">
-                        Buscar
-                    </label> --}}
                         <input id="profile_photo" name="profile_photo[]" type="file"
                             class="border-green-300 my-4 px-2 w-full rounded-lg bg-green-100" multiple />
                     </div>
+
+
+                    @if (isset($formprofile->id))
+                        <div class="mb-4">
+                            <label for="is_active">Estado</label>
+                            <input name="is_active" id="is_active" type="checkbox"
+                                {{ $formprofile->is_active ? 'checked' : '' }}>
+                        </div>
+                    @endif
 
                     <input type="submit" value="{{ isset($formprofile->id) ? 'Actualizar Perfil' : 'Publicar' }}"
                         class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" />

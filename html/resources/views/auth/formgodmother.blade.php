@@ -13,10 +13,10 @@
                 <div class="md:w-6/12 lg:w-4/12 mt-10">
                     <h1 class="text-2xl mb-4 text-left">Crear un perfil Madrina</h1>
                     <form method="POST"
-                        action="{{ isset($formGodMother->id) ? route('updatemadrina', ['id' => $formGodMother->id]) : route('storeFormMadrinas') }}"
+                        action="{{ isset($formgodmother->id) ? route('updatemadrina', ['id' => $formgodmother->id]) : route('storeformmadrinas') }}"
                         enctype="multipart/form-data">
                         @csrf
-                        @if (isset($formGodMother->id))
+                        @if (isset($formgodmother->id))
                             @method('PUT')
                         @endif
 
@@ -24,7 +24,7 @@
                             <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                             <input id="name" name="name" type="text"
                                 class="border-green-300 p-2 w-full rounded-lg bg-green-100"
-                                value="{{ $formGodMother->name }}" />
+                                value="{{ $formgodmother->name }}" />
                             @error('name')
                                 <span class="text-red-500">
                                     {{ $message }}
@@ -40,7 +40,7 @@
                             <label for="last_name" class="block mb-2 text-gray-500">Apellidos</label>
                             <input id="last_name" name="last_name" type="text"
                                 class="border-green-300 p-2 w-full rounded-lg bg-green-100"
-                                value="{{ $formGodMother->last_name }}" />
+                                value="{{ $formgodmother->last_name }}" />
                             @error('last_name')
                                 <span class="text-red-500">
                                     {{ $message }}
@@ -56,7 +56,7 @@
                             <label for="description" class="block mb-2 text-gray-500">Descripción</label>
                             <input id="description" name="description" type="text"
                                 class="border-green-300 p-14 w-full rounded-lg bg-green-100"
-                                value="{{ $formGodMother->description }}" />
+                                value="{{ $formgodmother->description }}" />
 
                             @if ($errors->has('description'))
                                 <span class="text-danger">{{ $errors->first('description') }}</span>
@@ -70,17 +70,16 @@
                                 class="border-green-300 my-4 px-2 w-full rounded-lg bg-green-100" />
                         </div>
 
-                        @if (isset($formGodMother->id))
+                        @if (isset($formgodmother->id))
                             <div class="mb-4">
                                 <label for="is_active">Estado</label>
-                                <input type="checkbox" {{ $formGodMother->is_active ? 'checked' : '' }} data-toggle="toggle">
+                                <input name="is_active" id="is_active" type="checkbox" {{ $formgodmother->is_active ? 'checked' : '' }}>
                             </div>
                         @endif
 
 
-                        <input type="submit" value="{{ isset($formGodMother->id) ? 'Actualizar Madrina' : 'Publicar' }}"
+                        <input type="submit" value="{{ isset($formgodmother->id) ? 'Actualizar Madrina' : 'Publicar' }}"
                             class="md:w-6/12 bg-black hover:bg-gray-400 transition-colors cursor-pointer font-bold w-full p-3 text-white rounded-lg" />
-
                     </form>
                 </div>
             </div>

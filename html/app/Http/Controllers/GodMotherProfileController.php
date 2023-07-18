@@ -2,99 +2,104 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FormGodMother;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Models\FormGodMother;
 
 class GodMotherProfileController extends Controller
 {
     public function createGodMotherForm()
     {
-        $formGodMother = new FormGodMother();
+        $formgodmother = new FormGodMother();
 
-        return view('auth.formgodmother', compact('formGodMother'));
+        return view('auth.formgodmother', compact('formgodmother'));
     }
 
     public function storeGodMotherForm(Request $request)
     {
-        $rules = [
+        // Validación de los campos del formulario (puedes agregar más campos si es necesario)
+        $request->validate([
             'name' => 'required',
             'last_name' => 'required',
             'description' => 'required',
             'madrina_photo' => 'required',
-        ];
+        ]);
 
-        $validator = Validator::make($request->all(), $rules);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+        $formgodmother = new FormGodMother();
+        $formgodmother->name = $request->input('name');
+        $formgodmother->last_name = $request->input('last_name');
+        $formgodmother->description = $request->input('description');
+        $formgodmother->is_active = true;
 
-        // Procesa o guarda los datos del formulario si la validación es exitosa
-
-        $formGodMother = new FormGodMother();
-
-        // Actualizar los campos de las madrinas con los nuevos datos
-        $formGodMother->name = $request->input('name');
-        $formGodMother->last_name = $request->input('last_name');
-        $formGodMother->description = $request->input('description');
-        $formGodMother->is_active = true;
         if ($request->hasFile('madrina_photo')) {
             $image = $request->file('madrina_photo');
             $filename = time() . '_' . $image->getClientOriginalName();
             $image->move('img', $filename);
-            $formGodMother->profile_media = $filename;
+            $formgodmother->profile_media = $filename;
         }
-        $formGodMother->save();
+        $formgodmother->save();
 
-        return redirect('/godmotherprofiles')->with('success', 'Perfil actualizado exitosamente');
+        return redirect('/godmotherprofiles/')->with('success', 'Madrina actualizada exitosamente');
     }
+
+
+
 
     public function getAllGodMothers()
     {
-        $godmothers = FormGodMother::paginate();
+        $godmothers = FormGodMother::where('is_active', true)->paginate();
         return view('profile.godmotherprofiles', ['godmothers' => $godmothers]);
     }
 
+
+
+    public function gestionadminmadrina()
+    {
+        $godmothers = FormGodMother::paginate();
+        return view('auth.gestionadminmadrina', compact('godmothers'));
+    }
+
+
+
+
     public function editarmadrina($id)
     {
-        $formGodMother = FormGodMother::findOrFail($id);
-        return view('auth.formgodmother', compact('formGodMother'));
+        $formgodmother = FormGodMother::findOrFail($id);
+        return view('auth.formgodmother', compact('formgodmother'));
     }
+
+
+
+
 
     public function updateGodMotherForm(Request $request, $id)
     {
-        $rules = [
-            'name' => 'required',
-            'last_name' => 'required',
+        // Validación de los campos del formulario (puedes agregar más campos si es necesario)
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'description' => 'required',
-            'madrina_photo' => 'required',
-        ];
+            // Agrega aquí la validación para el resto de campos que desees actualizar
+        ]);
 
-        $validator = Validator::make($request->all(), $rules);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        // Procesa o guarda los datos del formulario si la validación es exitosa
-
-        $formGodMother = FormGodMother::find($id);
+        // Buscar el perfil existente en la base de datos
+        $formgodmother = FormGodMother::find($id);
 
         // Actualizar los campos de las madrinas con los nuevos datos
-        $formGodMother->name = $request->input('name');
-        $formGodMother->last_name = $request->input('last_name');
-        $formGodMother->description = $request->input('description');
-        $formGodMother->is_active = false;
-        // if ($request->hasFile('madrina_photo')) {
-        //     $image = $request->file('madrina_photo');
-        //     $filename = time() . '_' . $image->getClientOriginalName();
-        //     $image->move('img', $filename);
-        //     $formGodMother->profile_media = $filename;
-        // }
-        $formGodMother->save();
-
-        return redirect('/godmotherprofiles')->with('success', 'Perfil actualizado exitosamente');
+        $formgodmother->name = $request->input('name');
+        $formgodmother->last_name = $request->input('last_name');
+        $formgodmother->description = $request->input('description');
+        $formgodmother->is_active = $request->input('is_active') == 'on' ? true : false;
+        if ($request->hasFile('madrina_photo')) {
+            $image = $request->file('madrina_photo');
+            $filename = time() . '_' . $image->getClientOriginalName();
+            $image->move('img', $filename);
+            $formgodmother->profile_media = $filename;
+        }
+        $formgodmother->save();
+        
+        return redirect()->route('godmotherprofiles')->with('success', 'Madrina actualizada exitosamente');
     }
 
 }

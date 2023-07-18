@@ -19,23 +19,29 @@
         <div class="relative bg-white justify-center items-center pt-5 pb-10 lg:pt-20">
             <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg">
 
-                @foreach ($godmothers as $item)
-                    <div class=" max-w-sm bg-gray-100 border border-gray-700 rounded-xl shadow m-5 mx-auto">
-                        <div class="text-center m-5">
-                            <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ $item->name }}</h4>
+                @if (count($godmothers) > 0)
+                    @foreach ($godmothers as $item)
+                        <div class=" max-w-sm bg-gray-100 border border-gray-700 rounded-xl shadow m-5 mx-auto">
+                            <div class="text-center m-5">
+                                <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ $item->name }}
+                                    {{ $item->last_name }}</h4>
+                            </div>
+                            <div class="content-center">
+                                <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto"
+                                    src="{{ asset('img/' . $item->profile_media) }}" alt="imagen madrinas" />
+                            </div>
+                            <div class="p-4 text-center">
+                                <p class="mb-3 font-semibold text-lg">{{ $item->description }}</p>
+                            </div>
                         </div>
-                        <div class="content-center">
-                            <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto" src="{{ asset('img/' . $item->profile_media) }}"
-                                alt="imagen madrinas" />
-                        </div>
-                        <div class="p-4 text-center">
-                            <p class="mb-3 font-semibold text-lg">{{ $item->description }}</p>
-                        </div>
+                    @endforeach
+                @else
+                    <div>
+                        <p>No encontrado ninguna madrina</p>
                     </div>
-                @endforeach
+                @endif
 
             </div>
         </div>
     </div>
 @endsection
-

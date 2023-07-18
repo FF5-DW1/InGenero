@@ -10,14 +10,14 @@
     <section class="bg-gray-7">
         <div id="encabezadoPerfil" class="breadcrumbs-custom box-transform-wrap context-dark">
             <div class="container">
-                <h3 class="breadcrumbs-custom-title">Perfil {{ $formprofile->name }}</h3>
+                <h3 class="breadcrumbs-custom-title">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</h3>
                 <div class="breadcrumbs-custom-decor"></div>
             </div>
         </div>
         <div class="container">
             <ul class="breadcrumbs-custom-path">
                 <li><a href="/">Inicio</a></li>
-                <li class="active">Perfil {{ $formprofile->name }}</li>
+                <li class="active">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</li>
             </ul>
         </div>
     </section>
@@ -25,8 +25,13 @@
         <div class="bg-rose-600 p-4 mt-28">
             <div class="max-w-2xl mx-auto bg-rose-600 overflow-hidden">
                 <section>
+
+                    @if (!$formprofile->is_active)
+                        <p>Este perfil esta inactivo</p>
+                    @endif
+
                     <div class="text-3xl text-white font-bold mb-2 justify-center mt-10">
-                        <h1>{{ $formprofile->name }}</h1>
+                        <h1>{{ $formprofile->name }} {{ $formprofile->last_name }}</h1>
                     </div>
                     @if (count($images) > 1)
                         <div id="default-carousel" class="relative w-full" data-carousel>

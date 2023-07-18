@@ -22,5 +22,6 @@ class Formprofile extends Model
         'additional_info',
         'artistic_skills',
         'profile_media',
+        'is_active',
     ];
 }
