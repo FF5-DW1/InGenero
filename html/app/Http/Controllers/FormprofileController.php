@@ -24,7 +24,13 @@ class FormprofileController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            // Agrega aquí la validación para el resto de campos que desees
+            'date_of_birth' => 'required|date',
+            'height' => 'required|numeric|max:4',
+            'weight' => 'required|numeric|max:4',
+            'eyes_color' => 'required|string|max:255',
+            'hair_color' => 'required|string|max:255',
+            'additional_info' => 'required|string|max:255',
+            'artistic_skills' => 'required|string|max:255'
         ]);
         
         //Obtener un usuario autenticado
@@ -45,7 +51,6 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-        $formprofile->nationality = $request->input('nationality');
         $formprofile->date_of_birth = $request->input('date_of_birth');
         $formprofile->height = $request->input('height');
         $formprofile->weight = $request->input('weight');
@@ -76,12 +81,11 @@ class FormprofileController extends Controller
     public function searchForm(Request $request)
     {
         $search = $request->input('search');
-        $nationality = $request->input('nationality');
         $artistic_skills = $request->input('artistic_skills');
         $height = $request->input('height');
     
         // Verificar si no hay campos de búsqueda
-        if (!$search && !$nationality && !$artistic_skills && !$height) {
+        if (!$search && !$artistic_skills && !$height) {
             // Devolver todos los perfiles sin filtros
             $profiles = Formprofile::paginate();
         } else {
@@ -90,10 +94,6 @@ class FormprofileController extends Controller
     
             if ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%');
-            }
-    
-            if ($nationality) {
-                $query->where('nationality', $nationality);
             }
     
             if ($artistic_skills) {
@@ -152,8 +152,13 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil existente con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-        $formprofile->nationality = $request->input('nationality');
-        // Agrega aquí el resto de campos que deseas actualizar
+        $formprofile->date_of_birth = $request->input('date_of_birth');
+        $formprofile->height = $request->input('height');
+        $formprofile->weight = $request->input('weight');
+        $formprofile->eyes_color = $request->input('eyes_color');
+        $formprofile->hair_color = $request->input('hair_color');
+        $formprofile->additional_info = $request->input('additional_info');
+        $formprofile->artistic_skills = $request->input('artistic_skills');
 
         // También puedes manejar la carga de la imagen aquí si es necesario
 

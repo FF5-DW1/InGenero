@@ -63,10 +63,6 @@
             </div>
         </div>
     </section>
-
-
-
-
     
     
     <section id="contenedorDivPerfiles">

@@ -4,6 +4,13 @@
 
 {{-- ENCABEZADO IMAGEN ADMIN --}}
 <div >
+    {{-- mensage alert no auth crear perfil --}}
+    @if (session('status'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('status')}}
+        </div>
+    @endif
+
     <div class="relative py-8 mt-10 bg-cover bg-center h-80">
         <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full h-full object-cover opacity-60">
         <div class="absolute inset-0 flex flex-col items-center justify-center">
@@ -14,7 +21,7 @@
     <div class="flex justify-center">
         <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
             <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
-            <form method="POST" action="{{ isset($formprofile->id) ? route('updateForm', ['id' => $formprofile->id]) : route('storeForm') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ isset($formprofile->id) ? route('updateform', ['id' => $formprofile->id]) : route('storeform') }}" enctype="multipart/form-data">
                 @csrf
                 @if (isset($formprofile->id))
                     @method('PUT')
