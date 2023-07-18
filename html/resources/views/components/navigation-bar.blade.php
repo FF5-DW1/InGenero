@@ -11,7 +11,7 @@
             <!-- RD Navbar Toggle -->
             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
             <!-- RD Navbar Brand -->
-            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark" src="{{ asset('img/logoencabezado.png') }}" alt="" width="198" height="66"/></a></div>
+            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark logo" src="{{ asset('imgnav/logo_verde.svg') }}" alt="imagen logo, mi vida es puro teatro" width="198" height="66"/></a></div>
           </div>
           <div class="rd-navbar-right rd-navbar-nav-wrap">
             <div class="rd-navbar-aside">
