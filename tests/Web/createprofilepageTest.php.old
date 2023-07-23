@@ -1,0 +1,23 @@
+<?php
+
+namespace Tests\Web;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * Test if the create profile page is accessible.
+     *
+     * @return void
+     */
+    public function testCreateProfilePage()
+    {
+        $response = $this->get('/create-profile');
+
+        $response->assertStatus(200);
+        $response->assertSee('Crear un perfil Madrina');
+    }
+}

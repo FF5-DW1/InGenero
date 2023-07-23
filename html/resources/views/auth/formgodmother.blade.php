@@ -19,11 +19,11 @@
                         <label for="name" class="block mb-2 text-gray-500">Nombre</label>
                         <input id="name" name="name" type="text" class="border-green-300 p-2 w-full rounded-lg bg-green-100" />
 
-                        @error('name')
+                        {{-- @error('name')
                         <span class="text-red-500">
                             {{ $message }}
                         </span>
-                    @enderror
+                    @enderror --}}
 
                     @if ($errors->has('name'))
     <span class="text-danger">{{ $errors->first('name') }}</span>

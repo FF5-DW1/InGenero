@@ -1,0 +1,29 @@
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+class ContactoTest extends TestCase
+{
+    /**
+     * Prueba de envío de formulario de contacto.
+     *
+     * @return void
+     */
+    public function testEnvioFormularioContacto()
+    {
+        $formData = [
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
+            'message' => 'Este es un mensaje de prueba.',
+        ];
+
+        $response = $this->post(route('contact.send'), $formData);
+
+        $response->assertStatus(200);
+    }
+}
+
