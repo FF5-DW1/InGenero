@@ -63,14 +63,8 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
     
     
-=======
-
-
-    {{-- todos los cards --}}
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
     <section id="contenedorDivPerfiles">
         <div id="contenedorPerfiles">
 

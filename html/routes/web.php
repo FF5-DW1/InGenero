@@ -28,9 +28,9 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::middleware('auth')->group(function(){
 
-    // Ruta para cargar el formulario de creación de perfil
+    //Ruta para cargar el formulario de creación de perfil
     Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
-    // Ruta de cierre de sesión
+    //Ruta de cierre de sesión
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 });
@@ -41,9 +41,9 @@ Route::middleware('auth')->group(function(){
 //Rutas solo auth + admin
 Route::middleware('auth', 'admin')->group(function(){
 
-     // Ruta para cargar la vista de gestión de administradore
-     Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
-     // Ruta para editar un perfil específico
+    // Ruta para cargar la vista de gestión de administradore
+    Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
+    // Ruta para editar un perfil específico
     Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
     // Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
     Route::post('/storeForm', [FormprofileController::class, 'storeForm'])->name('storeform');
