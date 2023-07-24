@@ -59,16 +59,28 @@ Route::middleware('auth', 'admin')->group(function(){
 
      // Ruta para cargar la vista de gestión de administradore
      Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
-
      // Ruta para editar un perfil específico
     Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
-
     // Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
     Route::post('/storeForm', [FormprofileController::class, 'storeForm'])->name('storeform');
-
     // Ruta para actualizar un perfil específico (procesa el formulario de actualización)
     Route::put('/updateForm/{id}', [FormprofileController::class, 'updateForm'])->name('updateform');
+
+    //----------- Rutas madrinas admin --------
+
+    // Ruta para cargar el formulario de creación de madrinas
+    Route::get('/formmadrinas', [GodMotherProfileController::class, 'createGodMotherForm'])->name('formmadrinas');
+    // Ruta para guardar los datos del formulario de madrinas (crear una nueva madrina)
+    Route::post('/storeformmadrinas', [GodMotherProfileController::class, 'storeGodMotherForm'])->name('storeformmadrinas');
+    // Ruta para editar una madrina específica
+    Route::get('/editarmadrina/{id}', [GodMotherProfileController::class, 'editarmadrina'])->name('editarmadrina');
+    // Ruta para actualizar una madrina específica (procesa el formulario de actualización)
+    Route::put('/updatemadrina/{id}', [GodMotherProfileController::class, 'updateGodMotherForm'])->name('updatemadrina');
+    // Ruta para cargar la vista de gestión de administradores para madrinas
+    Route::get('/gestionadminmadrina', [GodMotherProfileController::class, 'gestionadminmadrina'])->name('gestionadminmadrina');
+
 });
+
 
 // Ruta para buscar perfiles con filtros
 Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
@@ -79,23 +91,5 @@ Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'
 // Ruta para obtener todos los perfiles
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
 
-
-// ---------------------------  Rutas para madrinas  -----------------------------
-
-// Ruta para cargar el formulario de creación de madrinas
-Route::get('/formmadrinas', [GodMotherProfileController::class, 'createGodMotherForm'])->name('formmadrinas');
-
-// Ruta para guardar los datos del formulario de madrinas (crear una nueva madrina)
-Route::post('/storeformmadrinas', [GodMotherProfileController::class, 'storeGodMotherForm'])->name('storeformmadrinas');
-
 // Ruta para obtener todas las madrinas
 Route::get('/godmotherprofiles', [GodMotherProfileController::class, 'getAllGodMothers'])->name('godmotherprofiles');
-
-// Ruta para editar una madrina específica
-Route::get('/editarmadrina/{id}', [GodMotherProfileController::class, 'editarmadrina'])->name('editarmadrina');
-
-// Ruta para actualizar una madrina específica (procesa el formulario de actualización)
-Route::put('/updatemadrina/{id}', [GodMotherProfileController::class, 'updateGodMotherForm'])->name('updatemadrina');
-
-// Ruta para cargar la vista de gestión de administradores para madrinas
-Route::get('/gestionadminmadrina', [GodMotherProfileController::class, 'gestionadminmadrina'])->name('gestionadminmadrina');
