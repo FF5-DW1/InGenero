@@ -21,16 +21,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
-Route::get('/apoyo', function () {
-    return view('donaciones.apoyo');
-})->name('apoyo');
-
-Route::get('/nosotras', function () {
-    return view('about.nosotras');
-})->name('nosotras');
-
-
-
 //Rutas login
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -43,13 +33,7 @@ Route::middleware('auth')->group(function(){
     // Ruta de cierre de sesión
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-
-//------------------------------- Rutas contacto --------------//
-// Mostrar formulario de contacto
-Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
-
-// Enviar formulario de contacto
-Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
+});
 
 
 // ---------------------  Rutas para perfiles de estrellas  -----------------------
@@ -81,6 +65,23 @@ Route::middleware('auth', 'admin')->group(function(){
 
 });
 
+//------------------------------- Rutas contacto --------------//
+// Mostrar formulario de contacto
+Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
+
+// Enviar formulario de contacto
+Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
+
+
+
+//-------------------------------- Rutas  views y más --------
+Route::get('/apoyo', function () {
+    return view('donaciones.apoyo');
+})->name('apoyo');
+
+Route::get('/nosotras', function () {
+    return view('about.nosotras');
+})->name('nosotras');
 
 // Ruta para buscar perfiles con filtros
 Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
