@@ -49,7 +49,7 @@
                             </span>
                         @enderror
                         </div>
-                        <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight">Enviar</button>
+                        <input type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"></input>
                     </form>
                 </div>
                 <div class="col-lg-4">
