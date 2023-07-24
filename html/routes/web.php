@@ -21,38 +21,15 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
-<<<<<<< HEAD
-=======
-
-Route::get('/login', [LoginController::class, 'index'])->name('login'); 
-Route::post('/login', [LoginController::class, 'authenticate']);
-
-// Ruta de cierre de sesión
-Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
-
-
-
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
-Route::get('/contacto', function () {
-    return view('contacto');
-})->name('contacto');
-
-<<<<<<< HEAD
 Route::get('/apoyo', function () {
     return view('donaciones.apoyo');
 })->name('apoyo');
-
-Route::get('/gestionadmin', function () {
-    return view('auth.gestionadmin');
-})->name('gestionadmin');
 
 Route::get('/nosotras', function () {
     return view('about.nosotras');
 })->name('nosotras');
 
-Route::get('/profilemadrina', function () {
-    return view('profile.god-mother-profile');
-})->name('godmother');
+
 
 //Rutas login
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
@@ -65,19 +42,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
     // Ruta de cierre de sesión
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
-=======
-
-Route::get('/apoyo', function () {
-    return view('donaciones.apoyo');
-})->name('apoyo');
 
 
-Route::get('/nosotras', function () {
-    return view('about.nosotras');
-})->name('nosotras')->middleware('auth');
-
-
-
+//------------------------------- Rutas contacto --------------//
 // Mostrar formulario de contacto
 Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
 
@@ -85,29 +52,19 @@ Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('co
 Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
 
 
-
-
 // ---------------------  Rutas para perfiles de estrellas  -----------------------
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
-
-});
     
 //Rutas solo auth + admin
 Route::middleware('auth', 'admin')->group(function(){
 
+     // Ruta para cargar la vista de gestión de administradore
+     Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
+
+     // Ruta para editar un perfil específico
+    Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
+
     // Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
     Route::post('/storeForm', [FormprofileController::class, 'storeForm'])->name('storeform');
-
-<<<<<<< HEAD
-    // Ruta para cargar la vista de gestión de administradores
-    Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
-=======
-// Ruta para cargar la vista de gestión de administradores para perfiles estrellas
-Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
-
-    // Ruta para editar un perfil específico
-    Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
 
     // Ruta para actualizar un perfil específico (procesa el formulario de actualización)
     Route::put('/updateForm/{id}', [FormprofileController::class, 'updateForm'])->name('updateform');
@@ -121,15 +78,6 @@ Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'
 
 // Ruta para obtener todos los perfiles
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
-
-<<<<<<< HEAD
-// Mostrar formulario de contacto
-Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
-
-// Enviar formulario de contacto
-Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
-
-=======
 
 
 // ---------------------------  Rutas para madrinas  -----------------------------
@@ -151,5 +99,3 @@ Route::put('/updatemadrina/{id}', [GodMotherProfileController::class, 'updateGod
 
 // Ruta para cargar la vista de gestión de administradores para madrinas
 Route::get('/gestionadminmadrina', [GodMotherProfileController::class, 'gestionadminmadrina'])->name('gestionadminmadrina');
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
-

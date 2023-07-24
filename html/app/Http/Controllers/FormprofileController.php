@@ -16,40 +16,9 @@ class FormprofileController extends Controller
         return view('auth.formprofile', compact('formprofile'));
     }
 
-
-
     public function storeForm(Request $request)
     {
         // Validación de los campos del formulario (puedes agregar más campos si es necesario)
-<<<<<<< HEAD
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'date_of_birth' => 'required|date',
-            'height' => 'required|numeric|max:4',
-            'weight' => 'required|numeric|max:4',
-            'eyes_color' => 'required|string|max:255',
-            'hair_color' => 'required|string|max:255',
-            'additional_info' => 'required|string|max:255',
-            'artistic_skills' => 'required|string|max:255'
-        ]);
-        
-        //Obtener un usuario autenticado
-        $user = Auth::user();
-        // Si hay un campo oculto 'id' en el formulario, entonces estamos editando un perfil existente
-        // De lo contrario, estamos creando un nuevo perfil
-        if ($request->has('id')) {
-            // Edición de perfil existente
-            $formprofile = Formprofile::findOrFail($request->input('id'));
-        } else {
-            // Crear nuevo perfil
-            $formprofile = new Formprofile();
-        }
-
-        //Asignar un user_id al fomulario
-        $formprofile->user_id = $user->id;
-
-=======
         // $request->validate([
         //     'name' => 'required|string|max:255',
         //     'last_name' => 'required|string|max:255',
@@ -77,7 +46,6 @@ class FormprofileController extends Controller
         //     // Crear nuevo perfil
         $formprofile = new Formprofile();
         // }
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
@@ -108,12 +76,6 @@ class FormprofileController extends Controller
     }
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
     public function searchForm(Request $request)
     {
         $search = $request->input('search');
@@ -131,15 +93,7 @@ class FormprofileController extends Controller
             if ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%');
             }
-<<<<<<< HEAD
-    
-=======
 
-            if ($nationality) {
-                $query->where('nationality', $nationality);
-            }
-
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
             if ($artistic_skills) {
                 $query->where('artistic_skills', 'LIKE', '%' . $artistic_skills . '%');
             }
@@ -154,13 +108,11 @@ class FormprofileController extends Controller
         return view('profile.profiles', ['profiles' => $profiles]);
     }
 
-
     public function getAllProfiles()
     {
         $profiles = Formprofile::where('is_active', true)->paginate();
         return view('profile.profiles', ['profiles' => $profiles]);
     }
-
 
 
     public function showStarprofile($id)
@@ -176,16 +128,11 @@ class FormprofileController extends Controller
         return view('auth.gestionadmin', compact('profiles'));
     }
 
-
-
     public function editarperfil($id)
     {
         $formprofile = Formprofile::findOrFail($id);
         return view('auth.formprofile', compact('formprofile'));
     }
-
-
-
 
     public function updateForm(Request $request, $id)
     {
@@ -202,7 +149,6 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil existente con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-<<<<<<< HEAD
         $formprofile->date_of_birth = $request->input('date_of_birth');
         $formprofile->height = $request->input('height');
         $formprofile->weight = $request->input('weight');
@@ -211,9 +157,7 @@ class FormprofileController extends Controller
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
 
-        // También puedes manejar la carga de la imagen aquí si es necesario
-=======
-        $formprofile->nationality = $request->input('nationality');
+             
         //poner los demas campos para que se pueda actualizar
         $formprofile->is_active = $request->input('is_active') == 'on' ? true : false;
         
@@ -226,7 +170,6 @@ class FormprofileController extends Controller
             }
             $formprofile->profile_media = $imagestosave;
         }
->>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
 
         $formprofile->save();
 
