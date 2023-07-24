@@ -30,11 +30,6 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/contacto', function () {
-    return view('contacto');
-})->name('contacto');
-
-
 Route::get('/apoyo', function () {
     return view('donaciones.apoyo');
 })->name('apoyo');
@@ -44,6 +39,7 @@ Route::get('/nosotras', function () {
     return view('about.nosotras');
 })->name('nosotras')->middleware('auth');
 
+// ---------------------------- RUTAS DE CONTACTO ---------------------------------------
 
 // // Mostrar formulario de contacto
 Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
@@ -51,8 +47,6 @@ Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('co
 // // Enviar formulario de contacto
 Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
 
-// REVISAR
-Route::post('/contacto/enviar', 'ContactController@sendContactForm')->name('contact.send');
 
 
 // ---------------------  Rutas para perfiles de estrellas  -----------------------

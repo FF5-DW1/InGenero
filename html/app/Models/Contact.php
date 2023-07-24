@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Mail;
+namespace App\Models; // Cambia el namespace a App\Models
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-// use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactFormMail extends Mailable
+class Contact extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -38,6 +37,6 @@ class ContactFormMail extends Mailable
     {
         return $this->from($this->email, $this->name)
             ->subject('Nuevo mensaje de contacto desde el sitio web')
-            ->view('emails.contact-form');
+            ->view('contacto');
     }
 }

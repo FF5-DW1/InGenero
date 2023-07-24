@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactFormMail;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -15,7 +15,8 @@ class ContactController extends Controller
 
     public function sendContactForm(Request $request)
     {
-
+        
+        
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
@@ -27,7 +28,7 @@ class ContactController extends Controller
         $message = $request->input('message');
 
         // Enviar el correo
-        Mail::to('edcarrasmar@gmail.com')->send(new ContactFormMail($name, $email, $message));
+        Mail::to('smtp.mailtrap.io')->send(new Contact($name, $email, $message));
         
         // Redirigir o mostrar un mensaje de éxito
         return redirect()->back()->with('success', '¡Gracias! Tu mensaje ha sido enviado correctamente.');
