@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Formprofile extends Model
+class FormGodMother extends Model
 {
     use HasFactory;
 
@@ -13,14 +13,7 @@ class Formprofile extends Model
         'id',
         'name',
         'last_name',
-        'nationality',
-        'date_of_birth',
-        'height',
-        'weight',
-        'eyes_color',
-        'hair_color',
-        'additional_info',
-        'artistic_skills',
+        'description',
         'profile_media',
         'is_active',
     ];

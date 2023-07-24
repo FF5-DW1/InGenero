@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('godmotherprofiles', function (Blueprint $table) {
+        Schema::create('form_god_mothers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('nombre');
+            // $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name');
+            $table->string('last_name');
+            $table->string('description');
+            $table->string('profile_media')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('godmotherprofiles');
+        Schema::dropIfExists('form_god_mothers');
     }
 };

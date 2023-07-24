@@ -37,6 +37,12 @@
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
+<<<<<<< HEAD
+=======
+                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
+                </li>
+                
+>>>>>>> eb08fef9f9cb24ffcfd07640a69a7f6c45549f82
                 @if (Auth::guest())
                   <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
                   </li>
