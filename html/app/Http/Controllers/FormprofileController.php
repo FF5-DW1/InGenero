@@ -154,6 +154,8 @@ class FormprofileController extends Controller
         $formprofile = Formprofile::find($id);
 
         // Actualizar los campos del perfil existente con los nuevos datos
+        $formprofile->name = $request->input('name');
+        $formprofile->last_name = $request->input('last_name');
         $formprofile->idiomas = $request->input('idiomas');
         $formprofile->date_of_birth = $request->input('date_of_birth');
         $formprofile->height = $request->input('height');
