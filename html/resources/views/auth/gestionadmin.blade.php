@@ -39,13 +39,11 @@
 
                             <td scope="col" class="px-6 py-3 d-flex">
                                 <a href="{{ route('editarperfil', ['id' => $profile->id]) }}" class="btn btn-primary">
-                                    <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="mr-2"
-                                        style="width: 30px; height: 26px;">
+                                    Editar
                                 </a>
 
                                 <a href="{{ route('starprofile', ['id' => $profile->id]) }}" class="btn btn-primary">
-                                    <img src="{{ asset('img/user-square.svg') }}" alt="Usuario" class="mr-2"
-                                        style="width: 30px; height: 26px;">
+                                    perfil
                                 </a>
                             </td>
                         </tr>

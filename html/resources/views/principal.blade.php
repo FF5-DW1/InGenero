@@ -73,45 +73,45 @@
             <div class="row row-md row-30">
                 <div class="col-sm-6 col-lg-4">
                     <div class="oh-desktop">
-                        <!-- Services Terri-->
-                        <article class="services-terri wow slideInDown">
-                            <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt=""
-                                    width="370" height="278" />
-                            </div>
-                            <div class="services-terri-caption">
-                                <h5 class="services-terri-title"><a href="#">igualdad</a></h5>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="oh-desktop">
-                        <!-- Services Terri-->
+                        <!-- Colaboradores-->
                         <article class="services-terri wow slideInUp">
-                            <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt=""
-                                    width="370" height="278" />
+                            <div class="services-terri-figure"><img src="img/InGenero.png" alt=""
+                                width="370" height="278" />
                             </div>
                             <div class="services-terri-caption">
                                 <h5 class="services-terri-title"><a target="en_blank" href="https://www.ingenero.es/">Web In
-                                        Genero</a></h5>
-                            </div>
-                        </article>
+                                    Genero</a></h5>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="oh-desktop">
-                        <!-- Services Terri-->
-                        <article class="services-terri wow slideInUp">
-                            <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt=""
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="oh-desktop">
+                            <!-- Colaboradores-->
+                            <article class="services-terri wow slideInUp">
+                                <div class="services-terri-figure"><img src="img/Nosotras.jpg" alt=""
                                     width="370" height="278" />
-                            </div>
-                            <div class="services-terri-caption">
-                                <h5 class="services-terri-title"><a target="en_blank" href="https://nosotras.app/">Nosotras
+                                </div>
+                                <div class="services-terri-caption">
+                                    <h5 class="services-terri-title"><a target="en_blank" href="https://nosotras.app/">Nosotras
                                         App</a></h5>
+                                    </div>
+                                </article>
                             </div>
-                        </article>
-                    </div>
-                </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="oh-desktop">
+                                <!-- Colaboradores-->
+                                <article class="services-terri wow slideInDown">
+                                    <div class="services-terri-figure"><img src="img/igualdad.jpg" alt=""
+                                            width="370" height="278" />
+                                    </div>
+                                    <div class="services-terri-caption">
+                                        <h5 class="services-terri-title"><a target="en_blank" href="https://www.ingenero.es/plan-igualdad.html">igualdad</a></h5>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
 
             </div>
         </div>

@@ -7,7 +7,7 @@
             $images = explode('*', $formprofile->profile_media);
         }
     @endphp
-
+    <div class="falseoNavbarAdmin"></div>
     <section class="bg-gray-7">
         <div id="encabezadoPerfil" class="breadcrumbs-custom box-transform-wrap context-dark">
             <div class="container">
@@ -22,18 +22,12 @@
             </ul>
         </div>
     </section>
-    <div class="container my-5">
-        <div class="bg-rose-600 p-4 rounded-lg shadow-lg">
+
+    <div class="container">
+        <div class="bg-rose-600 rounded-lg shadow-lg mt-4 p-4">
             <div class="row">
-                <div class="col-md-6 mb-4">
-
-                    @if (!$formprofile->is_active)
-                        <p>Este perfil esta inactivo</p>
-                    @endif
-
-                    <div class="text-3xl text-white font-bold mb-2 justify-center mt-10">
-                        <h1>{{ $formprofile->name }} {{ $formprofile->last_name }}</h1>
-                    </div>
+                <div class="col-md-12 mb-4">
+                    <!-- Carrusel de imágenes -->
                     @if (count($images) > 1)
                         <div id="image-carousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicadores del carrusel -->
@@ -44,7 +38,7 @@
                                 @endforeach
                             </ol>
                             <!-- Imágenes del carrusel -->
-                            <div class="carousel-inner">
+                            <div class="carousel-inner rounded-lg">
                                 @foreach (array_filter($images) as $index => $item)
                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                         <img src="{{ asset('img/' . $item) }}" class="d-block w-100 rounded-lg"
@@ -64,6 +58,7 @@
                         </div>
                     @endif
 
+                    <!-- Imagen única -->
                     @if (count($images) == 1)
                         <div class="text-center mt-4">
                             <img src="{{ asset('img/' . $images[0]) }}" alt="Foto de {{ $formprofile->name }}"
@@ -74,6 +69,7 @@
 
                 <div class="col-md-6">
                     <ul class="list-unstyled text-black">
+                        <!-- Información del perfil -->
                         <li class="mb-3">
                             <span class="font-weight-bold">Idiomas:</span> {{ $formprofile->idiomas }}
                         </li>
@@ -105,9 +101,9 @@
 
             <div class="row mt-4">
                 <div class="col-md-12">
-                    {{-- Video Perfil --}}
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <video class="embed-responsive-item rounded-lg shadow" controls>
+                    <!-- Video -->
+                    <div class="embed-responsive embed-responsive-16by9 rounded-lg shadow">
+                        <video class="embed-responsive-item rounded-lg" controls>
                             <source src="video/video_patricia.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
