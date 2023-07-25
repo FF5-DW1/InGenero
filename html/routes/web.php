@@ -26,20 +26,15 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 
-Route::middleware('auth')->group(function(){
+// ---------------------  Rutas para perfiles de estrellas  -----------------------
+    
+//Rutas solo auth + admin
+Route::middleware('auth', 'admin')->group(function(){
 
     //Ruta para cargar el formulario de creación de perfil
     Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
     //Ruta de cierre de sesión
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
-
-});
-
-
-// ---------------------  Rutas para perfiles de estrellas  -----------------------
-    
-//Rutas solo auth + admin
-Route::middleware('auth', 'admin')->group(function(){
 
     // Ruta para cargar la vista de gestión de administradore
     Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
