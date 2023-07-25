@@ -96,7 +96,11 @@ class FormprofileController extends Controller
             if ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%');
             }
-
+    
+            if ($nationality) {
+                $query->where('nationality', $nationality);
+            }
+    
             if ($artistic_skills) {
                 $query->where('artistic_skills', 'LIKE', '%' . $artistic_skills . '%');
             }
@@ -116,7 +120,6 @@ class FormprofileController extends Controller
         $profiles = Formprofile::where('is_active', true)->paginate();
         return view('profile.profiles', ['profiles' => $profiles]);
     }
-
 
     public function showStarprofile($id)
     {
@@ -157,27 +160,10 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil existente con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-        $formprofile->date_of_birth = $request->input('date_of_birth');
-        $formprofile->height = $request->input('height');
-        $formprofile->weight = $request->input('weight');
-        $formprofile->eyes_color = $request->input('eyes_color');
-        $formprofile->hair_color = $request->input('hair_color');
-        $formprofile->additional_info = $request->input('additional_info');
-        $formprofile->artistic_skills = $request->input('artistic_skills');
+        $formprofile->nationality = $request->input('nationality');
+        // Agrega aquí el resto de campos que deseas actualizar
 
-             
-        //poner los demas campos para que se pueda actualizar
-        $formprofile->is_active = $request->input('is_active') == 'on' ? true : false;
-        
-        if ($request->hasFile('profile_photo')) {
-            $imagestosave = "";
-            foreach ($request->file('profile_photo') as $image) {
-                $filename = time() . '_' . $image->getClientOriginalName();
-                $image->move('img', $filename);
-                $imagestosave = $filename . '*' . $imagestosave;
-            }
-            $formprofile->profile_media = $imagestosave;
-        }
+        // También puedes manejar la carga de la imagen aquí si es necesario
 
         $formprofile->save();
 
