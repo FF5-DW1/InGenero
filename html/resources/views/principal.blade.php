@@ -139,62 +139,7 @@
         </div>
     </section>
 
-    <!--carusel estrellas-->
-    {{-- <section class="section section-xl bg-default">
-    <div class="container">
-      <h3 class="wow fadeInLeft">Nuestras estrellas</h3>
-    </div>
-    <div class="container container-style-1">
-      <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30" data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una joven actriz llena de talento y carisma que está cautivando al público con su actuación en cada papel que interpreta</p>
-            </div>
-            <div class="quote-tara-figure">
-              <img src="images/user-8-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Ashley Fitzgerald</h6>
-        </article>
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una prometedora actriz con una presencia magnética en el escenario, cuyo talento innato la está llevando a destacar en el mundo de la actuación.</p>
-            </div>
-            <div class="quote-tara-figure"><img src="images/user-8-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Stephanie Williams</h6>
-        </article>
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una actriz versátil y apasionada que se destaca por su habilidad para dar vida a personajes complejos y emocionalmente cautivadores.</p>
-            </div>
-            <div class="quote-tara-figure"><img src="images/user-7-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Billy Johnson</h6>
-        </article>
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una talentosa actriz en ascenso que impresiona con su dedicación y entrega en cada proyecto, dejando una huella imborrable en la audiencia.</p>
-            </div>
-            <div class="quote-tara-figure"><img src="images/user-9-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Aarona Wilson</h6>
-        </article>
-      </div>
-    </div>
-  </section>
-   --}}
+   
 
     <!--carusel estrellas-->
     <section class="section section-xl bg-default">
@@ -206,7 +151,7 @@
                 data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
                 @foreach ($profiles as $profile)
                     <!-- Card para el carrusel -->
-                    <a href="">
+                    <a href="{{ route('starprofile', ['id' => $profile->id]) }}">
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
                                 
@@ -214,8 +159,8 @@
                                         alt="imagen estrellas" width="300" height="300" />
                                         
                                 
+                                        <h6 class="quote-tara-author">{{ $profile->name }}</h6>
                             </div>
-                            <h6 class="quote-tara-author">{{ $profile->name }}</h6>
                         </article>
                     </a>
                 @endforeach

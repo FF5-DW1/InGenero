@@ -21,7 +21,7 @@ class LoginController extends Controller
         ]);
         //dd( $validados);
 
-        // $remember = ($request->has('remember') ? true : false);
+        //$remember = ($request->has('remember') ? true : false);
         //Comprobar pass 
         if (Auth::attempt($validados)) {
             //si login ok regenero la seccion
