@@ -76,6 +76,9 @@ class FormprofileController extends Controller
     }
 
 
+
+
+
     public function searchForm(Request $request)
     {
         $search = $request->input('search');
@@ -128,11 +131,16 @@ class FormprofileController extends Controller
         return view('auth.gestionadmin', compact('profiles'));
     }
 
+
+
     public function editarperfil($id)
     {
         $formprofile = Formprofile::findOrFail($id);
         return view('auth.formprofile', compact('formprofile'));
     }
+
+
+
 
     public function updateForm(Request $request, $id)
     {

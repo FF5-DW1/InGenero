@@ -63,8 +63,9 @@
             </div>
         </div>
     </section>
-    
-    
+
+
+    {{-- todos los cards --}}
     <section id="contenedorDivPerfiles">
         <div id="contenedorPerfiles">
 
