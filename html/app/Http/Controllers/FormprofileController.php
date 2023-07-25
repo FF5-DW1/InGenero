@@ -37,6 +37,7 @@ class FormprofileController extends Controller
         $formprofile->hair_color = $request->input('hair_color');
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
+        $formprofile->video_url = $request->input('video_url');
         $formprofile->is_active = true;
 
         // También puedes manejar la carga de la imagen aquí si es necesario
@@ -128,6 +129,7 @@ class FormprofileController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
+            'video_url' => 'required|string|max:255',
             // Agrega aquí la validación para el resto de campos que desees actualizar
         ]);
 
@@ -145,6 +147,7 @@ class FormprofileController extends Controller
         $formprofile->hair_color = $request->input('hair_color');
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
+        $formprofile->video_url = $request->input('video_url');
         $formprofile->is_active =$request->has('is_active'); //? true : false
         
         if ($request->hasFile('profile_photo')) {

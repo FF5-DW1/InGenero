@@ -163,6 +163,11 @@
                             multiple />
                     </div>
 
+                    <div class="mb-4">
+                        <label for="video_url">URL del Video de YouTube</label>
+                        <input id="video_url" name="video_url" type="text" class="form-control" value="{{ $formprofile->video_url }}" />
+                    </div>
+
                     @if (isset($formprofile->id))
                         <div class="mb-4">
                             <label for="is_active">Estado</label>
