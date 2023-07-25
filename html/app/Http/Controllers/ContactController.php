@@ -20,14 +20,28 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $message = $request->input('message');
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'mensaje' => $request->message,
+        ];
 
-        // Enviar el correo
-        Mail::to('edcarrasmar@gmail.com')->send(new Contact($name, $email, $message));
+        // Mail::send('emails.contact_form', $data, function ($message) {
+        //     $message->to('recipient@example.com', 'Recipient Name')
+        //         ->subject('Correo de contacto');
+        // });
 
-        // Redirigir o mostrar un mensaje de éxito
-        return redirect()->back()->with('success', '¡Gracias! Tu mensaje ha sido enviado correctamente.');
+        Mail::send('emails.contact_form', $data, function (Message $message) use ($data) {
+            $message->to('recipient@example.com', 'Recipient Name')
+                    ->subject('Correo de contacto');
+        });
+
+
+
+
+        return redirect('/contact')->with('success', 'Correo enviado con éxito');
     }
-}
+
+} 
+
+
