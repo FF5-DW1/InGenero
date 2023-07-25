@@ -176,7 +176,7 @@ class FormprofileController extends Controller
         $formprofile->last_name = $request->input('last_name');
         $formprofile->nationality = $request->input('nationality');
         //poner los demas campos para que se pueda actualizar
-        $formprofile->is_active = $request->input('is_active') == 'on' ? true : false;
+        $formprofile->is_active = $request->has('is_active');
         
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";

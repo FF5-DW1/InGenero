@@ -29,12 +29,6 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
-
-Route::get('/contacto', function () {
-    return view('contacto');
-})->name('contacto');
-
-
 Route::get('/apoyo', function () {
     return view('donaciones.apoyo');
 })->name('apoyo');
