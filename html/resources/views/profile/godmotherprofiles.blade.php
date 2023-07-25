@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+function getImage($stringImage)
+{
+    if ($stringImage) {
+        $image = explode('*', $stringImage);
+        return $image[0];
+    }
+    return 'avatar.jpg';
+}
+@endphp
     <div>
         {{-- banner --}}
         <div class="py-10 mt-10 sticky top-0 w-full h-full bg-cover bg-center bg-no-repeat"
@@ -28,7 +38,7 @@
                             </div>
                             <div class="content-center">
                                 <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto"
-                                    src="{{ asset('img/' . $item->profile_media) }}" alt="imagen madrinas" />
+                                    src="{{ asset('img/' . getImage($item->profile_media)) }}" alt="imagen madrinas" />
                             </div>
                             <div class="p-4 text-center">
                                 <p class="mb-3 font-semibold text-lg">{{ $item->description }}</p>

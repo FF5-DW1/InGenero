@@ -17,15 +17,13 @@ class GodMotherProfileController extends Controller
 
     public function storeGodMotherForm(Request $request)
     {
-        // Validación de los campos del formulario (puedes agregar más campos si es necesario)
-        $request->validate([
-            'name' => 'required',
-            'last_name' => 'required',
+        //validar formulario de madrinas
+        $this->validate($request, [
+            'name' => 'required|max:30',
+            'last_name' => 'required|max:20',
             'description' => 'required',
-            'madrina_photo' => 'required',
         ]);
-
-
+        
         $formgodmother = new FormGodMother();
         $formgodmother->name = $request->input('name');
         $formgodmother->last_name = $request->input('last_name');
@@ -91,6 +89,7 @@ class GodMotherProfileController extends Controller
         $formgodmother->last_name = $request->input('last_name');
         $formgodmother->description = $request->input('description');
         $formgodmother->is_active =$request->has('is_active'); //? true : false
+
         if ($request->hasFile('madrina_photo')) {
             $image = $request->file('madrina_photo');
             $filename = time() . '_' . $image->getClientOriginalName();
