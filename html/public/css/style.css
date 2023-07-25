@@ -65,10 +65,6 @@
 
 /* perfiles */
 
-#informacionPerfil{
-	margin-top: 20px;
-}
-
 #botonPerfiles{
 	padding: 10px;
 
@@ -80,7 +76,7 @@
 	margin-left: auto;
     margin-right: auto;
 	background-color:  #ff4c49;
-	padding: 40px 0px 40px 0px;
+	padding: 60px 0px 60px 0px;
 }
 
 
@@ -308,18 +304,13 @@
 }
 
 /* View Perfil individual */
-@media (max-width: 991px){
-	#encabezadoPerfil{
-		margin-top: 80px;
-		background-color: #ff5050;
-	}
-}
+
 #encabezadoPerfil{
 	background-color: #ff5050;
 }
 
 
-/* profile */
+/* form profile */
 
 
 
@@ -649,28 +640,18 @@ p [style*='max-width'] {
 */
 .brand {
 	display: inline-block;
-
 }
 
 .brand .brand-logo-light {
 	display: none;
-
 }
 
 .brand .brand-logo-dark {
 	display: block;
-	
 }
 
 .brand > * + * {
 	margin-top: 0;
-
-}
-
-@media (min-width: 1000px){
-	.logo {
-		margin-left: -16px;
-	}
 }
 
 /*
@@ -1678,7 +1659,7 @@ img {
 	display: inline-block;
 	font-weight: 400;
 	font-style: normal;
-	/* speak: none; */
+	speak: none;
 	text-transform: none;
 }
 
@@ -9001,7 +8982,7 @@ html.rd-navbar-fixed-linked .page {
 
 @media (min-width: 1200px) {
 	.rd-navbar-modern.rd-navbar-static .rd-navbar-project-hamburger-open {
-		bottom: 54px;
+		bottom: 26px;
 	}
 }
 
@@ -9142,7 +9123,6 @@ html.rd-navbar-fixed-linked .page {
 	}
 }
 
-
 .rd-navbar-project-hamburger {
 	position: relative;
 	width: 34px;
@@ -9163,8 +9143,16 @@ html.rd-navbar-fixed-linked .page {
 	transition-delay: .45s;
 }
 
+.project-hamburger {
+	display: flex;
+	overflow: hidden;
+	align-self: center;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 24px;
+}
 
-/* .project-hamburger > span {
+.project-hamburger > span {
 	position: relative;
 	display: inline-block;
 	align-self: flex-end;
@@ -9197,7 +9185,7 @@ html.rd-navbar-fixed-linked .page {
 
 .project-hamburger:hover > span:nth-child(3)::after {
 	animation-delay: .2s;
-} */
+}
 
 .rd-navbar-project-hamburger-close {
 	position: absolute;
