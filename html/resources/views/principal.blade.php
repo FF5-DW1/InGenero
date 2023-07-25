@@ -139,7 +139,7 @@
         </div>
     </section>
 
-   
+
 
     <!--carusel estrellas-->
     <section class="section section-xl bg-default">
@@ -154,12 +154,14 @@
                     <a href="{{ route('starprofile', ['id' => $profile->id]) }}">
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
-                                
-                                    <img class="wow fadeIn" data-wow-delay="0.3s" src="{{ asset('img/' . getImage($profile->profile_media)) }}"
-                                        alt="imagen estrellas" width="300" height="300" />
-                                        
-                                
-                                        <h6 class="quote-tara-author">{{ $profile->name }}</h6>
+
+                                <img class="wow fadeIn" data-wow-delay="0.3s"
+                                    src="{{ asset('img/' . getImage($profile->profile_media)) }}" alt="imagen estrellas"
+                                    width="300" height="300" />
+
+                                {{-- <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})" class="card-image wow fadeIn" data-wow-delay="0.3s">
+                                    </div> --}}
+                                <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
                             </div>
                         </article>
                     </a>
@@ -193,87 +195,31 @@
         </div>
     </section>
 
-    <!-- god mothers-->
-    <section class="section section-lg bg-default">
+    {{-- godmothers cards --}}
+    <section class="section section-xl bg-default">
         <div class="container">
-            <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Madrinas habituales</span></h3>
-            <div class="row row-lg row-30">
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
+            <h3 class="wow fadeInLeft">Madrinas habituales</h3>
+        </div>
+        <div class="container container-style-1">
+            <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
+                data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
+                @foreach ($godmothers as $profile)
+                    <!-- Card para el carrusel madrinas -->
+                    <a href="{{ route('godmotherprofiles') }}">
+                        <article class="quote-tara">
+                            <div class="quote-tara-caption carrusel-madrina">
 
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
+                                <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})"
+                                    class="card-image">
 
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
+                                </div>
+                                <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
+                                <p>{{ $profile->description }}</p>
 
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
-
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
+                            </div>
+                        </article>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>

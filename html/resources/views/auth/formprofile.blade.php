@@ -27,10 +27,10 @@
                             Nombre
                         </label>
                         <input id="name" name="name" type="text"
-                            class="border-green-300 p-2 w-full rounded-lg bg-green-100 @error('name') border-red @enderror"
+                            class="border-green-300 p-2 w-full rounded-lg bg-green-100 @error('name') error-borderred @enderror"
                             value="{{ $formprofile->name }}" />
                         @error('name')
-                            <span class="text-red-500">
+                            <span class="error-textred">
                                 {{ $message }}
                             </span>
                         @enderror
@@ -41,10 +41,10 @@
                             Apellidos
                         </label>
                         <input id="last_name" name="last_name" type="text"
-                            class="border-green-300 p-2 w-full rounded-lg bg-green-100 @error('last_name') border-red @enderror"
+                            class="border-green-300 p-2 w-full rounded-lg bg-green-100 @error('last_name') error-borderred @enderror"
                             value="{{ $formprofile->last_name }}" />
                         @error('last_name')
-                            <span class="text-red-500">
+                            <span class="error-textred">
                                 {{ $message }}
                             </span>
                         @enderror
@@ -57,14 +57,6 @@
                         <input id="idiomas" name="idiomas" type="text"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->idiomas }}" />
-
-                        @error('idiomas')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
-
                     </div>
 
                     <div class="mb-4">
@@ -74,13 +66,6 @@
                         <input id="date_of_birth" name="date_of_birth" type="date"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->date_of_birth }}" />
-
-                        @error('date_of_birth')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
                     </div>
 
                     <div class="mb-4">
@@ -90,13 +75,6 @@
                         <input id="height" name="height" type="text"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->height }}" />
-
-                        @error('heigth')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
                     </div>
 
                     <div class="mb-4">
@@ -106,13 +84,6 @@
                         <input id="weight" name="weight" type="text"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->weight }}" />
-
-                        @error('weight')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
                     </div>
 
                     <div class="mb-4">
@@ -122,13 +93,6 @@
                         <input id="eyes_color" name="eyes_color" type="text"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->eyes_color }}" />
-
-                        @error('eyes_color')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
                     </div>
 
                     <div class="mb-4">
@@ -138,13 +102,6 @@
                         <input id="hair_color" name="hair_color" type="text"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->hair_color }}" />
-
-                        @error('hair_color')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
                     </div>
 
                     <div class="mb-4">
@@ -163,13 +120,6 @@
                         <input id="artistic_skills" name="artistic_skills" type="text"
                             class="border-green-300 p-6 w-full rounded-lg bg-green-100"
                             value="{{ $formprofile->artistic_skills }}" />
-
-                        @error('artistic_skills')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
-
                     </div>
 
                     <!-- APARTADO FOTO / VIDEO / VIDEO BOOK - BUSCAR PARA SUBIR AL PERFIL -->
