@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class FormprofileController extends Controller
 {
-    public function createForm()
+    public function createform()
     {
         // Crear una nueva instancia de Formprofile para pasarla a la vista
         $formprofile = new Formprofile();
@@ -16,7 +16,7 @@ class FormprofileController extends Controller
         return view('auth.formprofile', compact('formprofile'));
     }
 
-    public function storeForm(Request $request)
+    public function storeform(Request $request)
     {
         // Validación de los campos del formulario (puedes agregar más campos si es necesario)
         // $request->validate([
@@ -25,7 +25,7 @@ class FormprofileController extends Controller
         //     'email' => 'required|email',
         //     'password' => 'required|min:8',
         //     'description' => 'required',
-        //     'nationality' => 'required',
+        //     'idiomas' => 'required',
         //     'date_of_birth' => 'required|date',
         //     'height' => 'required|numeric',
         //     'weight' => 'required|numeric',
@@ -49,6 +49,7 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
+        $formprofile->idiomas = $request->input('idiomas');
         $formprofile->date_of_birth = $request->input('date_of_birth');
         $formprofile->height = $request->input('height');
         $formprofile->weight = $request->input('weight');
@@ -79,7 +80,7 @@ class FormprofileController extends Controller
 
 
 
-    public function searchForm(Request $request)
+    public function searchform(Request $request)
     {
         $search = $request->input('search');
         $artistic_skills = $request->input('artistic_skills');
@@ -111,13 +112,13 @@ class FormprofileController extends Controller
         return view('profile.profiles', ['profiles' => $profiles]);
     }
 
-    public function getAllProfiles()
+    public function getallprofiles()
     {
         $profiles = Formprofile::where('is_active', true)->paginate();
         return view('profile.profiles', ['profiles' => $profiles]);
     }
 
-    public function showStarprofile($id)
+    public function showstarprofile($id)
     {
         $formprofile = Formprofile::find($id);
         return view('profile.starprofile', ['formprofile' => $formprofile]);
@@ -139,8 +140,9 @@ class FormprofileController extends Controller
     }
 
 
-    public function updateForm(Request $request, $id)
+    public function updateform(Request $request, $id)
     {
+        
         // Validación de los campos del formulario (puedes agregar más campos si es necesario)
         $request->validate([
             'name' => 'required|string|max:255',
@@ -154,13 +156,20 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil existente con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-        $formprofile->nationality = $request->input('nationality');
-        // Agrega aquí el resto de campos que deseas actualizar
+        $formprofile->idiomas = $request->input('idiomas');
+        $formprofile->date_of_birth = $request->input('date_of_birth');
+        $formprofile->height = $request->input('height');
+        $formprofile->weight = $request->input('weight');
+        $formprofile->eyes_color = $request->input('eyes_color');
+        $formprofile->hair_color = $request->input('hair_color');
+        $formprofile->additional_info = $request->input('additional_info');
+        $formprofile->artistic_skills = $request->input('artistic_skills');
+        $formprofile->is_active =$request->has('is_active'); //? true : false
 
         // También puedes manejar la carga de la imagen aquí si es necesario
 
         $formprofile->save();
-
+    
         // Después de guardar, redirecciona a la página de perfil o a donde desees
         return redirect()->route('starprofile', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
     }

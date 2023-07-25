@@ -12,17 +12,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(3)->create();
+        //\App\Models\User::factory(3)->create();
 
-        /* \App\Models\User::factory()->create([
+        \App\Models\User::factory()->create([
              'name' => 'Test User',
              'email' => 'test@example.com',
+             'is_admin' => '1'
         ]);
-        */
+    
         /* \App\Models\Formprofile::insert([
             'name' => "raul",
             'last_name' => "rodriguez",
-            'nationality' => "mexico",
+            'idiomas' => "mexico",
             'date_of_birth' => "1990-07-12",
             'height' => "170",
             'weight' => "85",

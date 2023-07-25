@@ -20,7 +20,7 @@ class FormprofileFactory extends Factory
             'user_id'=> 1,
             'name' => fake()->name(),
             'last_name' => fake()->name(),
-            'nationality' => fake()->country(),
+            'idiomas' => fake()->country(),
             'date_of_birth' => fake()->date(),
             'height' => fake()->buildingNumber(),
             'weight' => fake()->buildingNumber(),

@@ -32,7 +32,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::middleware('auth', 'admin')->group(function(){
 
     //Ruta para cargar el formulario de creación de perfil
-    Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
+    Route::get('/formprofile', [FormprofileController::class, 'createform'])->name('formprofile');
     //Ruta de cierre de sesión
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
@@ -41,9 +41,9 @@ Route::middleware('auth', 'admin')->group(function(){
     // Ruta para editar un perfil específico
     Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
     // Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
-    Route::post('/storeForm', [FormprofileController::class, 'storeForm'])->name('storeform');
+    Route::post('/storeform', [FormprofileController::class, 'storeform'])->name('storeform');
     // Ruta para actualizar un perfil específico (procesa el formulario de actualización)
-    Route::put('/updateForm/{id}', [FormprofileController::class, 'updateForm'])->name('updateform');
+    Route::put('/updateform/{id}', [FormprofileController::class, 'updateform'])->name('updateform');
 
     //----------- Rutas madrinas admin --------
 
@@ -79,13 +79,13 @@ Route::get('/nosotras', function () {
 })->name('nosotras');
 
 // Ruta para buscar perfiles con filtros
-Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
+Route::get('/getprofiles', [FormprofileController::class, 'searchform'])->name('getprofiles');
 
 // Ruta para ver un perfil específico
-Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
+Route::get('/starprofile/{id}', [FormprofileController::class, 'showstarprofile'])->name('starprofile');
 
 // Ruta para obtener todos los perfiles
-Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+Route::get('/profiles', [FormprofileController::class, 'getallprofiles'])->name('profiles');
 
 // Ruta para obtener todas las madrinas
 Route::get('/godmotherprofiles', [GodMotherProfileController::class, 'getAllGodMothers'])->name('godmotherprofiles');

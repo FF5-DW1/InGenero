@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('formprofiles', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->string('last_name');
-            $table->string('nationality');
+            $table->string('idiomas');
             $table->date('date_of_birth');
             $table->integer('height');
             $table->integer('weight');

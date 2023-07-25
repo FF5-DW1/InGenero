@@ -90,7 +90,7 @@ class GodMotherProfileController extends Controller
         $formgodmother->name = $request->input('name');
         $formgodmother->last_name = $request->input('last_name');
         $formgodmother->description = $request->input('description');
-        $formgodmother->is_active = $request->input('is_active') == 'on' ? true : false;
+        $formgodmother->is_active =$request->has('is_active'); //? true : false
         if ($request->hasFile('madrina_photo')) {
             $image = $request->file('madrina_photo');
             $filename = time() . '_' . $image->getClientOriginalName();
