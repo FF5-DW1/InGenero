@@ -58,7 +58,7 @@
             </div>
           </div>
           <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
-            <div class="icon-mask"><img src="{{ asset('imgnav/icon_gallery_black') }}" alt="dibujo mascaras teatro"></div>
+            <div class="icon-mask"><img src="{{ asset('imgnav/icon_gallery_black.svg') }}" alt="dibujo galeria img"></div>
             {{-- <div class="project-hamburger"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
             </div> --}}
           </div>
