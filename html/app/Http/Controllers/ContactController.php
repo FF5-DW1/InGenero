@@ -32,6 +32,6 @@ class ContactController extends Controller
 
 
         // Mostrar un mensaje de enviado
-        return redirect()->route('contacto')->with('info', 'Mensaje enviado');
+        return redirect()->route('principal')->with('info', 'Mensaje enviado');
     }
 }
