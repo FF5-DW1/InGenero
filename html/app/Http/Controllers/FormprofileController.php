@@ -97,10 +97,6 @@ class FormprofileController extends Controller
                 $query->where('name', 'LIKE', '%' . $search . '%');
             }
     
-            if ($nationality) {
-                $query->where('nationality', $nationality);
-            }
-    
             if ($artistic_skills) {
                 $query->where('artistic_skills', 'LIKE', '%' . $artistic_skills . '%');
             }
@@ -141,8 +137,6 @@ class FormprofileController extends Controller
         $formprofile = Formprofile::findOrFail($id);
         return view('auth.formprofile', compact('formprofile'));
     }
-
-
 
 
     public function updateForm(Request $request, $id)
