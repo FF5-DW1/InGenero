@@ -9,11 +9,10 @@ class PrincipalController extends Controller
 {
     public function showPrincipal()
     {
-        
-        $profiles = Formprofile::all(); 
 
-       
+        $profiles = Formprofile::all();
+
+
         return view('principal', ['profiles' => $profiles]);
     }
-
 }

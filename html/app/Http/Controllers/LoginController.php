@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller 
+class LoginController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         //visualiza el formulario login.blade.php
         return view('auth.login');
-       
     }
-    public function authenticate(Request $request){
+    public function authenticate(Request $request)
+    {
         //Validar
         $validados = $request->validate([
             'email' => ['required', 'email'],
@@ -22,12 +23,12 @@ class LoginController extends Controller
 
         $remember = ($request->has('remember') ? true : false);
         //Comprobar pass 
-        if (Auth::attempt($validados, $remember)){
-           //si login ok regenero la seccion
-           $request->session()->regenerate();
-            
+        if (Auth::attempt($validados, $remember)) {
+            //si login ok regenero la seccion
+            $request->session()->regenerate();
+
             //dd($validados);
-        
+
             return redirect()->intended(route('formprofile'));
             //->withSuccess('Logado Correctamente');
         }

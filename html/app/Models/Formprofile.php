@@ -10,6 +10,7 @@ class Formprofile extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'name',
         'last_name',
         'nationality',
@@ -21,5 +22,6 @@ class Formprofile extends Model
         'additional_info',
         'artistic_skills',
         'profile_media',
+        'is_active',
     ];
 }

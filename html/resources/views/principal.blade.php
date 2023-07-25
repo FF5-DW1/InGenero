@@ -359,8 +359,8 @@
                                 width="631" height="587" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
-                                <h6 class="thumbnail-mary-title"><a href="#">Comfortable interior</a></h6>
-                                <div class="thumbnail-mary-location">Modern Design</div>
+                                <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
+                                <div class="thumbnail-mary-location">Lorem ipsun</div>
                             </div>
                         </div>
                     </article>
@@ -373,8 +373,8 @@
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
-                                <h6 class="thumbnail-mary-title"><a href="#">quality Dishware</a></h6>
-                                <div class="thumbnail-mary-location">Top-notch utensils</div>
+                                <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
+                                <div class="thumbnail-mary-location">Lorem ipsun</div>
                             </div>
                         </div>
                     </article>
@@ -386,8 +386,8 @@
                                 src="images/gallery-4-631x289.jpg" alt="" width="631" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
-                                <h6 class="thumbnail-mary-title"><a href="#">Refreshing cocktails</a></h6>
-                                <div class="thumbnail-mary-location">Exclusive selection</div>
+                                <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
+                                <div class="thumbnail-mary-location">Lorem ipsun</div>
                             </div>
                         </div>
                     </article>
@@ -400,8 +400,8 @@
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
-                                <h6 class="thumbnail-mary-title"><a href="#">Exotic Salads</a></h6>
-                                <div class="thumbnail-mary-location">Summer Taste</div>
+                                <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
+                                <div class="thumbnail-mary-location">Lorem ipsun</div>
                             </div>
                         </div>
                     </article>
@@ -414,8 +414,8 @@
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
-                                <h6 class="thumbnail-mary-title"><a href="#">All Types of pizza</a></h6>
-                                <div class="thumbnail-mary-location">Special Recipes</div>
+                                <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
+                                <div class="thumbnail-mary-location">Lorem ipsun</div>
                             </div>
                         </div>
                     </article>
@@ -428,8 +428,8 @@
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
-                                <h6 class="thumbnail-mary-title"><a href="#">Diverse menu</a></h6>
-                                <div class="thumbnail-mary-location">Pick Your Favorite dish</div>
+                                <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
+                                <div class="thumbnail-mary-location">Lorem ipsun</div>
                             </div>
                         </div>
                     </article>
