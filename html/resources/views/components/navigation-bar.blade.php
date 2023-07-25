@@ -11,7 +11,7 @@
             <!-- RD Navbar Toggle -->
             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
             <!-- RD Navbar Brand -->
-            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark" src="{{ asset('img/logoencabezado.png') }}" alt="" width="198" height="66"/></a></div>
+            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark logo" src="{{ asset('imgnav/logo_verde.svg') }}" alt="imagen logo, mi vida es puro teatro" width="198" height="66"/></a></div>
           </div>
           <div class="rd-navbar-right rd-navbar-nav-wrap">
             <div class="rd-navbar-aside">
@@ -37,15 +37,16 @@
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
-                </li>
-                
                 @if (Auth::guest())
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacto">Contacto</a>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contacto') }}">Contacto</a>
                   </li> 
                 @endif
                   
                 @auth
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('formprofile') }}">Crear perfil</a>
+                  </li>
                   <li class="rd-nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
@@ -58,8 +59,9 @@
             </div>
           </div>
           <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
-            <div class="project-hamburger"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
-            </div>
+            <div class="icon-mask"><img src="{{ asset('imgnav/icon_gallery_black.svg') }}" alt="dibujo galeria img"></div>
+            {{-- <div class="project-hamburger"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
+            </div> --}}
           </div>
           <div class="rd-navbar-project">
             <div class="rd-navbar-project-header">

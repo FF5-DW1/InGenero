@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+  
     {{-- ENCABEZADO IMAGEN ADMIN --}}
     <div>
-        <div class="relative py-8 mt-10 bg-cover bg-center h-80">
+            <div class="relative py-8 mt-10 bg-cover bg-center h-80">
             <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 flex flex-col items-center justify-center">
                 <h1 class="text-4xl font-bold leading-none text-black lg:text-2xl">Administrador@</h1>
@@ -14,7 +15,7 @@
             <div class=" w-10/12 md:w-6/12 lg:w-4/12 ">
                 <h1 class="text-2xl mb-4 text-left">Crear un perfil Estrella</h1>
                 <form method="POST"
-                    action="{{ isset($formprofile->id) ? route('updateForm', ['id' => $formprofile->id]) : route('storeForm') }}"
+                    action="{{ isset($formprofile->id) ? route('updateform', ['id' => $formprofile->id]) : route('storeform') }}"
                     enctype="multipart/form-data">
                     @csrf
                     @if (isset($formprofile->id))
@@ -50,14 +51,14 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="nationality" class="block mb-2 text-gray-500">
-                            Nacionalidad
+                        <label for="idiomas" class="block mb-2 text-gray-500">
+                            Idiomas
                         </label>
-                        <input id="nationality" name="nationality" type="text"
+                        <input id="idiomas" name="idiomas" type="text"
                             class="border-green-300 p-2 w-full rounded-lg bg-green-100"
-                            value="{{ $formprofile->nationality }}" />
+                            value="{{ $formprofile->idiomas }}" />
 
-                        @error('nationality')
+                        @error('idiomas')
                             <span class="text-red-500">
                                 {{ $message }}
                             </span>

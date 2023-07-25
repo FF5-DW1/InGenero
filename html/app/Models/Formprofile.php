@@ -13,7 +13,7 @@ class Formprofile extends Model
         'id',
         'name',
         'last_name',
-        'nationality',
+        'idiomas',
         'date_of_birth',
         'height',
         'weight',
