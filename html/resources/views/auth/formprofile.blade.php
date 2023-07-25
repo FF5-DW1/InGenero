@@ -1,8 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+  
     {{-- ENCABEZADO IMAGEN ADMIN --}}
     <div>
+         {{-- mensage alert no auth crear perfil --}}
+        @if (session('status'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('status')}}
+            </div>
+        @endif
         <div class="relative py-8 mt-10 bg-cover bg-center h-80">
             <img src="{{ asset('img/banner_profiles.webp') }}" alt="" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 flex flex-col items-center justify-center">

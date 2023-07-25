@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Formprofile;
+use Illuminate\Support\Facades\Auth;
 
 class FormprofileController extends Controller
 {
@@ -14,8 +15,6 @@ class FormprofileController extends Controller
 
         return view('auth.formprofile', compact('formprofile'));
     }
-
-
 
     public function storeForm(Request $request)
     {
@@ -50,7 +49,6 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-        $formprofile->nationality = $request->input('nationality');
         $formprofile->date_of_birth = $request->input('date_of_birth');
         $formprofile->height = $request->input('height');
         $formprofile->weight = $request->input('weight');
@@ -84,12 +82,11 @@ class FormprofileController extends Controller
     public function searchForm(Request $request)
     {
         $search = $request->input('search');
-        $nationality = $request->input('nationality');
         $artistic_skills = $request->input('artistic_skills');
         $height = $request->input('height');
 
         // Verificar si no hay campos de búsqueda
-        if (!$search && !$nationality && !$artistic_skills && !$height) {
+        if (!$search && !$artistic_skills && !$height) {
             // Devolver todos los perfiles sin filtros
             $profiles = Formprofile::paginate();
         } else {
@@ -98,10 +95,6 @@ class FormprofileController extends Controller
 
             if ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%');
-            }
-
-            if ($nationality) {
-                $query->where('nationality', $nationality);
             }
 
             if ($artistic_skills) {
@@ -118,13 +111,6 @@ class FormprofileController extends Controller
         return view('profile.profiles', ['profiles' => $profiles]);
     }
 
-
-
-
-
-
-
-
     public function getAllProfiles()
     {
         $profiles = Formprofile::where('is_active', true)->paginate();
@@ -132,14 +118,11 @@ class FormprofileController extends Controller
     }
 
 
-
     public function showStarprofile($id)
     {
         $formprofile = Formprofile::find($id);
         return view('profile.starprofile', ['formprofile' => $formprofile]);
     }
-
-
 
 
     public function gestionadmin()
@@ -174,7 +157,15 @@ class FormprofileController extends Controller
         // Actualizar los campos del perfil existente con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
-        $formprofile->nationality = $request->input('nationality');
+        $formprofile->date_of_birth = $request->input('date_of_birth');
+        $formprofile->height = $request->input('height');
+        $formprofile->weight = $request->input('weight');
+        $formprofile->eyes_color = $request->input('eyes_color');
+        $formprofile->hair_color = $request->input('hair_color');
+        $formprofile->additional_info = $request->input('additional_info');
+        $formprofile->artistic_skills = $request->input('artistic_skills');
+
+             
         //poner los demas campos para que se pueda actualizar
         $formprofile->is_active = $request->input('is_active') == 'on' ? true : false;
         

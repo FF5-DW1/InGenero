@@ -29,7 +29,7 @@ class LoginController extends Controller
 
             //dd($validados);
 
-            return redirect()->intended(route('formprofile'));
+            return redirect()->intended(route('gestionadmin'));
             //->withSuccess('Logado Correctamente');
         }
         return redirect("/")->withSuccess('Los datos introducidos no son correctos');
