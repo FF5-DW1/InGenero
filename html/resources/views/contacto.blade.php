@@ -23,7 +23,7 @@
             <div class="row row-60 justify-content-center">
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ route('contact.send') }}">
+                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="POST" action="{{ route('contact.send') }}">
                         @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
@@ -49,7 +49,7 @@
                             </span>
                         @enderror
                         </div>
-                        <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight">Enviar</button>
+                        <input type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"></input>
                     </form>
                 </div>
                 <div class="col-lg-4">
