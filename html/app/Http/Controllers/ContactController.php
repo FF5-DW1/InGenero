@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMaillable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\Contact; // Supongamos que aquí tienes tu clase de correo personalizada
+
 
 class ContactController extends Controller
 {
@@ -26,9 +27,11 @@ class ContactController extends Controller
         $message = $request->input('message');
 
         // Enviar el correo
-        Mail::to('edcarrasmar@gmail.com')->send(new Contact($name, $email, $message));
+        $correo = new ContactMaillable($request->all());
+        Mail::to('edcarrasmar@gmail.com')->send($correo);
 
-        // Redirigir o mostrar un mensaje de éxito
-        return redirect()->back()->with('success', '¡Gracias! Tu mensaje ha sido enviado correctamente.');
+
+        // Mostrar un mensaje de enviado
+        return redirect()->route('contacto')->with('info', 'Mensaje enviado');
     }
 }
