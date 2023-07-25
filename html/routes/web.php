@@ -21,27 +21,47 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
-
+//Rutas login
 Route::get('/login', [LoginController::class, 'index'])->name('login'); 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-// Ruta de cierre de sesión
-Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
+// ---------------------  Rutas para perfiles de estrellas  -----------------------
+    
+//Rutas solo auth + admin
+Route::middleware('auth', 'admin')->group(function(){
 
+    //Ruta para cargar el formulario de creación de perfil
+    Route::get('/formprofile', [FormprofileController::class, 'createform'])->name('formprofile');
+    //Ruta de cierre de sesión
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-Route::get('/apoyo', function () {
-    return view('donaciones.apoyo');
-})->name('apoyo');
+    // Ruta para cargar la vista de gestión de administradore
+    Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
+    // Ruta para editar un perfil específico
+    Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
+    // Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
+    Route::post('/storeform', [FormprofileController::class, 'storeform'])->name('storeform');
+    // Ruta para actualizar un perfil específico (procesa el formulario de actualización)
+    Route::put('/updateform/{id}', [FormprofileController::class, 'updateform'])->name('updateform');
 
+    //----------- Rutas madrinas admin --------
 
-Route::get('/nosotras', function () {
-    return view('about.nosotras');
-})->name('nosotras')->middleware('auth');
+    // Ruta para cargar el formulario de creación de madrinas
+    Route::get('/formmadrinas', [GodMotherProfileController::class, 'createGodMotherForm'])->name('formmadrinas');
+    // Ruta para guardar los datos del formulario de madrinas (crear una nueva madrina)
+    Route::post('/storeformmadrinas', [GodMotherProfileController::class, 'storeGodMotherForm'])->name('storeformmadrinas');
+    // Ruta para editar una madrina específica
+    Route::get('/editarmadrina/{id}', [GodMotherProfileController::class, 'editarmadrina'])->name('editarmadrina');
+    // Ruta para actualizar una madrina específica (procesa el formulario de actualización)
+    Route::put('/updatemadrina/{id}', [GodMotherProfileController::class, 'updateGodMotherForm'])->name('updatemadrina');
+    // Ruta para cargar la vista de gestión de administradores para madrinas
+    Route::get('/gestionadminmadrina', [GodMotherProfileController::class, 'gestionadminmadrina'])->name('gestionadminmadrina');
 
-// ---------------------------- RUTAS DE CONTACTO ---------------------------------------
+});
 
-// // Mostrar formulario de contacto
+//------------------------------- Rutas contacto --------------//
+// Mostrar formulario de contacto
 Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
 
 // // Enviar formulario de contacto
@@ -49,28 +69,23 @@ Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('c
 
 
 
-// ---------------------  Rutas para perfiles de estrellas  -----------------------
+//-------------------------------- Rutas  views y más --------
+Route::get('/apoyo', function () {
+    return view('donaciones.apoyo');
+})->name('apoyo');
 
-// Ruta para cargar el formulario de creación de perfil
-Route::get('/formprofile', [FormprofileController::class, 'createForm'])->name('formprofile');
-
-// Ruta para guardar los datos del formulario de perfil (crear un nuevo perfil)
-Route::post('/storeForm', [FormprofileController::class, 'storeForm'])->name('storeForm');
-
-// Ruta para cargar la vista de gestión de administradores para perfiles estrellas
-Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
-
-// Ruta para editar un perfil específico
-Route::get('/editarperfil/{id}', [FormprofileController::class, 'editarperfil'])->name('editarperfil');
-
-// Ruta para actualizar un perfil específico (procesa el formulario de actualización)
-Route::put('/updateForm/{id}', [FormprofileController::class, 'updateForm'])->name('updateForm');
+Route::get('/nosotras', function () {
+    return view('about.nosotras');
+})->name('nosotras');
 
 // Ruta para buscar perfiles con filtros
-Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('getprofiles');
+Route::get('/getprofiles', [FormprofileController::class, 'searchform'])->name('getprofiles');
 
 // Ruta para ver un perfil específico
-Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
+Route::get('/starprofile/{id}', [FormprofileController::class, 'showstarprofile'])->name('starprofile');
 
 // Ruta para obtener todos los perfiles
-Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
+Route::get('/profiles', [FormprofileController::class, 'getallprofiles'])->name('profiles');
+
+// Ruta para obtener todas las madrinas
+Route::get('/godmotherprofiles', [GodMotherProfileController::class, 'getAllGodMothers'])->name('godmotherprofiles');

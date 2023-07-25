@@ -50,7 +50,7 @@
 
                     <!--nacionalidad -->
 
-                    <select name="nationality" id="nationality">
+                    <select name="idiomas" id="idiomas">
                         <option value="">Seleccione nacionalidad</option>
                         <option value="España">España</option>
                         <option value="USA">USA</option>

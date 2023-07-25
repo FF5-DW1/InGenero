@@ -75,7 +75,7 @@
                 <div class="col-md-6">
                     <ul class="list-unstyled text-black">
                         <li class="mb-3">
-                            <span class="font-weight-bold">Nacionalidad:</span> {{ $formprofile->nationality }}
+                            <span class="font-weight-bold">Idiomas:</span> {{ $formprofile->idiomas }}
                         </li>
                         <li class="mb-3">
                             <span class="font-weight-bold">Fecha de Nacimiento:</span> {{ $formprofile->date_of_birth }}
