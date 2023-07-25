@@ -66,9 +66,27 @@ Route::get('/getprofiles', [FormprofileController::class, 'searchForm'])->name('
 Route::get('/starprofile/{id}', [FormprofileController::class, 'showStarprofile'])->name('starprofile');
 Route::get('/profiles', [FormprofileController::class, 'getAllProfiles'])->name('profiles');
 
-// Route::post('/enviar-correo', 'ContactController@enviarCorreo')->name('enviar.correo');
-Route::post('contact_mail', [HomeController::class,'contact_mail_send']);
+// // Route::post('/enviar-correo', 'ContactController@enviarCorreo')->name('enviar.correo');
+// Route::post('contact_mail', [HomeController::class,'contact_mail_send']);
 
 Route::get('/formgodmother', function () {
     return view('auth.formgodmother');
 })->name('formgodmother');
+
+
+
+// // Ruta para mostrar el formulario de contacto
+// Route::get('/contact', 'ContactController@showForm');
+
+// // Ruta para enviar el formulario de contacto
+// Route::post('/contact', 'ContactController@sendEmail');
+
+use App\Http\Controllers\ContactController;
+
+Route::group(['prefix' => '/contact', 'as' => 'contact.'], function () {
+    // Ruta para mostrar el formulario de contacto
+    Route::get('/', [ContactController::class, 'showForm'])->name('form');
+
+    // Ruta para enviar el formulario de contacto
+    Route::post('/', [ContactController::class, 'sendEmail'])->name('send');
+});

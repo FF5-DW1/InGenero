@@ -24,8 +24,10 @@
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
                     {{-- <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('bat/rd-mailform.php') }}"> --}}
-                        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact_mail" method="post" action="{{ url('contact_mail')}}">
+                        {{-- <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact_mail" method="post" action="{{ url('contact_mail')}}"> --}}
                             {{-- {{csrf_field()}} --}}
+                            <form method="POST" action="/contact">
+
                             @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
