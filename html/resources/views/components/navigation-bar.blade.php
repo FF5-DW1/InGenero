@@ -33,11 +33,12 @@
             <div class="rd-navbar-main">
               <!-- RD Navbar Nav-->
               <ul class="rd-navbar-nav">
-                <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
-                </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
-                </li>
+                
                 @if (Auth::guest())
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
+                  </li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
                   </li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contacto') }}">Contacto</a>
@@ -45,14 +46,21 @@
                 @endif
                   
                 @auth
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('formprofile') }}">Crear perfil</a>
-                  </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('gestionadmin') }}">Gestion Perfiles</a>
+                    </li> 
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('formprofile') }}">Crear Estrella</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('formmadrinas') }}">Crear Madrine</a>
+                    </li>
+                    </li>
                   <li class="rd-nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <span>{{ Auth::user()->name }}</span>
                         <button type="submit" class="button button-sm button-primary button-winona button-shadow-2 fadeInUp animated">Cerrar sesión</button>
                     </form>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar</a>
                   </li>
                 @endauth
               </ul>

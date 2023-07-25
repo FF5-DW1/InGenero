@@ -51,14 +51,6 @@
                 <button class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
                     Acceder
                 </button>
-                <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2">
-                    ¿Olvidaste la contraseña?
-                </a>
-                {{-- <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}"> --}}
-                    ¿No tienes una cuenta? ¡Contáctanos!
-                </a>
-
-
             </div>
 
         </form>
