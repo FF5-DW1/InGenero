@@ -54,8 +54,14 @@
                         <div class="form-group">
                             <label for="message">Mensaje</label>
                             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+
+                            @error('message')
+                            <span class="text-red-500">
+                                {{ $message }}
+                            </span>
+                        @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <input type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"></input>
                     </form>
                 </div>
                 <div class="col-lg-4">
@@ -76,21 +82,7 @@
                                     <div class="unit-body"><a class="phone" href="tel:#">+34 665786789</a></div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                                <p class="aside-contacts-title">E-mail</p>
-                                <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                                    <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
-                                    <div class="unit-body"><a class="mail" href="mailto:infoingenero@outlook.org">infoingenero@outlook.org</a></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                                <p class="aside-contacts-title">Dirección</p>
-                                <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                                    <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                                    <div class="unit-body"><a class="address" href="#">Calle Ciprian <br
-                                                class="d-md-none">Madrid, 56, 2230</a></div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

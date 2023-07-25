@@ -8,6 +8,13 @@
 
         <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('login') }}">
             @csrf
+            
+            <!-- si no está autenticado->mensaje de error-->
+            @if(session('mensaje'))
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                    {{ session('mensaje') }}
+                </p>
+            @endif
             <!-- Resto del formulario -->
 
             <div class="mb-4">
@@ -16,12 +23,23 @@
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
                 <!-- Campos de entrada -->
+                @error('email')
+                <span class="text-red-500">
+                    {{ $message }}
+                </span>
+                @enderror
+
             </div>
 
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                     Contraseña
                 </label>
+                @error('password')
+                <span class="text-red-500">
+                    {{ $message }}
+                </span>
+            @enderror
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Contraseña" name="password" required>
                 @if ($errors->has('email'))
                 <p class="text-red-500 text-xs italic">{{ $errors->first('email') }}</p>
@@ -36,7 +54,7 @@
                 <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2">
                     ¿Olvidaste la contraseña?
                 </a>
-                <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}">
+                {{-- <a class="text-red-500 text-opacity-70 text-[14px] font-normal mt-2" href="{{ route('register') }}"> --}}
                     ¿No tienes una cuenta? ¡Contáctanos!
                 </a>
 

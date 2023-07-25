@@ -1,124 +1,119 @@
 @extends('layouts.app')
 
 @section('content')
-@php
-    $images = [];
-    if ($formprofile->profile_media){
-        $images =  explode("*", $formprofile->profile_media);
-    }
-@endphp
-<div>
-    <div class="bg-rose-600 p-4 mt-28">
-        <div class="max-w-2xl mx-auto bg-rose-600 overflow-hidden">
-            <section>
-                <div class="text-3xl text-white font-bold mb-2 justify-center mt-10 ">
-                    <h1>{{ $formprofile->name }}</h1>
-                </div>
-                @if (count($images) > 1)
-                    <div id="default-carousel" class="relative w-full" data-carousel>
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                            <!-- Item 1 -->
-                            @foreach ($images as $item)
-                                @if ($item) 
-                                    <div class="hidden ease-in-out" data-carousel-item>
-                                        <img src="{{ asset('img/' . $item) }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:w-1/2 md:w-full" alt="foto patricia">
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                        {{-- -- Slider indicators -->
-                        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div> --}}
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
+    @php
+        $images = [];
+        if ($formprofile->profile_media) {
+            $images = explode('*', $formprofile->profile_media);
+        }
+    @endphp
+
+    <section class="bg-gray-7">
+        <div id="encabezadoPerfil" class="breadcrumbs-custom box-transform-wrap context-dark">
+            <div class="container">
+                <h3 class="breadcrumbs-custom-title">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</h3>
+                <div class="breadcrumbs-custom-decor"></div>
+            </div>
+        </div>
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Inicio</a></li>
+                <li class="active">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</li>
+            </ul>
+        </div>
+    </section>
+    <div class="container my-5">
+        <div class="bg-rose-600 p-4 rounded-lg shadow-lg">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+
+                    @if (!$formprofile->is_active)
+                        <p>Este perfil esta inactivo</p>
+                    @endif
+
+                    <div class="text-3xl text-white font-bold mb-2 justify-center mt-10">
+                        <h1>{{ $formprofile->name }} {{ $formprofile->last_name }}</h1>
                     </div>
-                @endif
+                    @if (count($images) > 1)
+                        <div id="image-carousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicadores del carrusel -->
+                            <ol class="carousel-indicators">
+                                @foreach (array_filter($images) as $index => $item)
+                                    <li data-target="#image-carousel" data-slide-to="{{ $index }}"
+                                        class="{{ $index === 0 ? 'active' : '' }}"></li>
+                                @endforeach
+                            </ol>
+                            <!-- Imágenes del carrusel -->
+                            <div class="carousel-inner">
+                                @foreach (array_filter($images) as $index => $item)
+                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                        <img src="{{ asset('img/' . $item) }}" class="d-block w-100 rounded-lg"
+                                            alt="Foto {{ $index + 1 }}">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <!-- Controles del carrusel -->
+                            <a class="carousel-control-prev" href="#image-carousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#image-carousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    @endif
 
-                @if (count($images) == 1)
-                <div class="flex justify-center mt-10">
-                    <img src="{{ asset('img/' . $images[0]) }}" alt="Foto de {{ $formprofile->name }}" class="h-90 w-90
-                    object-cover rounded m-2 sm:h-128 sm:w-128 md:h-160 md:w-160 lg:h-240 lg:w-240 xl:h-320 xl:w-320 2xl:h-400 2xl:w-400">
+                    @if (count($images) == 1)
+                        <div class="text-center mt-4">
+                            <img src="{{ asset('img/' . $images[0]) }}" alt="Foto de {{ $formprofile->name }}"
+                                class="img-fluid rounded-lg">
+                        </div>
+                    @endif
                 </div>
-                @endif
-            
-                
 
-                <!-- Characteristics list -->
-                <div class="px-2 py-4">
-                    <ul class="text-white">
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Nacionalidad: {{ $formprofile->nationality }} </span>
+                <div class="col-md-6">
+                    <ul class="list-unstyled text-black">
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Idiomas:</span> {{ $formprofile->idiomas }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Fecha Nacimiento: {{ $formprofile->date_of_birth }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Fecha de Nacimiento:</span> {{ $formprofile->date_of_birth }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Altura: {{ $formprofile->height }} cms </span> 
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Altura:</span> {{ $formprofile->height }} cms
                         </li>
-                    
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Peso: {{ $formprofile->weight }} kg </span> 
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Peso:</span> {{ $formprofile->weight }} kg
                         </li>
-                
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Color de ojos: {{ $formprofile->eyes_color }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Color de ojos:</span> {{ $formprofile->eyes_color }}
                         </li>
-        
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Color de pelo: {{ $formprofile->hair_color }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Color de pelo:</span> {{ $formprofile->hair_color }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Info. Adicional: {{ $formprofile->additional_info }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Info. Adicional:</span> {{ $formprofile->additional_info }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Habilidades artísticas: {{ $formprofile->artistic_skills }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Habilidades artísticas:</span>
+                            {{ $formprofile->artistic_skills }}
                         </li>
                     </ul>
                 </div>
-            </section>
-            <section>
+            </div>
 
-                    {{-- Video Perfil--}}
-                <div>
-                    <video class="w-full rounded-lg mt-10 mb-10" autoplay muted controls>
-                    <source src="video/video_patricia.mp4" type="video/mp4">
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    {{-- Video Perfil --}}
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video class="embed-responsive-item rounded-lg shadow" controls>
+                            <source src="video/video_patricia.mp4" type="video/mp4">
                             Your browser does not support the video tag.
-                    </video>
+                        </video>
+                    </div>
                 </div>
-
-                    {{-- Audio Perfil--}}
-                <div class="audio-player">
-                    <audio controls>
-                        <source src="audio/happyrock.mp3" type="audio/mp3">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </section>
-        </div> 
-            
-        {{-- Apoyar --}}         
+            </div>
+        </div>
     </div>
-</div>
-
 @endsection
