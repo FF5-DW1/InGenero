@@ -197,7 +197,6 @@
     {{-- godmothers cards --}}
     <section class="section section-xl bg-default">
         <div class="container">
-<<<<<<< HEAD
             <h3 class="wow fadeInLeft">Madrinas habituales</h3>
         </div>
         <div class="container container-style-1">
@@ -208,16 +207,6 @@
                     <a href="{{ route('godmotherprofiles') }}">
                         <article class="quote-tara">
                             <div class="quote-tara-caption carrusel-madrina">
-=======
-            <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Madrines habituales</span></h3>
-            <div class="row row-lg row-30">
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
->>>>>>> 88090c094b2d828eb0a7feef89a43a5ab72fd231
 
                                 <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})"
                                     class="card-image">

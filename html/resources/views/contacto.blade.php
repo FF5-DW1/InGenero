@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    
     <section class="bg-gray-7">
         <div class="breadcrumbs-custom box-transform-wrap context-dark">
             <div class="container">
@@ -23,33 +22,62 @@
             <div class="row row-60 justify-content-center">
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="POST" action="{{ route('contact.send') }}">
+                    <form class="rd-form rd-mailform" method="POST" action="{{ route('contacto') }}">
                         @csrf
+                        <!-- Vista -->
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+
+                        <!-- Vista -->
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
+
+
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control @error('name') error-borderred @enderror"
+                                id="name" name="name" value="{{ old('name') }}" />
                             @error('name')
-                                <span class="text-red-500">{{ $message }}</span>
+                                <span class="error-textred">
+                                    El campo nombre es requerido.
+                                </span>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control @error('name') error-borderred @enderror"
+                                id="email" name="email" value="{{ old('email') }}">
                             @error('email')
-                                <span class="text-red-500">{{ $message }}</span>
+                                <span class="error-textred">
+                                    El campo email es requerido.
+                                </span>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="message">Mensaje</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-
+                            <textarea class="form-control @error('message') error-borderred @enderror" id="message" name="message" rows="5"></textarea>
                             @error('message')
-                            <span class="text-red-500">
-                                {{ $message }}
-                            </span>
-                        @enderror
+                                <span class="error-textred">
+                                    El campo de mensaje es requerido.
+                                </span>
+                            @enderror
                         </div>
-                        <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight">Enviar</button>
+
+                        <div>
+                            <input type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"
+                                value="Enviar" />
+                        </div>
+
                     </form>
                 </div>
                 <div class="col-lg-4">
@@ -58,7 +86,8 @@
                             <div class="col-sm-6 col-lg-12 aside-contacts-item">
                                 <p class="aside-contacts-title">Redes sociales</p>
                                 <ul class="list-inline contacts-social-list list-inline-sm">
-                                    <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/asociacionIngenero/?locale=es_ES"></a></li>
+                                    <li><a class="icon mdi mdi-facebook"
+                                            href="https://www.facebook.com/asociacionIngenero/?locale=es_ES"></a></li>
                                     <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                     <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                                 </ul>
@@ -70,7 +99,7 @@
                                     <div class="unit-body"><a class="phone" href="tel:#">+34 665786789</a></div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
