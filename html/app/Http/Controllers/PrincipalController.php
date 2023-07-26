@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\profiles;
 use Illuminate\Http\Request;
 use App\Models\Formprofile;
 
@@ -15,4 +15,7 @@ class PrincipalController extends Controller
 
         return view('principal', ['profiles' => $profiles]);
     }
+
+
+
 }

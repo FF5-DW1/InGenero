@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Formprofile;
 use App\Controllers;
 use Illuminate\Support\Facades\Auth;
+// use App\Http\Controllers\Profiles;
 
 class FormprofileController extends Controller
 {
@@ -181,4 +182,35 @@ class FormprofileController extends Controller
         // Después de guardar, redirecciona a la página de perfil o a donde desees
         return redirect()->route('starprofile', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
     }
+
+
+
+    // public function show(Request $request, $id){
+
+    //     $Profiles = Profiles::find($id);
+    //     dd($profiles);
+    //  }
+     
+    public function store(Request $request)
+    {
+        $formProfile = new Formprofile();
+        $formProfile->name = $request->input('name'); // Ajusta 'name' al campo correcto del formulario
+        // Completa los demás campos relevantes
+        $formProfile->save();
+        
+        // Redirige a la página del perfil utilizando el slug
+        return redirect()->route('starprofile', ['slug' => $formProfile->slug]);
+    }
+
+    public function showProfile($slug)
+    {
+        // Buscar el perfil en la base de datos utilizando el slug
+        $profile = Formprofile::where('slug', $slug)->firstOrFail();
+
+        // Pasar los datos del perfil a la vista
+        return view('profile.show', ['profile' => $profile]);
+    }
+
 }
+
+
