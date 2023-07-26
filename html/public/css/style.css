@@ -191,6 +191,20 @@
 
 
 
+/* GESTION */
+
+#contenedorTablaGestion{
+	display: flex;
+	justify-content: center;
+}
+
+#tablaGestion{
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+}
+
+
 /* Para pantallas de hasta 740px */
 @media (max-width: 740px) {
 

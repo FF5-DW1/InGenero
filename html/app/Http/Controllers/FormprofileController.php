@@ -41,20 +41,21 @@ class FormprofileController extends Controller
         $formprofile->is_active = true;
 
         
+        
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";
             foreach ($request->file('profile_photo') as $image) {
                 $filename = time() . '_' . $image->getClientOriginalName();
                 $image->move('img', $filename);
-                $imagestosave .= $filename . '|' . $image->getClientOriginalName() . '|' . 'Descripción de la imagen' . '*';
+                $imagestosave = $filename . '*' . $imagestosave;
             }
             $formprofile->profile_media = $imagestosave;
         }
 
-        // Guardar los cambios en la base de datos
+        
         $formprofile->save();
 
-        // Después de guardar, redirecciona a la página de perfil o a donde desees
+        
         return redirect('/starprofile/' . $formprofile->id)->with('success', 'Perfil actualizado exitosamente');
     }
 

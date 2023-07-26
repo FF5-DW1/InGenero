@@ -159,8 +159,6 @@
                                     src="{{ asset('img/' . getImage($profile->profile_media)) }}" alt="imagen estrellas"
                                     width="300" height="300" />
 
-                                {{-- <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})" class="card-image wow fadeIn" data-wow-delay="0.3s">
-                                    </div> --}}
                                 <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
                             </div>
                         </article>
