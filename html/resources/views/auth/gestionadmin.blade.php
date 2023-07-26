@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        <div class="table-responsive mt-4 mb-4">
+    <div id="contenedorTablaGestion">
+        <div class="table-responsive mt-4 mb-4" id="tablaGestion">
             <table class="table text-sm text-center text-gray-500">
                 <thead class="text-xs text-white bg-green-100">
                     <tr>
@@ -25,7 +25,7 @@
                         <tr class="bg-green-100">
                             <td scope="row" class="px-6 py-4 font-weight-medium text-dark whitespace-nowrap">
                                 {{ $profile->id }}
-                                <!-- Imprimir ID del perfil -->
+                                
                             </td>
 
                             <td class="px-6 py-4">
@@ -34,10 +34,10 @@
 
                             <td class="px-6 py-4">
                                 {{ $profile->name }} {{ $profile->last_name }}
-                                <!-- Imprimir nombre del perfil -->
+                                
                             </td>
 
-                            <td scope="col" class="px-6 py-3 d-flex">
+                            <td scope="col" class="px-6 py-3">
                                 <a href="{{ route('editarperfil', ['id' => $profile->id]) }}" class="btn btn-primary">
                                     Editar
                                 </a>
