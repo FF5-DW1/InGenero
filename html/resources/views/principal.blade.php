@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     @php
         function getImage($stringImage)
         {
@@ -11,6 +12,7 @@
             return 'avatar.jpg';
         }
     @endphp
+    
 
     <!-- What We Offer-->
     <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true"

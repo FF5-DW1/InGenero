@@ -9,9 +9,13 @@ class LoginController extends Controller
 {
     public function index()
     {
-        //visualiza el formulario login.blade.php
+        // Mensaje si el usuario está autenticado
+        if (Auth::check()) {
+            return redirect()->route('gestionadmin')->withErrors(['default' => 'Ya estás logueade.']);
+        }
         return view('auth.login');
     }
+    
     public function authenticate(Request $request)
     {
         //Validar
@@ -27,14 +31,11 @@ class LoginController extends Controller
             //si login ok regenero la seccion
             $request->session()->regenerate();
 
-            //dd($validados);
-
-            return redirect()->intended(route('gestionadmin'));
             //->withSuccess('Logado Correctamente');
+            return redirect()->route('gestionadmin')->with('success', '¡Estás logueade!');
+            
         }
-        return redirect("/")->withSuccess('Los datos introducidos no son correctos');
-        /* return back()->withErrors([
-            'email' => 'Los datos ingresados no coinciden con el registro.',
-        ])->onlyInput('email'); */
+        //inicio sesión falla
+        return redirect()->route('login')->withErrors(['default' => 'Error: Parece que los datos no son correctos.']);
     }
 }

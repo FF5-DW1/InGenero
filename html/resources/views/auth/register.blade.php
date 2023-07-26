@@ -8,7 +8,24 @@
 
         <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('register') }}">
             @csrf
-            
+            <!-- mensaje error registro no permitido -->
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <!--mensaje registro exitoso -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <!-- Resto del formulario -->
 
             <div class="mb-4">

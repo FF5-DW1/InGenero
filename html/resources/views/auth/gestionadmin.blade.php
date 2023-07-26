@@ -3,6 +3,12 @@
 @section('content')
     <div>
         <div class="table-responsive mt-4 mb-4">
+            <!-- mensaje ya estás logueado -->
+            @if ($errors->has('default'))
+                <div class="alert alert-info">
+                    {{ $errors->first('default') }}
+                </div>
+            @endif
             <table class="table text-sm text-center text-gray-500">
                 <thead class="text-xs text-white bg-green-100">
                     <tr>

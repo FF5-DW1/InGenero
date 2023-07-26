@@ -9,12 +9,20 @@
         <form class="bg-white  rounded px-8 pt-6 pb-9 mb-4" method="POST" action="{{ route('login') }}">
             @csrf
             
-            <!-- si no está autenticado->mensaje de error-->
-            @if(session('mensaje'))
-                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
-                    {{ session('mensaje') }}
-                </p>
+            <!-- si no está autenticado, mensaje de error-->
+            @if ($errors->has('default'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('default') }}
+                </div>
             @endif
+
+            <!--mensaje estas logueado -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <!-- Resto del formulario -->
 
             <div class="mb-4">
@@ -44,8 +52,9 @@
                 @if ($errors->has('email'))
                 <p class="text-red-500 text-xs italic">{{ $errors->first('email') }}</p>
                 @endif
-                <!-- Campos de entrada -->
+                
             </div>
+            
 
             <div class="flex flex-col items-center justify-between mt-4">
                 <button class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">

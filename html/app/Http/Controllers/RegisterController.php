@@ -42,7 +42,7 @@ class RegisterController extends Controller
             ]);
             //dd('Usuario creado');
             //dd($isAdmin);
-            return redirect()->route('gestionadmin')->withSuccess('Se ha registrado un nuevo administrador exitosamente.');
+            return back()->withSuccess('Se ha registrado un nuevo administrador exitosamente.');
         } else {
             return redirect()->route('login')->withErrors('No tienes permiso para registrar nuevos administradores.');
         }
