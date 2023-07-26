@@ -11,7 +11,7 @@
             <!-- RD Navbar Toggle -->
             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
             <!-- RD Navbar Brand -->
-            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark" src="{{ asset('img/logoencabezado.png') }}" alt="" width="198" height="66"/></a></div>
+            <div class="rd-navbar-brand"><a class="brand" href="/"><img class="brand-logo-dark logo" src="{{ asset('imgnav/logo_verde.svg') }}" alt="imagen logo, mi vida es puro teatro" width="198" height="66"/></a></div>
           </div>
           <div class="rd-navbar-right rd-navbar-nav-wrap">
             <div class="rd-navbar-aside">
@@ -37,15 +37,16 @@
                 </li>
                 <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('profiles') }}">Perfiles</a>
                 </li>
-                <li class="rd-nav-item"><a class="rd-nav-link" href="nosotras">Nosotr@s</a>
-                </li>
-                
                 @if (Auth::guest())
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacto">Contacto</a>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('nosotras') }}">Nosotr@s</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contacto') }}">Contacto</a>
                   </li> 
                 @endif
                   
                 @auth
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('formprofile') }}">Crear perfil</a>
+                  </li>
                   <li class="rd-nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf

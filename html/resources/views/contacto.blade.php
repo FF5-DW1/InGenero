@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <section class="bg-gray-7">
+    <section class="bg-gray-7" id="containerContacto">
         <div class="breadcrumbs-custom box-transform-wrap context-dark">
             <div class="container">
                 <h3 class="breadcrumbs-custom-title">Contacto</h3>
@@ -23,7 +23,7 @@
             <div class="row row-60 justify-content-center">
                 <div class="col-lg-8">
                     <h4 class="text-spacing-25 text-transform-none">CONTÁCTANOS</h4>
-                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ route('contact.send') }}">
+                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="POST" action="{{ route('contact.send') }}">
                         @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
@@ -49,7 +49,7 @@
                             </span>
                         @enderror
                         </div>
-                        <button type="submit" class="button button-lg button-secondary button-winona wow fadeInRight">Enviar</button>
+                        <input type="submit" class="button button-lg button-secondary button-winona wow fadeInRight"></input>
                     </form>
                 </div>
                 <div class="col-lg-4">
@@ -70,21 +70,7 @@
                                     <div class="unit-body"><a class="phone" href="tel:#">+34 665786789</a></div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                                <p class="aside-contacts-title">E-mail</p>
-                                <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                                    <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
-                                    <div class="unit-body"><a class="mail" href="mailto:infoingenero@outlook.org">infoingenero@outlook.org</a></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-12 aside-contacts-item">
-                                <p class="aside-contacts-title">Dirección</p>
-                                <div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
-                                    <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                                    <div class="unit-body"><a class="address" href="#">Calle Ciprian <br
-                                                class="d-md-none">Madrid, 56, 2230</a></div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
