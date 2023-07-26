@@ -32,15 +32,15 @@ class RegisterController extends Controller
 
             //dd($request->all());
 
-            $isAdmin = $request->has('is_admin') ? true : false;
+            $isAdmin = $request->has('is_admin');
 
             User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'is_admin' => $isAdmin ? 1 : 0 // Asigna 1 si $isAdmin es true, 0 si $isAdmin es false
+                'is_admin' => $isAdmin // Asigna valor booleano
             ]);
-            dd('Usuario creado');
+            //dd('Usuario creado');
             //dd($isAdmin);
             return redirect()->route('gestionadmin')->withSuccess('Se ha registrado un nuevo administrador exitosamente.');
         } else {

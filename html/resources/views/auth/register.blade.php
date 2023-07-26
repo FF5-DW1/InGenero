@@ -53,7 +53,7 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="is_admin">
                     ¿Registrar como administrador?
                 </label>
-                <input type="checkbox" id="is_admin" name="is_admin" value="1">
+                <input type="checkbox" id="is_admin" name="is_admin" value="0">
             </div>
             <div class="flex flex-col items-center justify-between mt-4">
                 <button class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
