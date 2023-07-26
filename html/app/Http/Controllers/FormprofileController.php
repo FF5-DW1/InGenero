@@ -40,13 +40,13 @@ class FormprofileController extends Controller
         $formprofile->video_url = $request->input('video_url');
         $formprofile->is_active = true;
 
-        // También puedes manejar la carga de la imagen aquí si es necesario
+        
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";
             foreach ($request->file('profile_photo') as $image) {
                 $filename = time() . '_' . $image->getClientOriginalName();
                 $image->move('img', $filename);
-                $imagestosave = $filename . '*' . $imagestosave;
+                $imagestosave .= $filename . '|' . $image->getClientOriginalName() . '|' . 'Descripción de la imagen' . '*';
             }
             $formprofile->profile_media = $imagestosave;
         }
@@ -79,7 +79,7 @@ class FormprofileController extends Controller
             if ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%');
             }
-    
+
             if ($artistic_skills) {
                 $query->where('artistic_skills', 'LIKE', '%' . $artistic_skills . '%');
             }
@@ -100,11 +100,32 @@ class FormprofileController extends Controller
         return view('profile.profiles', ['profiles' => $profiles]);
     }
 
+    // public function showstarprofile($id)
+    // {
+    //     $formprofile = Formprofile::find($id);
+    //     return view('profile.starprofile', ['formprofile' => $formprofile]);
+    // }
     public function showstarprofile($id)
     {
         $formprofile = Formprofile::find($id);
-        return view('profile.starprofile', ['formprofile' => $formprofile]);
+    
+        // Asegúrate de que la columna "profile_media" tenga el formato correcto en la base de datos,
+        // separando los datos de cada imagen con el carácter "|"
+        $imagesData = explode('*', $formprofile->profile_media);
+        
+        $imagenes = [];
+        foreach ($imagesData as $image) {
+            if (!empty($image)) {
+                $imageData = explode('|', $image);
+                $imagenes[] = (object) [
+                    'ruta_imagen' => 'img/' . $imageData[0], // Ruta completa de la imagen
+                ];
+            }
+        }
+    
+        return view('profile.starprofile', compact('formprofile', 'imagenes'));
     }
+    
 
 
     public function gestionadmin()
@@ -124,7 +145,7 @@ class FormprofileController extends Controller
 
     public function updateform(Request $request, $id)
     {
-        
+
         // Validación de los campos del formulario (puedes agregar más campos si es necesario)
         $request->validate([
             'name' => 'required|string|max:255',
@@ -148,8 +169,8 @@ class FormprofileController extends Controller
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
         $formprofile->video_url = $request->input('video_url');
-        $formprofile->is_active =$request->has('is_active'); //? true : false
-        
+        $formprofile->is_active = $request->has('is_active'); //? true : false
+
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";
             foreach ($request->file('profile_photo') as $image) {
@@ -160,7 +181,7 @@ class FormprofileController extends Controller
             $formprofile->profile_media = $imagestosave;
         }
         $formprofile->save();
-    
+
         // Después de guardar, redirecciona a la página de perfil o a donde desees
         return redirect()->route('starprofile', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
     }
