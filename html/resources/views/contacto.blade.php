@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <section class="bg-gray-7">
+    <section class="bg-gray-7" id="containerContacto">
         <div class="breadcrumbs-custom box-transform-wrap context-dark">
             <div class="container">
                 <h3 class="breadcrumbs-custom-title">Contacto</h3>

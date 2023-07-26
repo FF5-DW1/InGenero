@@ -73,45 +73,45 @@
             <div class="row row-md row-30">
                 <div class="col-sm-6 col-lg-4">
                     <div class="oh-desktop">
-                        <!-- Services Terri-->
-                        <article class="services-terri wow slideInDown">
-                            <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt=""
-                                    width="370" height="278" />
-                            </div>
-                            <div class="services-terri-caption">
-                                <h5 class="services-terri-title"><a href="#">igualdad</a></h5>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="oh-desktop">
-                        <!-- Services Terri-->
+                        <!-- Colaboradores-->
                         <article class="services-terri wow slideInUp">
-                            <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt=""
-                                    width="370" height="278" />
+                            <div class="services-terri-figure"><img src="img/InGenero.png" alt=""
+                                width="370" height="278" />
                             </div>
                             <div class="services-terri-caption">
                                 <h5 class="services-terri-title"><a target="en_blank" href="https://www.ingenero.es/">Web In
-                                        Genero</a></h5>
-                            </div>
-                        </article>
+                                    Genero</a></h5>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="oh-desktop">
-                        <!-- Services Terri-->
-                        <article class="services-terri wow slideInUp">
-                            <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt=""
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="oh-desktop">
+                            <!-- Colaboradores-->
+                            <article class="services-terri wow slideInUp">
+                                <div class="services-terri-figure"><img src="img/Nosotras.jpg" alt=""
                                     width="370" height="278" />
-                            </div>
-                            <div class="services-terri-caption">
-                                <h5 class="services-terri-title"><a target="en_blank" href="https://nosotras.app/">Nosotras
+                                </div>
+                                <div class="services-terri-caption">
+                                    <h5 class="services-terri-title"><a target="en_blank" href="https://nosotras.app/">Nosotras
                                         App</a></h5>
+                                    </div>
+                                </article>
                             </div>
-                        </article>
-                    </div>
-                </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="oh-desktop">
+                                <!-- Colaboradores-->
+                                <article class="services-terri wow slideInDown">
+                                    <div class="services-terri-figure"><img src="img/igualdad.jpg" alt=""
+                                            width="370" height="278" />
+                                    </div>
+                                    <div class="services-terri-caption">
+                                        <h5 class="services-terri-title"><a target="en_blank" href="https://www.ingenero.es/plan-igualdad.html">igualdad</a></h5>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
 
             </div>
         </div>
@@ -138,62 +138,7 @@
         </div>
     </section>
 
-    <!--carusel estrellas-->
-    {{-- <section class="section section-xl bg-default">
-    <div class="container">
-      <h3 class="wow fadeInLeft">Nuestras estrellas</h3>
-    </div>
-    <div class="container container-style-1">
-      <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30" data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una joven actriz llena de talento y carisma que está cautivando al público con su actuación en cada papel que interpreta</p>
-            </div>
-            <div class="quote-tara-figure">
-              <img src="images/user-8-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Ashley Fitzgerald</h6>
-        </article>
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una prometedora actriz con una presencia magnética en el escenario, cuyo talento innato la está llevando a destacar en el mundo de la actuación.</p>
-            </div>
-            <div class="quote-tara-figure"><img src="images/user-8-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Stephanie Williams</h6>
-        </article>
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una actriz versátil y apasionada que se destaca por su habilidad para dar vida a personajes complejos y emocionalmente cautivadores.</p>
-            </div>
-            <div class="quote-tara-figure"><img src="images/user-7-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Billy Johnson</h6>
-        </article>
-        <!-- Quote Tara-->
-        <article class="quote-tara">
-          <div class="quote-tara-caption">
-            <div class="quote-tara-text">
-              <p class="q">Una talentosa actriz en ascenso que impresiona con su dedicación y entrega en cada proyecto, dejando una huella imborrable en la audiencia.</p>
-            </div>
-            <div class="quote-tara-figure"><img src="images/user-9-115x115.jpg" alt="" width="115" height="115"/>
-            </div>
-          </div>
-          <h6 class="quote-tara-author">Aarona Wilson</h6>
-        </article>
-      </div>
-    </div>
-  </section>
-   --}}
+
 
     <!--carusel estrellas-->
     <section class="section section-xl bg-default">
@@ -205,16 +150,18 @@
                 data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
                 @foreach ($profiles as $profile)
                     <!-- Card para el carrusel -->
-                    <a href="">
+                    <a href="{{ route('starprofile', ['id' => $profile->id]) }}">
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
-                                
-                                    <img class="wow fadeIn" data-wow-delay="0.3s" src="{{ asset('img/' . getImage($profile->profile_media)) }}"
-                                        alt="imagen estrellas" width="300" height="300" />
-                                        
-                                
+
+                                <img class="wow fadeIn" data-wow-delay="0.3s"
+                                    src="{{ asset('img/' . getImage($profile->profile_media)) }}" alt="imagen estrellas"
+                                    width="300" height="300" />
+
+                                <!-- {{-- <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})" class="card-image wow fadeIn" data-wow-delay="0.3s">
+                                    </div> --}} -->
+                                <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
                             </div>
-                            <h6 class="quote-tara-author">{{ $profile->name }}</h6>
                         </article>
                     </a>
                 @endforeach
@@ -247,87 +194,31 @@
         </div>
     </section>
 
-    <!-- god mothers-->
-    <section class="section section-lg bg-default">
+    {{-- godmothers cards --}}
+    <section class="section section-xl bg-default">
         <div class="container">
-            <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Madrines habituales</span></h3>
-            <div class="row row-lg row-30">
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
+            <h3 class="wow fadeInLeft">Madrines habituales</h3>
+        </div>
+        <div class="container container-style-1">
+            <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
+                data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
+                @foreach ($godmothers as $profile)
+                    <!-- Card para el carrusel madrinas -->
+                    <a href="{{ route('godmotherprofiles') }}">
+                        <article class="quote-tara">
+                            <div class="quote-tara-caption carrusel-madrina">
 
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
+                                <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})"
+                                    class="card-image">
 
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
+                                </div>
+                                <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
+                                <p>{{ $profile->description }}</p>
 
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- godmother-->
-                    <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                        <div class="product-figure"><img src="images/product-1-161x162.png" alt=""
-                                width="161" height="162" />
-                        </div>
-
-                        <h6 class="product-title">Inma Cuesta</h6>
-                        <div class="product-price-wrap">
-                            <div>Leyenda del cine con una increíble versatilidad y tres premios de la Academia.</div>
-                        </div>
-                        <div class="product-button">
-                            <div class="button-wrap"><a class="button button-xs button-primary button-winona"
-                                    target="en _blank" href="https://es.wikipedia.org/wiki/Inma_Cuesta">info</a></div>
-                            <div class="button-wrap"><a class="button button-xs button-secondary button-winona"
-                                    target="en _blank" href="https://www.instagram.com/inmakum/?hl=es">instagram</a></div>
-                        </div>
-                    </article>
-                </div>
+                            </div>
+                        </article>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>

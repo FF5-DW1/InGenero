@@ -18,34 +18,14 @@ class FormprofileController extends Controller
 
     public function storeform(Request $request)
     {
-        // Validación de los campos del formulario (puedes agregar más campos si es necesario)
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'last_name' => 'required|string|max:255',
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:8',
-        //     'description' => 'required',
-        //     'idiomas' => 'required',
-        //     'date_of_birth' => 'required|date',
-        //     'height' => 'required|numeric',
-        //     'weight' => 'required|numeric',
-        //     'eyes_color' => 'required',
-        //     'hair_color' => 'required',
-        //     'additional_info' => 'required',
-        //     'artistic_skills' => 'required',
-        //     'profile_photo' => 'required',
-            // Agrega aquí la validación para el resto de campos que desees
-        // ]);
+        //validar formulario de perfiles
+        $this->validate($request, [
+            'name' => 'required|max:30',
+            'last_name' => 'required|max:20',
+        ]);
 
-        // Si hay un campo oculto 'id' en el formulario, entonces estamos editando un perfil existente
-        // // De lo contrario, estamos creando un nuevo perfil
-        // if ($request->has('id')) {
-        //     // Edición de perfil existente
-        //     $formprofile = Formprofile::findOrFail($request->input('id'));
-        // } else {
-        //     // Crear nuevo perfil
+        // Crear nuevo perfil
         $formprofile = new Formprofile();
-        // }
         // Actualizar los campos del perfil con los nuevos datos
         $formprofile->name = $request->input('name');
         $formprofile->last_name = $request->input('last_name');
@@ -57,14 +37,16 @@ class FormprofileController extends Controller
         $formprofile->hair_color = $request->input('hair_color');
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
+        $formprofile->video_url = $request->input('video_url');
+        $formprofile->is_active = true;
 
-        // También puedes manejar la carga de la imagen aquí si es necesario
+        
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";
             foreach ($request->file('profile_photo') as $image) {
                 $filename = time() . '_' . $image->getClientOriginalName();
                 $image->move('img', $filename);
-                $imagestosave = $filename . '*' . $imagestosave;
+                $imagestosave .= $filename . '|' . $image->getClientOriginalName() . '|' . 'Descripción de la imagen' . '*';
             }
             $formprofile->profile_media = $imagestosave;
         }
@@ -97,7 +79,7 @@ class FormprofileController extends Controller
             if ($search) {
                 $query->where('name', 'LIKE', '%' . $search . '%');
             }
-    
+
             if ($artistic_skills) {
                 $query->where('artistic_skills', 'LIKE', '%' . $artistic_skills . '%');
             }
@@ -118,11 +100,32 @@ class FormprofileController extends Controller
         return view('profile.profiles', ['profiles' => $profiles]);
     }
 
+    // public function showstarprofile($id)
+    // {
+    //     $formprofile = Formprofile::find($id);
+    //     return view('profile.starprofile', ['formprofile' => $formprofile]);
+    // }
     public function showstarprofile($id)
     {
         $formprofile = Formprofile::find($id);
-        return view('profile.starprofile', ['formprofile' => $formprofile]);
+    
+        // Asegúrate de que la columna "profile_media" tenga el formato correcto en la base de datos,
+        // separando los datos de cada imagen con el carácter "|"
+        $imagesData = explode('*', $formprofile->profile_media);
+        
+        $imagenes = [];
+        foreach ($imagesData as $image) {
+            if (!empty($image)) {
+                $imageData = explode('|', $image);
+                $imagenes[] = (object) [
+                    'ruta_imagen' => 'img/' . $imageData[0], // Ruta completa de la imagen
+                ];
+            }
+        }
+    
+        return view('profile.starprofile', compact('formprofile', 'imagenes'));
     }
+    
 
 
     public function gestionadmin()
@@ -142,11 +145,12 @@ class FormprofileController extends Controller
 
     public function updateform(Request $request, $id)
     {
-        
+
         // Validación de los campos del formulario (puedes agregar más campos si es necesario)
         $request->validate([
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
+            'video_url' => 'required|string|max:255',
             // Agrega aquí la validación para el resto de campos que desees actualizar
         ]);
 
@@ -164,8 +168,9 @@ class FormprofileController extends Controller
         $formprofile->hair_color = $request->input('hair_color');
         $formprofile->additional_info = $request->input('additional_info');
         $formprofile->artistic_skills = $request->input('artistic_skills');
-        $formprofile->is_active =$request->has('is_active'); //? true : false
-        
+        $formprofile->video_url = $request->input('video_url');
+        $formprofile->is_active = $request->has('is_active'); //? true : false
+
         if ($request->hasFile('profile_photo')) {
             $imagestosave = "";
             foreach ($request->file('profile_photo') as $image) {
@@ -176,7 +181,7 @@ class FormprofileController extends Controller
             $formprofile->profile_media = $imagestosave;
         }
         $formprofile->save();
-    
+
         // Después de guardar, redirecciona a la página de perfil o a donde desees
         return redirect()->route('starprofile', ['id' => $id])->with('success', 'Perfil actualizado exitosamente');
     }
