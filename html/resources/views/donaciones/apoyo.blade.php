@@ -13,9 +13,11 @@
     Somos un grupo de artistas apasionades por esta profesión, que buscamos recursos para acceder a programas de formación, audiciones y oportunidades profesionales.
     Con tu contribución, podemos perseguir nuestros sueños y llevar nuestras actuaciones a un público más amplio.
     Únete a nuestro emocionante viaje y contribuye a construir un futuro prometedor en el mundo del arte dramático.
-    ¡Tu colaboración marca la diferencia!
   </p>
-  <p> 
+  <p> ¡Tu colaboración marca la diferencia! Conócenos más en:</p>
+  <div class="button-container">
+    <a href="nosotras" class="button button-xs button-primary button-winona">Nosotr@s</a>
+  </div>
   <p>Si deseas brindarnos tu apoyo, puedes hacerlo a través de las siguientes opciones:</p>
   <div class="button-container">
     <a href="https://www.patreon.com/tuusuario" class="button button-xs button-primary button-winona">Patreon</a>
