@@ -65,8 +65,19 @@ Route::middleware('auth', 'admin')->group(function(){
 // Mostrar formulario de contacto
 Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
 
-// // Enviar formulario de contacto
+// // // Enviar formulario de contacto
 Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
+
+
+
+
+
+//  // Ruta para mostrar el formulario de contacto
+//  Route::get('/', [ContactController::class, 'showForm'])->name('form');
+
+
+//  // Ruta para enviar el formulario de contacto
+//  Route::post('/', [ContactController::class, 'sendEmail'])->name('send');
 
 
 
