@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
                                 <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown"
-                                        data-caption-delay="0">nuestras actrices</span></h1>
+                                        data-caption-delay="0">nuestras estrellas</span></h1>
                                 <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">Date
                                     una vuelta por la galería de talentos, seguro que te sorprenderá</p>
                                 <div class="button-wrap oh"><a
@@ -124,14 +124,13 @@
                 <div class="row justify-content-end">
                     <div class="col-sm-8 col-md-7 col-lg-5">
                         <div class="cta-modern">
-                            <h3 class="cta-modern-title wow fadeInRight">APOYA EL PROYECTO</h3>
-                            <p class="lead">Desde aquí te animamos a que con tu aportación ayudes a financiar la formación
-                                de nuestras estrellas para que puedan conseguir sus metas profesionales</p>
+                            <h3 class="cta-modern-title wow fadeInRight">APOYA NUESTRA CARRERA</h3>
+                            <p class="lead">¡Acompáñanos en nuestro crowdfunding para impulsar nuestras futuras carreras en el arte dramático!</p>
                             <p class="cta-modern-text oh-desktop" data-wow-delay=".1s"><span
                                     class="cta-modern-decor wow slideInLeft"></span><span
                                     class="d-inline-block wow slideInDown">Donación segura con PayPal</span></p><a
                                 class="button button-md button-secondary-2 button-winona wow fadeInUp" href="apoyo"
-                                data-wow-delay=".2s">aportar</a>
+                                data-wow-delay=".2s">APOYAR</a>
                         </div>
                     </div>
                 </div>
@@ -251,7 +250,7 @@
     <!-- god mothers-->
     <section class="section section-lg bg-default">
         <div class="container">
-            <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Madrinas habituales</span></h3>
+            <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Madrines habituales</span></h3>
             <div class="row row-lg row-30">
                 <div class="col-sm-6 col-lg-4 col-xl-3">
                     <!-- godmother-->
