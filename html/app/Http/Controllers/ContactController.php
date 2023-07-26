@@ -22,9 +22,9 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $message = $request->input('message');
+        // // // $name = $request->input('name');
+        // // // $email = $request->input('email');
+        // // //* $message = $request->input('message');
 
         // Enviar el correo
         $correo = new ContactMaillable($request->all());
