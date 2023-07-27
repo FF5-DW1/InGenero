@@ -50,14 +50,14 @@
 
                     <!--nacionalidad -->
 
-                    <select name="idiomas" id="idiomas">
+                    {{-- <select name="idiomas" id="idiomas">
                         <option value="">Seleccione idioma</option>
                         <option value="Castellano">Castellano</option>
                         <option value="Portugues">Portugues</option>
                         <option value="Inglés">Inglés</option>
                         <option value="Italiano">Italiano</option>
                         <option value="Frances">Francés</option>
-                    </select>
+                    </select> --}}
 
 
                     <button type="submit">Buscar</button>

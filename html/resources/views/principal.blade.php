@@ -236,8 +236,8 @@
                 <div class="col-xs-6 col-sm-4 col-xl-2 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a
-                            class="thumbnail-mary-figure" href="img4k/pexels-photo-3644048.jpeg"
-                            data-lightgallery="item"><img src="img4k/pexels-photo-3644048.jpeg" alt=""
+                            class="thumbnail-mary-figure" href="fotosGaleriaAbajo/fototeatro12.jpg"
+                            data-lightgallery="item"><img src="fotosGaleriaAbajo/fototeatro12.jpg" alt=""
                                 width="310" height="585" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
@@ -250,8 +250,8 @@
                 <div class="col-xs-6 col-sm-8 col-xl-4 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary thumbnail-mary-big wow slideInRight"><a
-                            class="thumbnail-mary-figure" href="images/gallery-2-1200x800-original.jpg"
-                            data-lightgallery="item"><img src="images/gallery-2-631x587.jpg" alt=""
+                            class="thumbnail-mary-figure" href="fotosGaleriaAbajo/fototeatro1.jpg"
+                            data-lightgallery="item"><img src="fotosGaleriaAbajo/fototeatro1.jpg" alt=""
                                 width="631" height="587" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
@@ -264,8 +264,8 @@
                 <div class="col-xs-6 col-sm-4 col-xl-2 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInDown"><a
-                            class="thumbnail-mary-figure" href="images/gallery-3-1200x800-original.jpg"
-                            data-lightgallery="item"><img src="images/gallery-3-311x289.jpg" alt=""
+                            class="thumbnail-mary-figure" href="fotosGaleriaAbajo/fototeatro2.jpg"
+                            data-lightgallery="item"><img src="fotosGaleriaAbajo/fototeatro2.jpg" alt=""
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
@@ -278,8 +278,8 @@
                 <div class="col-xs-6 col-sm-8 col-xl-4 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary wow slideInUp"><a class="thumbnail-mary-figure"
-                            href="images/gallery-4-1200x800-original.jpg" data-lightgallery="item"><img
-                                src="images/gallery-4-631x289.jpg" alt="" width="631" height="289" /></a>
+                            href="fotosGaleriaAbajo/fototeatro6.jpg" data-lightgallery="item"><img
+                                src="fotosGaleriaAbajo/fototeatro6.jpg" alt="" width="631" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
                                 <h6 class="thumbnail-mary-title"><a href="#">Lorem Ipsun</a></h6>
@@ -291,8 +291,8 @@
                 <div class="col-xs-6 col-sm-4 col-xl-2 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInUp"><a
-                            class="thumbnail-mary-figure" href="images/gallery-5-1200x800-original.jpg"
-                            data-lightgallery="item"><img src="images/gallery-5-311x289.jpg" alt=""
+                            class="thumbnail-mary-figure" href="fotosGaleriaAbajo/fototeatro3.jpg"
+                            data-lightgallery="item"><img src="fotosGaleriaAbajo/fototeatro3.jpg" alt=""
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
@@ -305,8 +305,8 @@
                 <div class="col-xs-6 col-sm-4 col-xl-2 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInRight"><a
-                            class="thumbnail-mary-figure" href="images/gallery-6-1200x800-original.jpg"
-                            data-lightgallery="item"><img src="images/gallery-6-311x289.jpg" alt=""
+                            class="thumbnail-mary-figure" href="fotosGaleriaAbajo/fototeatro4.jpg"
+                            data-lightgallery="item"><img src="fotosGaleriaAbajo/fototeatro4.jpg" alt=""
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>
@@ -319,8 +319,8 @@
                 <div class="col-xs-6 col-sm-4 col-xl-2 isotope-item oh-desktop">
                     <!-- Thumbnail Mary-->
                     <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a
-                            class="thumbnail-mary-figure" href="images/gallery-7-1200x800-original.jpg"
-                            data-lightgallery="item"><img src="images/gallery-7-311x289.jpg" alt=""
+                            class="thumbnail-mary-figure" href="fotosGaleriaAbajo/fototeatro5.jpg"
+                            data-lightgallery="item"><img src="fotosGaleriaAbajo/fototeatro5.jpg" alt=""
                                 width="311" height="289" /></a>
                         <div class="thumbnail-mary-caption">
                             <div>

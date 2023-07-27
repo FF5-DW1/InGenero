@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <title>InGenero</title>
-    <link rel="stylesheet" type="text/css"
-        href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+    <link rel="stylesheet" type="text/css"href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="icon" href="img/logo 1.png" type="image/png">
 
 </head>
 
@@ -73,7 +73,7 @@
 
     <script src="{{ asset('js\core.min.js') }}"></script>
     <script src="{{ asset('js\script.js') }}"></script>
-
+    
 </body>
 
 </html>

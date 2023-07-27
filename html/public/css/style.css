@@ -15620,3 +15620,18 @@ disabled look for disabled choices in the results dropdown
 .error-textred {
     color: #ff0000;
 }
+
+.logo-small {
+	width: 198px; 
+	height: 66px; 
+}
+
+
+
+
+/* Oculta el logo en formato móvil (pantallas pequeñas) */
+@media screen and (max-width: 1200px) {
+	.logo-container {
+		display: none;
+	}
+}
