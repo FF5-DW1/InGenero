@@ -27,7 +27,8 @@
                                 <li>
                                     <div class="unit unit-spacing-xs">
                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                                        <div class="unit-body"><a class="phone" href="tel:#">+34 667564756</a></div>
+                                        <div class="unit-body"><a class="phone" href="tel:#">+34 722 654 794
+                                        </a></div>
                                     </div>
                                 </li>
 
@@ -78,8 +79,8 @@
                                             sesión</button>
                                     </form>
                                   </li>
-                                {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar</a>
-                                </li> --}}
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar usuarie</a>
+                                </li>
                               @endauth
                             </ul>
                           </div>
