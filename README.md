@@ -65,7 +65,6 @@ o Genera una clave de aplicación:
 * MySQL o XAMPP
 * Composer o Docker
 * Node.js
-* NPM
 * Laravel
 * JavaScript
 ## Desarrolladores
