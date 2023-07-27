@@ -59,7 +59,7 @@ o Genera una clave de aplicación:
 * Laravel: https://laravel.com
 * Docker: https://www.docker.com
 * Bootstrap CSS: https://getbootstrap.com/docs/4.0/getting-started/download/
-* JavaScript
+
 ## Requisitos Previos
 * PHP o Docker
 * MySQL o XAMPP
@@ -67,7 +67,7 @@ o Genera una clave de aplicación:
 * Node.js
 * NPM
 * Laravel
-
+* JavaScript
 ## Desarrolladores
 
 [Pablo](https://github.com/Khodac)
