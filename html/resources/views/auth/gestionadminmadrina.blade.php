@@ -7,6 +7,7 @@
         <div class="container">
             <ul class="breadcrumbs-custom-path">
                 <li><a href="/">Inicio</a></li>
+                <li><a href="/gestionadmin">Tabla Estrellas</a></li>
                 <li class="active">Tabla Madrinas</li>
             </ul>
         </div>

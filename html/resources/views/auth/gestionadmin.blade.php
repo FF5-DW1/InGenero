@@ -15,6 +15,7 @@
         <ul class="breadcrumbs-custom-path">
             <li><a href="/">Inicio</a></li>
             <li class="active">Tabla Estrellas</li>
+            <li><a href="/gestionadminmadrina">Tabla Madrinas</a></li>
         </ul>
     </div>
     <div id="contenedorTablaGestion">
