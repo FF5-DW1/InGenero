@@ -10,7 +10,9 @@ class ContactController extends Controller
 {
     public function showContactForm()
     {
-        return view('contacto');
+        // return view('contacto');
+        return view('emails.contact_form');
+
     }
 
     public function sendContactForm(Request $request)

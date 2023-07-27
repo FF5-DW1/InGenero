@@ -61,16 +61,24 @@ Route::middleware('auth', 'admin')->group(function(){
 
 });
 
-//------------------------------- Rutas contacto --------------//
-// Mostrar formulario de contacto
+//ruta nueva---------
+
+
+// Show contact form
 Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
 
-// // // Enviar formulario de contacto
+// Submit contact form
 Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
 
 
+//------------------------------- Rutas contacto --------------//
+// Mostrar formulario de contacto
+// Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('contacto');
 
+// // // Enviar formulario de contacto
+// Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
 
+// otra---------
 
 //  // Ruta para mostrar el formulario de contacto
 //  Route::get('/', [ContactController::class, 'showForm'])->name('form');
@@ -80,6 +88,9 @@ Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('c
 //  Route::post('/', [ContactController::class, 'sendEmail'])->name('send');
 
 
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
 
 //-------------------------------- Rutas  views y más --------
 Route::get('/apoyo', function () {
@@ -102,8 +113,3 @@ Route::get('/profiles', [FormprofileController::class, 'getallprofiles'])->name(
 // Ruta para obtener todas las madrinas
 Route::get('/godmotherprofiles', [GodMotherProfileController::class, 'getAllGodMothers'])->name('godmotherprofiles');
 
-//ruta para obtener todos los profiles pero con lugs
-// Route::get('/profiles/{id}', [FormprofileController::class, 'show'])->name('profiles.show');
-
-
-Route::get('/profile/{slug}', 'FormprofileController@showProfile')->name('showprofile');

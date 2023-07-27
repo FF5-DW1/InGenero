@@ -26,8 +26,8 @@
                     {{-- <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url('bat/rd-mailform.php') }}"> --}}
                         {{-- <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact_mail" method="post" action="{{ url('contact_mail')}}"> --}}
                             {{-- {{csrf_field()}} --}}
-                            <form method="POST" action="/contact">
-
+                            {{-- <form method="POST" action="/contact"> --}}
+                                <form action="{{ route('contact.send') }}" method="post">
                             @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
