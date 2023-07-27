@@ -92,8 +92,3 @@
     </div>
 @endsection
 
-<div class="mb-4">
-    <p>Foto</p>
-    <input id="madrina_photo" name="madrina_photo" type="file"
-        class="border-green-300 my-4 px-2 w-full rounded-lg bg-green-100" />
-</div>

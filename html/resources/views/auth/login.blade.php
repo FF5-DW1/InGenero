@@ -46,7 +46,6 @@
                     {{ $message }}
                 </span>
             @enderror
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Contraseña" name="password" required>
                 @if ($errors->has('email'))
                 <p class="text-red-500 text-xs italic">{{ $errors->first('email') }}</p>
                 @endif
