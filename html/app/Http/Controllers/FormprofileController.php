@@ -31,6 +31,7 @@ class FormprofileController extends Controller
             'additional_info' => 'required',
             'artistic_skills' => 'required',
             'profile_photo' => 'required',
+            'videourl' => 'required',
         ]);
 
         // Crear nuevo perfil
