@@ -6,6 +6,7 @@ use App\Http\Controllers\FormprofileController;
 use App\Http\Controllers\GodMotherProfileController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,9 +37,9 @@ Route::middleware('auth', 'admin')->group(function(){
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::post('/register', [RegisterController::class, 'store']);
 
+
     //Ruta de cierre de sesión
-    Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
-    Route::post('/logout', [LogoutController::class, 'logout']);
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
     //Ruta para cargar el formulario de creación de perfil
@@ -74,7 +75,6 @@ Route::get('/contacto', [ContactController::class, 'showContactForm'])->name('co
 
 // // Enviar formulario de contacto
 Route::post('/contacto', [ContactController::class, 'sendContactForm'])->name('contact.send');
-
 
 
 //-------------------------------- Rutas  views y más --------

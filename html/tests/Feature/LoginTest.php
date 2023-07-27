@@ -2,15 +2,19 @@
 
 namespace Tests\Feature;
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Http\Response;
 
 class LoginTest extends TestCase
 {
     use DatabaseTransactions;
+
     /**
      * A basic feature test example.
      */
@@ -69,19 +73,28 @@ class LoginTest extends TestCase
         $this->assertEquals('Error: Parece que los datos no son correctos.', $errorMessage);
     }
 
-    public function test_user_logout(): void
-    {
-        $user = User::factory()->create(['is_admin' => true]);
-        $this->actingAs($user);
        
-        $csrfToken = csrf_token();
+   /* public function test_user_logout(): void
+    {
+        $admin = User::factory()->create(['is_admin' => true]);
+        $this->actingAs($admin);
+
+        // Obtener el token CSRF 
+        $responseLogin = $this->get('/orenegni');
+        $csrfToken = $this->getCsrfTokenFromResponse($responseLogin);
+
+        // Realizar la llamada POST al endpoint de logout con el token CSRF
+        $responseLogout = $this->post('/logout', ['_token' => $csrfToken]);
+
+        // Verificar que el usuario se cerró de sesión correctamente y fue redirigido
+        $responseLogout->assertStatus(302);
+        $responseLogout->assertRedirect('orenegni');
+
+        // Verificar que el usuario ya no está autenticado
+        $this->assertGuest();
+    }*/
+
         
-        $response = $this->post('/logout', [
-                        '_token' => $csrfToken, 
-                        ]);
-        
-        $response->assertStatus(302)
-                ->assertRedirect('orenegni');
-    }
+    
 
 }

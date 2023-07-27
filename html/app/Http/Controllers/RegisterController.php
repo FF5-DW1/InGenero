@@ -30,7 +30,6 @@ class RegisterController extends Controller
                 'password' => 'required|min:8|confirmed'
             ]);
 
-            //dd($request->all());
 
             $isAdmin = $request->has('is_admin');
 
@@ -40,11 +39,13 @@ class RegisterController extends Controller
                 'password' => Hash::make($request->password),
                 'is_admin' => $isAdmin // Asigna valor booleano
             ]);
-            //dd('Usuario creado');
-            //dd($isAdmin);
+           
             return back()->withSuccess('Se ha registrado un nuevo administrador exitosamente.');
         } else {
             return redirect()->route('login')->withErrors('No tienes permiso para registrar nuevos administradores.');
         }
     }
+
+    
+    
 }

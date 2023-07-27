@@ -78,8 +78,8 @@
                                             sesión</button>
                                     </form>
                                   </li>
-                                {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar</a>
-                                </li> --}}
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar</a>
+                                </li>
                               @endauth
                             </ul>
                           </div>
