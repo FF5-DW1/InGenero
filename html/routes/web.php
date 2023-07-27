@@ -23,8 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
 //Rutas login
-Route::get('/login', [LoginController::class, 'index'])->name('login'); 
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/orenegni', [LoginController::class, 'index'])->name('login'); 
+Route::post('/orenegni', [LoginController::class, 'authenticate']);
 
 
 // ---------------------  Rutas para perfiles de estrellas  -----------------------

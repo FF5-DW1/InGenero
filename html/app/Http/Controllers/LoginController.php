@@ -23,9 +23,7 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        //dd( $validados);
-
-        //$remember = ($request->has('remember') ? true : false);
+       
         //Comprobar pass 
         if (Auth::attempt($validados)) {
             //si login ok regenero la seccion
