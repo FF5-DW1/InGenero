@@ -1,12 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+    <div>
+        <div class="table-responsive mt-4 mb-4">
+            <!-- mensaje ya estás logueado -->
+            @if ($errors->has('default'))
+                <div class="alert alert-info">
+                    {{ $errors->first('default') }}
+                </div>
+            @endif
     <div class="falseoNavbarAdmin"></div>
     <div class="falseoNavbarAdmin"></div>
     <div class="container">
         <ul class="breadcrumbs-custom-path">
             <li><a href="/">Inicio</a></li>
             <li class="active">Tabla Estrellas</li>
+            <li><a href="/gestionadminmadrina">Tabla Madrinas</a></li>
         </ul>
     </div>
     <div id="contenedorTablaGestion">

@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormprofileController;
 use App\Http\Controllers\GodMotherProfileController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PrincipalController@showPrincipal')->name('principal');
 
 //Rutas login
-Route::get('/login', [LoginController::class, 'index'])->name('login'); 
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/orenegni', [LoginController::class, 'index'])->name('login'); 
+Route::post('/orenegni', [LoginController::class, 'authenticate']);
 
 
 // ---------------------  Rutas para perfiles de estrellas  -----------------------
@@ -31,11 +32,16 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //Rutas solo auth + admin
 Route::middleware('auth', 'admin')->group(function(){
 
-    //Ruta para cargar el formulario de creación de perfil
-    Route::get('/formprofile', [FormprofileController::class, 'createform'])->name('formprofile');
+    //Ruta para crear otro admin
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store']);
+
     //Ruta de cierre de sesión
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
+    //Ruta para cargar el formulario de creación de perfil
+    Route::get('/formprofile', [FormprofileController::class, 'createform'])->name('formprofile');
+    
     // Ruta para cargar la vista de gestión de administradore
     Route::get('/gestionadmin', [FormprofileController::class, 'gestionadmin'])->name('gestionadmin');
     // Ruta para editar un perfil específico

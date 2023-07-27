@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -42,4 +43,45 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Determinar si el usuario es administrador o no.
+     *
+     * @return bool
+     */
+    public function getIsAdminAttribute()
+    {
+        return $this->attributes['is_admin'] === 1;
+    }
+
+    /**
+     * Determinar si el usuario no es administrador.
+     *
+     * @return bool
+     */
+    public function getIsNotAdminAttribute()
+    {
+        return $this->attributes['is_admin'] === 0;
+    }
+
+    /**
+     * Verificar si el usuario es administrador.
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->attributes['is_admin'] === 1;
+    }
+
+    /**
+     * Verificar si el usuario no es administrador.
+     *
+     * @return bool
+     */
+    public function isNotAdmin()
+    {
+        return $this->attributes['is_admin'] === 0;
+    }
+
 }

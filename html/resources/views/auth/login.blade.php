@@ -10,12 +10,21 @@
 
         <form class="bg-white rounded p-4 mt-4" method="POST" action="{{ route('login') }}">
             @csrf
-            <!-- si no está autenticado -> mensaje de error -->
-            @if(session('mensaje'))
-                <div class="alert alert-danger text-center my-2">
-                    {{ session('mensaje') }}
+            
+            <!-- si no está autenticado, mensaje de error-->
+            @if ($errors->has('default'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('default') }}
                 </div>
             @endif
+
+            <!--mensaje estas logueado -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <!-- Resto del formulario -->
 
             <div class="form-group">
@@ -33,12 +42,16 @@
                 <label for="password" class="text-gray-700 font-weight-bold">Contraseña</label>
                 <input class="form-control" id="password" type="password" placeholder="Contraseña" name="password" required>
                 @error('password')
-                    <span class="text-danger">
-                        {{ $message }}
-                    </span>
-                @enderror
-                <!-- Campos de entrada -->
+                <span class="text-red-500">
+                    {{ $message }}
+                </span>
+            @enderror
+                @if ($errors->has('email'))
+                <p class="text-red-500 text-xs italic">{{ $errors->first('email') }}</p>
+                @endif
+                
             </div>
+            
 
             <div class="d-flex flex-column align-items-center mt-4">
                 <button class="button button-md button-secondary-2 button-winona wow fadeInUp" type="submit">
