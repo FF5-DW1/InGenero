@@ -1,6 +1,36 @@
 # InGenero
 ## Proyecto final Factoria F5
 ## Introducción:
+* 	Día de comienzo: 26 de junio. Hemos presentado los proyectos a lxs coders y creado los equipos. 
+* 	Día de presentación de proyectos: 28 de julio
+* 	Proyecto para un cliente el cual se necesita amadrines para estudios de teatro y actuación, el cual se realizan obras de teatro con los participantes.
+   
+* La entidad solicita la creación de una herramienta desde la cual se pueda administrar y gestionar los perfiles de las actrices y actores que forman parte del grupo de teatro de InGénero.
+ 
+* Por un lado, la aplicación será un escaparatepara el proyecto y para los integrantes del mismo, pero también deberá llevar un historial de las personas que pasan por el programa, así como de las actividades que se van realizando.
+ 
+* Será necesario además crear un apartado para“madrinas y padrinos”, ya que se intenta que actrices y actores famosos seconviertan en “madrinas y padrinos” y se dejen acompañar en la última etapa decada participante en eventos en los que participen las madrinas y padrinos.
+ ## Requisitos Técnicos
+ 
+*	Se DEBE trabajar bajo el marco Scrum.
+*	Se DEBE hacer un CRUD para las actrices y actores.
+*	Se DEBE hacer un CRUD para las madrinas y padrinos, que luego se irán vinculando con uno o más perfiles de InGénero.
+*	SE DEBEN configurar diferentes usuarios: admin y usuario registrado.
+*	La conexión DEBE ser segura (Tokens, Auth, etc…).
+*	Se DEBE hacer Testing (postman, Jest, Cypress, Phpunit, Codeception).
+*	Se DEBE de hacer un modelado de datos óptimo en BD.
+*	Se DEBE usar SoftDelete para no borrar definitivamente ningún usuario, así poder mantener un histórico completo. Preguntar al stakeholder si es necesario implementar.
+
+*	Se DEBE realizar dos tipos de usuarios:
+*	Admin.: encargados de InGenero, capaz de acceder a los datos de todos lxs participantes y editar cualquier dato.
+*	Usuario: registrado como actor o actriz, puede ver y modificar sus datos.
+
+*	DEBE generar un histórico de lxs participantes en el programa, así como el estado final de cada unx, indicando si aún está en el programa o en qué época estuvo, qué madrina o padrino tuvo asignado, a qué eventos han asistido, etc… 
+
+* Además los administradores DEBERÁN poder crear nuevos usuarios participantes, no se podrá apuntar cualquiera, sino que serán los admins los que añadan nuevos participantes y estos recibirán un email y configurarán sus datos y su perfil una vez creada la cuenta.
+Usuario: una vez registrado, DEBE poder añadir sus datos personales y todos los datos personales necesarios, así como las fotografías e incluso enlaces de video a YouTube con sus propias presentaciones.   
+
+  
 
 
 ## Tabla de contenido - [Instalación](#instalación) 
