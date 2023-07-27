@@ -11,47 +11,49 @@ function getImage($stringImage)
     return 'avatar.jpg';
 }
 @endphp
-    <div>
+    
         {{-- banner --}}
-        <div class="py-10 mt-10 sticky top-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style="background-image: url('img/madrina_banner.jpg')">
-            <div class="text-center m-5 lg:my-12 relative lg:w-3/4 lg:text-left max-w-full">
-                <h1 class="m-4 text-2xl font-extrabold leading-none text-white lg:text-4xl py-4 sm:px-8 lg:px-20">Nuestras
-                    madrinas</h1>
-                <p class="mb-8 text-white lg:text-xl sm:px-8 lg:px-20">Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Fusce in sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in
-                    sagittis risusrue nisl,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in sagittis
-                    risusrue nisl.</p>
+        <div class="breadcrumbs-custom box-transform-wrap context-dark">
+            <div class="container">
+                <h3 class="breadcrumbs-custom-title">Madrinas</h3>
+                <div class="breadcrumbs-custom-decor"></div>
             </div>
+            <div class="box-transform" style="background-image: url(img4k/pexels-photo-6896196.jpeg);"></div>
+        </div>
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Inicio</a></li>
+                <li class="active">Perfiles Madrinas</li>
+            </ul>
         </div>
 
-        {{-- todos los cards + boton más --}}
-        <div class="relative bg-white justify-center items-center pt-5 pb-10 lg:pt-20">
-            <div class="grid grid-flow-row gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-w-lg">
-
+        
+        <section id="contenedorDivPerfiles">
+            <div id="contenedorPerfiles">
+    
                 @if (count($godmothers) > 0)
                     @foreach ($godmothers as $item)
-                        <div class=" max-w-sm bg-gray-100 border border-gray-700 rounded-xl shadow m-5 mx-auto">
-                            <div class="text-center m-5">
-                                <h4 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ $item->name }}
-                                    {{ $item->last_name }}</h4>
-                            </div>
-                            <div class="content-center">
-                                <img class="rounded-xl w-10/12 m-5 mb-2 mx-auto"
-                                    src="{{ asset('img/' . getImage($item->profile_media)) }}" alt="imagen madrinas" />
-                            </div>
-                            <div class="p-4 text-center">
-                                <p class="mb-3 font-semibold text-lg">{{ $item->description }}</p>
+                        <div id="card" class="wow slideInRight" data-wow-delay="0.3s">
+                            <img class="wow fadeIn" data-wow-delay="0.3s"
+                                src="{{ asset('img/' . getImage($item->profile_media)) }}" alt="imagen madrinas" />
+                            <div>
+                                <h5 class="">{{ $item->name }} {{ $item->last_name }}</h5>
+                               
+                                <div class="p-4 text-center">
+                                    <p class="mb-3 font-semibold text-lg">{{ $item->description }}</p>
+                                </div>
                             </div>
                         </div>
                     @endforeach
                 @else
                     <div>
-                        <p>No encontrado ninguna madrina</p>
+                        <p>No encontrado ningun perfil</p>
                     </div>
                 @endif
-
+    
+    
+    
             </div>
-        </div>
-    </div>
+        </section>
+   
 @endsection

@@ -147,6 +147,7 @@
             <h3 class="wow fadeInLeft">Nuestras estrellas</h3>
         </div>
         <div class="container container-style-1">
+            
             <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
                 data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
                 @foreach ($profiles as $profile)
@@ -207,8 +208,9 @@
                         <article class="quote-tara">
                             <div class="quote-tara-caption carrusel-madrina">
 
-                                <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})"
-                                    class="card-image">
+                                <img class="wow fadeIn" data-wow-delay="0.3s"
+                                    src="{{ asset('img/' . getImage($profile->profile_media)) }}" alt="imagen estrellas"
+                                    width="300" height="300" />
 
                                 </div>
                                 <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>

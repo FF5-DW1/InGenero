@@ -50,8 +50,8 @@
                   <li class="rd-nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <span>{{ Auth::user()->name }}</span>
-                        <button type="submit" class="button button-sm button-primary button-winona button-shadow-2 fadeInUp animated">Cerrar sesión</button>
+                        <span>Perfil: {{ Auth::user()->name }}</span> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="rd-nav-link" style="border: none">Cerrar sesión</button>
                     </form>
                   </li>
                 @endauth

@@ -1,10 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="falseoNavbarAdmin"></div>
+    <div class="falseoNavbarAdmin"></div>
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/">Inicio</a></li>
+            <li class="active">Tabla Estrellas</li>
+        </ul>
+    </div>
     <div id="contenedorTablaGestion">
         <div class="table-responsive mt-4 mb-4" id="tablaGestion">
             <table class="table text-sm text-center text-gray-500">
-                <thead class="text-xs text-white bg-green-100">
+                <thead class="text-xs text-dark bg-green-100">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             ID
@@ -16,7 +24,10 @@
                             Nombre
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Acciones
+                            Editar
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Ver Perfil
                         </th>
                     </tr>
                 </thead>
@@ -25,7 +36,7 @@
                         <tr class="bg-green-100">
                             <td scope="row" class="px-6 py-4 font-weight-medium text-dark whitespace-nowrap">
                                 {{ $profile->id }}
-                                
+
                             </td>
 
                             <td class="px-6 py-4">
@@ -34,16 +45,19 @@
 
                             <td class="px-6 py-4">
                                 {{ $profile->name }} {{ $profile->last_name }}
-                                
+
                             </td>
 
                             <td scope="col" class="px-6 py-3">
-                                <a href="{{ route('editarperfil', ['id' => $profile->id]) }}" class="btn btn-primary">
-                                    Editar
+                                <a href="{{ route('editarperfil', ['id' => $profile->id]) }}" class="  btn-responsive">
+                                    <img src="{{ asset('img/edit-2.svg') }}" alt="Editar" class="btn-icon"
+                                        style="width: 30px; height: 26px;">
                                 </a>
-
-                                <a href="{{ route('starprofile', ['id' => $profile->id]) }}" class="btn btn-primary">
-                                    perfil
+                            </td>
+                            <td>
+                                <a href="{{ route('starprofile', ['id' => $profile->id]) }}" class="  btn-responsive">
+                                    <img src="{{ asset('img/usuario.png') }}" alt="Editar" class="btn-icon"
+                                        style="width: 30px; height: 26px;">
                                 </a>
                             </td>
                         </tr>
