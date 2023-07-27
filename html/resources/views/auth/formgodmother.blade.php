@@ -28,11 +28,11 @@
                             Nombre
                         </label>
                         <input id="name" name="name" type="text"
-                            class="form-control @error('name') is-invalid @enderror"
-                            value="{{ $formgodmother->name }}" />
+                            class="form-control @error('name') error-borderred @enderror"
+                            value="{{ old('name', $formgodmother->name) }}" />
                         @error('name')
-                            <span class="invalid-feedback">
-                                {{ $message }}
+                            <span class="invalid-feedback error-textred">
+                                El campo nombre es requerido.
                             </span>
                         @enderror
                     </div>
@@ -42,11 +42,11 @@
                             Apellidos
                         </label>
                         <input id="last_name" name="last_name" type="text"
-                            class="form-control @error('last_name') is-invalid @enderror"
-                            value="{{ $formgodmother->last_name }}" />
+                            class="form-control @error('last_name') error-borderred @enderror"
+                            value="{{ old('last_name', $formgodmother->last_name) }}" />
                         @error('last_name')
-                            <span class="invalid-feedback">
-                                {{ $message }}
+                            <span class="invalid-feedback error-textred">
+                                El campo apellido es requerido.
                             </span>
                         @enderror
                     </div>
@@ -57,28 +57,35 @@
                         </label>
                         <input id="description" name="description" type="text"
                             class="form-control @error('description') error-borderred @enderror"
-                            value="{{ $formgodmother->description }}" />
+                            value="{{ old('description', $formgodmother->description) }}" />
                         @error('description')
-                            <span class="text-textred">
-                                {{ $message }}
+                            <span class="invalid-feedback text-textred">
+                                El campo de descripción es requerido.
                             </span>
                         @enderror
                     </div>
+
 
                     <!-- APARTADO FOTO -->
                     <div class="mb-4">
                         <p>Foto</p>
                         <input id="madrina_photo" name="madrina_photo" type="file"
-                            class="border-green-300 my-4 px-2 w-full rounded-lg bg-green-100" />
-                    </div>
-                    
-                    @if (isset($formgodmother->id))
-                        <div class="mb-4">
-                            <label for="is_active">Estado</label>
-                            <input name="is_active" id="is_active" type="checkbox"
-                                {{ $formgodmother->is_active ? 'checked' : '' }}>
+                            class="border-green-300 my-4 px-2 w-full rounded-lg bg-green-100" @error('description') error-borderred @enderror"
+                                value="{{ old('madrina_photo', $formgodmother->madrina_photo) }}" />
+                            @error('madrina_photo')
+                                <span class="error-textred">
+                                    Es es requerido que suba 1 foto.
+                                </span>
+                            @enderror
                         </div>
-                    @endif
+
+                        @if (isset($formgodmother->id))
+                            <div class="mb-4">
+                                <label for="is_active">Perfil activo</label>
+                                <input name="is_active" id="is_active" type="checkbox"
+                                    {{ $formgodmother->is_active ? 'checked' : '' }}>
+                            </div>
+                        @endif
 
 
                     <div class="text-center mb-4">

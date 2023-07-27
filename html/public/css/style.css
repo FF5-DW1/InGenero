@@ -15600,3 +15600,13 @@ disabled look for disabled choices in the results dropdown
 		padding-right: 70px;
 	}
 }
+
+
+/* validaciones */
+.error-borderred {
+	border: 1px solid #ff0000;
+}
+
+.error-textred {
+	color: #ff0000;
+}
