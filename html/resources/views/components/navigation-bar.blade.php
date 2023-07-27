@@ -70,6 +70,7 @@
                                     Crear Madrine</a>
                                   </li>
                                   
+                                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar Admin</a>
                                   <li class="rd-nav-item">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
@@ -79,7 +80,6 @@
                                             sesión</button>
                                     </form>
                                   </li>
-                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Registrar usuarie</a>
                                 </li>
                               @endauth
                             </ul>
