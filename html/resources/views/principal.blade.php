@@ -75,43 +75,44 @@
                     <div class="oh-desktop">
                         <!-- Colaboradores-->
                         <article class="services-terri wow slideInUp">
-                            <div class="services-terri-figure"><img src="img/InGenero.png" alt=""
-                                width="370" height="278" />
+                            <div class="services-terri-figure"><img src="img/InGenero.png" alt="" width="370"
+                                    height="278" />
                             </div>
                             <div class="services-terri-caption">
                                 <h5 class="services-terri-title"><a target="en_blank" href="https://www.ingenero.es/">Web In
-                                    Genero</a></h5>
-                                </div>
-                            </article>
-                        </div>
+                                        Genero</a></h5>
+                            </div>
+                        </article>
                     </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="oh-desktop">
-                            <!-- Colaboradores-->
-                            <article class="services-terri wow slideInUp">
-                                <div class="services-terri-figure"><img src="img/Nosotras.jpg" alt=""
-                                    width="370" height="278" />
-                                </div>
-                                <div class="services-terri-caption">
-                                    <h5 class="services-terri-title"><a target="en_blank" href="https://nosotras.app/">Nosotras
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="oh-desktop">
+                        <!-- Colaboradores-->
+                        <article class="services-terri wow slideInUp">
+                            <div class="services-terri-figure"><img src="img/Nosotras.jpg" alt="" width="370"
+                                    height="278" />
+                            </div>
+                            <div class="services-terri-caption">
+                                <h5 class="services-terri-title"><a target="en_blank" href="https://nosotras.app/">Nosotras
                                         App</a></h5>
-                                    </div>
-                                </article>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="oh-desktop">
-                                <!-- Colaboradores-->
-                                <article class="services-terri wow slideInDown">
-                                    <div class="services-terri-figure"><img src="img/igualdad.jpg" alt=""
-                                            width="370" height="278" />
-                                    </div>
-                                    <div class="services-terri-caption">
-                                        <h5 class="services-terri-title"><a target="en_blank" href="https://www.ingenero.es/plan-igualdad.html">igualdad</a></h5>
-                                    </div>
-                                </article>
+                        </article>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="oh-desktop">
+                        <!-- Colaboradores-->
+                        <article class="services-terri wow slideInDown">
+                            <div class="services-terri-figure"><img src="img/igualdad.jpg" alt="" width="370"
+                                    height="278" />
                             </div>
-                        </div>
+                            <div class="services-terri-caption">
+                                <h5 class="services-terri-title"><a target="en_blank"
+                                        href="https://www.ingenero.es/plan-igualdad.html">igualdad</a></h5>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -146,6 +147,7 @@
             <h3 class="wow fadeInLeft">Nuestras estrellas</h3>
         </div>
         <div class="container container-style-1">
+
             <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
                 data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
                 @foreach ($profiles as $profile)
@@ -200,7 +202,7 @@
             <h3 class="wow fadeInLeft">Madrines habituales</h3>
         </div>
         <div class="container container-style-1">
-            <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
+            {{-- <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
                 data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
                 @foreach ($godmothers as $profile)
                     <!-- Card para el carrusel madrinas -->
@@ -208,18 +210,38 @@
                         <article class="quote-tara">
                             <div class="quote-tara-caption carrusel-madrina">
 
-                                <div style="background: url({{ asset('img/' . getImage($profile->profile_media)) }})"
-                                    class="card-image">
+                                <img class="wow fadeIn" data-wow-delay="0.3s"
+                                    src="{{ asset('img/' . getImage($profile->profile_media)) }}" alt="imagen estrellas"
+                                    width="300" height="300" />
 
-                                </div>
                                 <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
                                 <p>{{ $profile->description }}</p>
+                            </div>
 
+                        </article>
+                    </a>
+            </div> --}}
+            <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30"
+                data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
+                @foreach ($godmothers as $profile)
+                    <!-- Card para el carrusel -->
+                    <a href="{{ route('godmotherprofiles', ['id' => $profile->id]) }}">
+                        <article class="quote-tara">
+                            <div class="quote-tara-caption">
+
+                                <img class="wow fadeIn" data-wow-delay="0.3s"
+                                    src="{{ asset('img/' . getImage($profile->profile_media)) }}" alt="imagen estrellas"
+                                    width="300" height="300" />
+
+                                <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
+                                <p>{{ $profile->description }}</p>
                             </div>
                         </article>
                     </a>
                 @endforeach
             </div>
+            
+        </div>
         </div>
     </section>
 

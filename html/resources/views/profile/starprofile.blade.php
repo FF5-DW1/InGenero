@@ -79,17 +79,15 @@
             @php
                 $videoId = null;
                 $url = $formprofile->video_url;
-                if (strpos($url, 'youtu.be/') !== false) {
+                if (strpos($url, 'vimeo.com/') !== false) {
                     $videoId = substr($url, strrpos($url, '/') + 1);
-                } elseif (preg_match('/\?v=([a-zA-Z0-9_-]+)/', $url, $matches)) {
-                    $videoId = $matches[1];
                 }
             @endphp
-
+        
             @if ($videoId)
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item rounded-lg shadow"
-                        src="https://www.youtube.com/embed/{{ $videoId }}" allowfullscreen></iframe>
+                        src="https://player.vimeo.com/video/{{ $videoId }}" allowfullscreen></iframe>
                 </div>
             @else
                 <p>No se encontró el enlace del video.</p>

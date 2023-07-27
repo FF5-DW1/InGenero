@@ -1,4 +1,21 @@
 /* ESTILOS SOBRESCRTIOS */
+/* Estilos para el tamaño del ícono dentro del botón */
+.btn-icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Estilos responsivos para los botones */
+@media (max-width: 576px) {
+	.btn-responsive {
+		width: 80px; /* Puedes ajustar este valor según tus necesidades */
+	}
+}
+
+.encabezadoTablasGestion{
+	display: flex;
+	text-align: center;
+}
 
 #footerSobrescrito {
 	background-color: #00bb80;
@@ -12287,9 +12304,7 @@ h3 + .tabs-custom {
 /*
  * Owl Navigation
  */
-.owl-nav.disabled {
-	display: none !important;
-}
+
 
 .owl-prev,
 .owl-next {
@@ -12412,10 +12427,10 @@ h3 + .tabs-custom {
 	margin-left: -10px;
 }
 
-.owl-custom-nav:empty {
+/* .owl-custom-nav:empty {
 	margin-bottom: 0;
 	margin-left: 0;
-}
+} */
 
 .owl-custom-nav > * {
 	display: inline-block;
@@ -12540,6 +12555,7 @@ h3 + .tabs-custom {
 }
 
 @media (min-width: 576px) {
+	
 	.dots-style-2 .owl-dot {
 		width: 64px;
 	}
@@ -12549,6 +12565,7 @@ h3 + .tabs-custom {
 	.dots-style-2 .owl-dots {
 		margin-top: 45px;
 	}
+	
 }
 
 .dots-style-3 .owl-dot.active::before {
@@ -12579,6 +12596,7 @@ h3 + .tabs-custom {
 	display: block;
 	margin: 17px 0;
 }
+
 
 @media (min-width: 576px) {
 	.dots-style-4 {
