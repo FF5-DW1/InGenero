@@ -44,7 +44,7 @@
                     <select name="artistic_skills" id="artistic_skills">
                         <option value="">Seleccione habilidad</option>
                         <option value="Pintura">Pintura</option>
-                        <option value="Singing">Singing</option>
+                        <option value="Cantar">Cantar</option>
                     </select>
 
 
