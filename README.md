@@ -1,7 +1,7 @@
 # InGenero
 ## Proyecto final Factoria F5
 ## Introducción:
-* 	Día de comienzo: 26 de junio. Hemos presentado los proyectos a lxs coders y creado los equipos. 
+* 	Día de comienzo: 26 de junio. Hemos presentado los proyectos a los coders y creado los equipos. 
 * 	Día de presentación de proyectos: 28 de julio
 * 	Proyecto para un cliente el cual se necesita amadrines para estudios de teatro y actuación, el cual se realizan obras de teatro con los participantes.
    
@@ -25,7 +25,7 @@
 *	Admin.: encargados de InGenero, capaz de acceder a los datos de todos lxs participantes y editar cualquier dato.
 *	Usuario: registrado como actor o actriz, puede ver y modificar sus datos.
 
-*	DEBE generar un histórico de lxs participantes en el programa, así como el estado final de cada unx, indicando si aún está en el programa o en qué época estuvo, qué madrina o padrino tuvo asignado, a qué eventos han asistido, etc… 
+*	DEBE generar un histórico de los participantes en el programa, así como el estado final de cada uno, indicando si aún está en el programa o en qué época estuvo, qué madrina o padrino tuvo asignado, a qué eventos han asistido, etc… 
 
 * Además los administradores DEBERÁN poder crear nuevos usuarios participantes, no se podrá apuntar cualquiera, sino que serán los admins los que añadan nuevos participantes y estos recibirán un email y configurarán sus datos y su perfil una vez creada la cuenta.
 Usuario: una vez registrado, DEBE poder añadir sus datos personales y todos los datos personales necesarios, así como las fotografías e incluso enlaces de video a YouTube con sus propias presentaciones.   
