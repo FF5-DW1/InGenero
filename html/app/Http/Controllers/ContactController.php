@@ -6,7 +6,6 @@ use App\Mail\ContactMaillable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-
 class ContactController extends Controller
 {
     public function showContactForm()
