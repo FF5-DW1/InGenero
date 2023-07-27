@@ -11,8 +11,8 @@ class PrincipalController extends Controller
     public function showPrincipal()
     {
 
-        $profiles = Formprofile::all();
-        $godmothers = FormGodMother::all();
+        $profiles = Formprofile::where('is_active', true)->paginate();
+        $godmothers = FormGodMother::where('is_active', true)->paginate();
 
         return view('principal', ['profiles' => $profiles, 'godmothers' => $godmothers]);
     }

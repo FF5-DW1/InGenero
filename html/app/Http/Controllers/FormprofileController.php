@@ -20,8 +20,18 @@ class FormprofileController extends Controller
     {
         //validar formulario de perfiles
         $this->validate($request, [
-            'name' => 'required|max:30',
-            'last_name' => 'required|max:20',
+            'name' => 'required',
+            'last_name' => 'required',
+            'idiomas' => 'required',
+            'date_of_birth' => 'required',
+            'height' => 'required',
+            'weight' => 'required',
+            'eyes_color' => 'required',
+            'hair_color' => 'required',
+            'additional_info' => 'required',
+            'artistic_skills' => 'required',
+            'profile_photo' => 'required',
+            'video_url' => 'required',
         ]);
 
         // Crear nuevo perfil

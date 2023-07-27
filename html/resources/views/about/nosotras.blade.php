@@ -108,14 +108,13 @@
                 <div class="tabs-custom" id="tabs-5">
                     <div class="tab-content tab-content-1">
                         <div class="tab-pane fade" id="tabs-5-2">
-                            <h5 class="font-weight-normal text-transform-none text-spacing-75">Fundación de asociación
-                                InGenero </h5>
+                            <h5 class="font-weight-normal text-transform-none text-spacing-75">Se fundó el grupo de teatro
+                                "Mi vida es puro teatro" </h5>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
                             </p>
                         </div>
                         <div class="tab-pane fade" id="tabs-5-3">
-                            <h5 class="font-weight-normal text-transform-none text-spacing-75">Nacimiento de "Vivir es
-                                puro teatro"</h5>
+                            <h5 class="font-weight-normal text-transform-none text-spacing-75">Consolidación del grupo de teatro</h5>
                             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                         </div>
                         <div class="tab-pane fade show active" id="tabs-5-4">
@@ -143,7 +142,7 @@
             </div>
             <div class="col-md-9 col-lg-6 position-static index-1">
                 <div class="bg-image-right-1 bg-image-right-lg"><img src="images/our_history-1110x710.jpg" alt="" width="1110" height="710" />
-                    <div class="link-play-modern"><a class="icon mdi mdi-play" data-lightgallery="item" href="https://www.youtube.com/watch?v=UR7LAW-VBBk"></a>
+                    <div class="link-play-modern"><a class="icon mdi mdi-play" data-lightgallery="item" href="https://www.youtube.com/watch?v=TuOCUU644Jg&t=2s"></a>
                         <div class="link-play-modern-title">Videobook<span>Conjunto</span></div>
                         <div class="link-play-modern-decor"></div>
                     </div>

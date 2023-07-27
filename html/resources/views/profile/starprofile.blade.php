@@ -14,6 +14,10 @@
                 <h3 class="breadcrumbs-custom-title">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</h3>
                 <div class="breadcrumbs-custom-decor"></div>
             </div>
+            <br>
+            @if (!$formprofile->is_active)
+                        <p class="text-white">Este perfil esta inactivo</p>
+            @endif
         </div>
         <div class="container">
             <ul class="breadcrumbs-custom-path">

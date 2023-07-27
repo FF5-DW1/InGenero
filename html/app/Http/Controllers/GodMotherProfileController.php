@@ -19,9 +19,10 @@ class GodMotherProfileController extends Controller
     {
         //validar formulario de madrinas
         $this->validate($request, [
-            'name' => 'required|max:30',
-            'last_name' => 'required|max:20',
+            'name' => 'required',
+            'last_name' => 'required',
             'description' => 'required',
+            'madrina_photo' => 'required',
         ]);
         
         $formgodmother = new FormGodMother();
