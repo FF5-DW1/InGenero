@@ -10,8 +10,5 @@
     "masonry-layout": "^4.2.2",
     "outlayer": "^2.1.1",
     "wolfy87-eventemitter": "^5.2.9"
-  },
-  "devDependencies": {
-    "jest": "^29.6.1"
   }
 }
