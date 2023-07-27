@@ -15,34 +15,30 @@
   <div class="footer-modern-line-2">
     <div class="container">
       <div class="row row-30 align-items-center">
+        
         <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
           <div class="row row-30 align-items-center text-lg-center">
-            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="{{ asset('img/logo 1.png') }}" alt="" width="198" height="66"/></a></div>
+            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="{{ asset('img/logoInGenero.png') }}" alt="" width="198" height="66"/></a></div>
           </div>
         </div>
         <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
           <div class="row row-30 align-items-center text-lg-center">
-            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="{{ asset('img/logo 1.png') }}" alt="" width="198" height="66"/></a></div>
+            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="{{ asset('img/logoMadrid.png') }}" alt="" width="198" height="66"/></a></div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
-          <div class="row row-30 align-items-center text-lg-center">
-            <div class="col-md-7 col-xl-6"><a class="brand" href="/"><img src="{{ asset('img/logo 1.png') }}" alt="" width="198" height="66"/></a></div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-12 col-lg-8 col-xl-8 oh-desktop">
-          <div class="group-xmd group-sm-justify">
-            
-            
-            <div class="wow slideInRight">
-              <ul class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
-                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
-                <li><a class="icon mdi mdi-twitter" href="#"></a></li>
-                <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-              </ul>
+          <div class="col-sm-6 col-md-12 col-lg-8 col-xl-8 oh-desktop">
+            <div class="group-xmd group-sm-justify">
+              
+              
+              <div class="wow slideInRight">
+                <ul class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
+                  <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                  <li><a class="icon mdi mdi-twitter" href="#"></a></li>
+                  <li><a class="icon mdi mdi-instagram" href="#"></a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </div><br>
       </div>
     </div>
   </div>

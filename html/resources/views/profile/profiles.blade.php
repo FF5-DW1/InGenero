@@ -51,10 +51,12 @@
                     <!--nacionalidad -->
 
                     <select name="idiomas" id="idiomas">
-                        <option value="">Seleccione nacionalidad</option>
-                        <option value="España">España</option>
-                        <option value="USA">USA</option>
-                        <option value="Argentina">Argentina</option>
+                        <option value="">Seleccione idioma</option>
+                        <option value="Castellano">Castellano</option>
+                        <option value="Portugues">Portugues</option>
+                        <option value="Inglés">Inglés</option>
+                        <option value="Italiano">Italiano</option>
+                        <option value="Frances">Francés</option>
                     </select>
 
 
