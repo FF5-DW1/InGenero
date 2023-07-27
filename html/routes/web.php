@@ -37,7 +37,9 @@ Route::middleware('auth', 'admin')->group(function(){
     Route::post('/register', [RegisterController::class, 'store']);
 
     //Ruta de cierre de sesión
-    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+    Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+    Route::post('/logout', [LogoutController::class, 'logout']);
+
 
     //Ruta para cargar el formulario de creación de perfil
     Route::get('/formprofile', [FormprofileController::class, 'createform'])->name('formprofile');

@@ -71,8 +71,8 @@ class LoginTest extends TestCase
 
     public function test_user_logout(): void
     {
-        $admin = User::factory()->create(['is_admin' => true]);
-        $this->actingAs($admin);
+        $user = User::factory()->create(['is_admin' => true]);
+        $this->actingAs($user);
        
         $csrfToken = csrf_token();
         
