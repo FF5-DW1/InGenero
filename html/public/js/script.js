@@ -3,7 +3,7 @@
 
 
 (function () {
-	// Global variables
+	// variables
 	var userAgent = navigator.userAgent.toLowerCase(),
 			initialDate = new Date(),
 
