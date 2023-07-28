@@ -209,7 +209,7 @@
                 data-xl-margin="45" data-autoplay="true" data-nav="true" data-center="true" data-smart-speed="400">
                 @foreach ($godmothers as $profile)
                     <!-- Card para el carrusel -->
-                    <a href="{{ route('godmotherprofiles', ['id' => $profile->id]) }}">
+                    <a class="enlaceMadrinas" href="{{ route('godmotherprofiles', ['id' => $profile->id]) }}">
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
 
@@ -218,7 +218,7 @@
                                     width="300" height="300" />
 
                                 <h6 class="quote-tara-author">{{ $profile->name }} {{ $profile->last_name }}</h6>
-                                <p>{{ $profile->description }}</p>
+                                <p class="descripcionMadrinas">{{ $profile->description }}</p>
                             </div>
                         </article>
                     </a>

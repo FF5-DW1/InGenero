@@ -15635,3 +15635,13 @@ disabled look for disabled choices in the results dropdown
 		display: none;
 	}
 }
+
+
+.descripcionMadrinas{
+	text-decoration:none;
+}
+
+
+.enlaceMadrinas{
+	text-decoration:none;
+}

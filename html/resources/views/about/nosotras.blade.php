@@ -1,37 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{--
-<div class="m-5">
-    <div class="flex flex-col lg:flex-row mt-10 mx-auto justify-center px-6 my-12">
-        <div class="w-full lg:w-1/2 flex justify-center items-center mb-10 lg:mb-0">
-            <img src="{{ asset('img/nosotras2.jpg') }}" alt="Imagem" class="w-full h-auto rounded-lg md:object-cover lg:object-cover lg:scale-75 md:scale-90">
-</div>
-<div class="lg:w-1/2 flex flex-col justify-center lg:pr-24 w-full">
-    <p class="text-xl font-semibold leading-relaxed text-justify md:text-left lg:text-left">Somos un grupo de teatro compuesto por artistas valientes. Uno de nuestros grandes sueños es crecer profesionalmente en el ámbito de la interpretación.
-        <br>
-        <br>
-        Nuestra misión es utilizar el poder del arte para compartir historias auténticas y emocionantes que inspiran, crean conciencia y promueven la transformación social. A través de actuaciones cautivadoras, exploramos temas universales de superación, resiliencia y empoderamiento.
-</div>
-</div>
 
-<div class="flex flex-col lg:flex-row md:mt-11 mx-auto justify-center px-6 my-12">
-    <div class="lg:w-1/2 flex flex-col justify-center lg:pl-24 w-full order-last md:order-first lg:order-first">
-        <p class="text-xl font-semibold leading-relaxed text-justify md-text-left lg:text-left">
-            Con cada representación, buscamos desafiar estereotipos, fomentar la empatía y promover la igualdad, invitando a la reflexión y al cambio positivo en nuestra sociedad.
-            <br>
-            <br>
-            Somos un grupo de actores y actrices comprometidos con la construcción de un mundo más inclusivo, donde el respeto, la dignidad y la justicia sean los pilares fundamentales.
-            <br>
-            <br>
-            Junt@s, creamos un espacio de expresión creativa, donde nuestras voces se unen para transmitir mensajes de esperanza.
-        </p>
-    </div>
-    <div class="w-full lg:w-1/2 flex justify-center items-center mb-10 lg:mb-0">
-        <img src="{{ asset('img/nosotras1.jpg') }}" alt="Imagem" class="w-full h-auto rounded-lg md:object-cover lg:object-cover lg:scale-75 md:scale-90">
-    </div>
-</div>
-</div> --}}
 
 
 <!-- parallax top-->
@@ -88,7 +58,7 @@
                             Con dedicación y esfuerzo, trabajamos en equipo para mejorar constantemente y crecer como artistas. Nos enorgullece el ambiente colaborativo que hemos construido y la humildad con la que enfrentamos los desafíos.</p>
                         <p>Creemos en el poder del teatro para impactar positivamente a la sociedad y buscamos involucrarnos en proyectos que reflejen nuestros valores de inclusión y respeto.
                             Aunque nuestra trayectoria es corta, estamos comprometides a seguir adelante con determinación y entusiasmo, aspirando a un futuro prometedor en el mundo del arte dramático.</p>
-                            <img src="images/about-1-835x418.jpg" alt="" width="835" height="418" />
+                            <img src="img4k/pexels-photo-458379.jpeg" alt="" width="835" height="418" />
                     </div>
                 </div>
             </div>
@@ -199,8 +169,8 @@
                                     <h5 class="quote-modern-text"><span class="q">Fluctuss sunt eras de neuter
                                             plasmator. Heuretes noster brabeuta est. Nixus, visus, et mensa. Primus,
                                             magnum tatas rare locus de altus, camerarius clabulare.</span></h5>
-                                    <h5 class="quote-modern-author">Ana Becerra</h5>
-                                    <p class="quote-modern-status">Director</p>
+                                    <h5 class="quote-modern-author">David</h5>
+                                    <p class="quote-modern-status">Profesor</p>
                                 </article>
                             </div>
                         </div>
@@ -211,7 +181,7 @@
                             </div>
                             <div class="item"><img class="img-circle" src="images/team-7-83x83.jpg" alt="" width="83" height="83" />
                             </div>
-                            <div class="item"><img class="img-circle" src="images/team-8-83x83.jpg" alt="" width="83" height="83" />
+                            <div class="item"><img class="img-circle" src="fotosGaleriaAbajo/profe1.1.jpg" alt="" width="83" height="83" />
                             </div>
                         </div>
                     </div>

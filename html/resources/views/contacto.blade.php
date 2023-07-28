@@ -7,7 +7,7 @@
                 <h3 class="breadcrumbs-custom-title">Contacto</h3>
                 <div class="breadcrumbs-custom-decor"></div>
             </div>
-            <div class="box-transform" style="background-image: url(images/bg-1.jpg);"></div>
+            <div class="box-transform" style="background-image: url(img4k/pexels-photo-6896196.jpeg);"></div>
         </div>
         <div class="container">
             <ul class="breadcrumbs-custom-path">
