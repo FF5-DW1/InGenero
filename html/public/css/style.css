@@ -1,4 +1,21 @@
 /* ESTILOS SOBRESCRTIOS */
+/* Estilos para el tamaño del ícono dentro del botón */
+.btn-icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Estilos responsivos para los botones */
+@media (max-width: 576px) {
+	.btn-responsive {
+		width: 80px; /* Puedes ajustar este valor según tus necesidades */
+	}
+}
+
+.encabezadoTablasGestion{
+	display: flex;
+	text-align: center;
+}
 
 #footerSobrescrito {
 	background-color: #00bb80;
@@ -16,18 +33,389 @@
 	background-color: #ff4c49;
 }
 
-/* APOYO VIEW */
+
+
+
+/* Barra de búsqueda Perfiles */
+#barraBusquedaPerfiles {
+    display: flex;
+    flex-wrap: wrap; /* Envuelve los elementos en varias líneas si no caben en una sola */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    text-align: center; /* Centra el texto dentro de los select */
+}
+
+/* Estilos para los select */
+.formularioBusqueda select {
+    margin: 5px; /* Espacio entre los select */
+    padding: 5px; /* Ajusta el padding a tu gusto */
+    min-width: 150px; /* Ajusta el ancho mínimo a tu gusto */
+    flex-grow: 1; /* Permite que los selects ocupen el espacio adicional */
+    max-width: calc(33.33% - 10px); /* Divide el espacio en tres columnas, ajusta según tu gusto */
+}
+
+/* Estilos para el botón de búsqueda */
+#barraBusquedaPerfiles button {
+    margin: 5px; /* Espacio entre el último select y el botón */
+    background-color: #ff4c49;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 46px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+  /* Estilos para el campo de búsqueda */
+  #search {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    padding: 6px;
+    color: #333333;
+    font-family: Arial, sans-serif;
+  }
+
+/* perfiles */
+/* .contenedorDeContenedoresDeImagenes{
+	width: 1200px;
+	display: flex;
+	flex-direction: column;
+} */
+
+.contenedorPerfiles{
+	display: flex;
+	flex-direction: column;
+
+}
+
+.contenedorImagenesEstrellas{
+	width: 310px;
+    height: 390px; 
+    overflow: hidden;
+}
+
+.contenedorImagenesEstrellas img{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+#botonPerfiles{
+	padding: 10px;
+
+}
+
+#contenedorDivPerfiles{
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+    margin-right: auto;
+	background-color:  #ff4c49;
+	padding: 60px 0px 60px 0px;
+}
+
+
+
+#contenedorPerfiles{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1170px;
+	background-color:  #ff4c49;
+}
+
+.contenedorPerfilIndividualInterno{
+	width: 1200px;
+}
+
+#contenedorPerfilIndividual{
+    display: flex;
+	justify-content: center;
+}
+
+
+* { box-sizing: border-box;}
+
+#card{
+	display: flex;
+	align-items: center;
+	width: 75vw;
+	max-width: 500px;
+	margin: 40px;
+	padding: 50px 30px 50px 20px;
+	background: #ffffff;
+	border-radius: 24px;
+}
+
+#card img {
+	max-width: 200px;
+	width: 28vw;
+	height: 200px;
+	object-fit:cover;
+	margin-left: -60px;
+	margin-right: 30px;
+	border-radius: inherit;
+	box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+}
+
+#card h3 { color: rgb(0 0 0 / 90%);}
+
+#card p { color: rgb(0 0 0 / 70%);}
+
+#card button {
+	border: 0;
+	background: #5448de;
+	color: #f8f8f8;
+	font-family: inherit;
+	padding: 16px 26px;
+	font-size: 16px;
+	border-radius: 40px;
+}
+
+/* APOYO */
+#containerApoyo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
 
 .button-container {
-	max-width: 425px;
+	width: 425px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 
 .botonPaypal{
 	margin-bottom: 30px;
 }
+
+/* CONTACTO */
+
+#containerContacto{
+	margin-top: 40px;
+}
+
+/* formprofile */
+
+.containerFormProfile{
+	max-width: 710px;
+}
+
+.falseoNavbarAdmin{
+	background-color: white;
+	height: 40px;
+}
+
+
+
+/* GESTION */
+
+#contenedorTablaGestion{
+	display: flex;
+	justify-content: center;
+}
+
+#tablaGestion{
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+}
+
+
+/* Para pantallas de hasta 740px */
+@media (max-width: 740px) {
+
+	#contenedorDivPerfiles {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #ff5050;
+        padding: 0px 0px 60px 0px;
+    }
+	
+    #barraBusquedaPerfiles {
+        margin-bottom: 40px;
+    }
+
+    #card {
+        flex-direction: column;
+        text-align: center;
+        margin: 0 40px;
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    #card img {
+        margin: -100px 0 30px 0;
+        width: 100%;
+        max-width: 1000px;
+    }
+}
+
+
+
+/* Para pantallas de 769px a 1024px */
+@media (min-width: 900px) and (max-width: 1024px) {
+    #botonPerfiles {
+        padding: 10px;
+    }
+
+    #contenedorDivPerfiles {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #ff5050;
+        padding: 60px 0px 60px 0px;
+    }
+
+    #contenedorPerfiles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1170px;
+        background-color: #ff5050;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #card {
+        display: flex;
+        align-items: center;
+        width: 75vw;
+        max-width: 420px;
+        margin: 40px;
+        padding: 50px 30px 50px 20px;
+        background: #ffffff;
+        border-radius: 24px;
+    }
+
+    #card img {
+        max-width: 170px;
+        width: 28vw;
+        height: 170px;
+        object-fit: cover;
+        margin-left: -40px;
+        margin-right: 30px;
+        border-radius: inherit;
+        box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+    }
+
+    #card h3 {
+        color: rgb(0 0 0 / 90%);
+    }
+
+    #card p {
+        color: rgb(0 0 0 / 70%);
+    }
+
+    #card button {
+        border: 0;
+        background: #5448de;
+        color: #f8f8f8;
+        font-family: inherit;
+        padding: 16px 26px;
+        font-size: 16px;
+        border-radius: 40px;
+    }
+}
+
+
+@media (min-width: 1700px) {
+    #botonPerfiles {
+        padding: 10px;
+    }
+
+    #contenedorDivPerfiles {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #ff5050;
+        padding: 60px 0px 60px 0px;
+    }
+
+    #contenedorPerfiles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1500px;
+        background-color: #ff5050;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #card {
+        display: flex;
+        align-items: center;
+        width: 75vw;
+        max-width: 400px;
+        margin: 40px;
+        padding: 50px 30px 50px 20px;
+        background: #ffffff;
+        border-radius: 24px;
+    }
+
+    #card img {
+        max-width: 180px;
+        width: 28vw;
+        height: 180px;
+        object-fit: cover;
+        margin-left: -80px;
+        margin-right: 30px;
+        border-radius: inherit;
+        box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+    }
+
+    #card h3 {
+        color: rgb(0 0 0 / 90%);
+    }
+
+    #card p {
+        color: rgb(0 0 0 / 70%);
+    }
+
+    #card button {
+        border: 0;
+        background: #5448de;
+        color: #f8f8f8;
+        font-family: inherit;
+        padding: 16px 26px;
+        font-size: 16px;
+        border-radius: 40px;
+    }
+}
+
+/* View Perfil individual */
+
+#encabezadoPerfil{
+	background-color: #ff5050;
+}
+
+
+/* form profile */
+
+
+
+/* APOYO VIEW */
+
 
 
 
@@ -6715,7 +7103,7 @@ html:not(.lt-ie10) .not-animated {
 	width: 0;
 	height: 0;
 	border: 31px solid transparent;
-	border-bottom: 54px solid #ff4444;
+	border-bottom: 54px solid #ff6c55;
 	animation: tri 1.5s linear infinite;
 }
 
@@ -7161,6 +7549,7 @@ html.tablet .ui-to-top {
 	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 	color: #2c343b;
 	transition: all .25s;
+	text-decoration:none;
 }
 
 .rd-navbar-static .rd-nav-link::before {
@@ -7378,6 +7767,7 @@ html.tablet .ui-to-top {
 	letter-spacing: .075em;
 	color: #6046b6;
 }
+
 
 @media (min-width: 1200px) {
 	.rd-navbar-static .rd-megamenu-title {
@@ -11924,9 +12314,7 @@ h3 + .tabs-custom {
 /*
  * Owl Navigation
  */
-.owl-nav.disabled {
-	display: none !important;
-}
+
 
 .owl-prev,
 .owl-next {
@@ -12049,10 +12437,10 @@ h3 + .tabs-custom {
 	margin-left: -10px;
 }
 
-.owl-custom-nav:empty {
+/* .owl-custom-nav:empty {
 	margin-bottom: 0;
 	margin-left: 0;
-}
+} */
 
 .owl-custom-nav > * {
 	display: inline-block;
@@ -12177,6 +12565,7 @@ h3 + .tabs-custom {
 }
 
 @media (min-width: 576px) {
+	
 	.dots-style-2 .owl-dot {
 		width: 64px;
 	}
@@ -12186,6 +12575,7 @@ h3 + .tabs-custom {
 	.dots-style-2 .owl-dots {
 		margin-top: 45px;
 	}
+	
 }
 
 .dots-style-3 .owl-dot.active::before {
@@ -12216,6 +12606,7 @@ h3 + .tabs-custom {
 	display: block;
 	margin: 17px 0;
 }
+
 
 @media (min-width: 576px) {
 	.dots-style-4 {
@@ -15218,4 +15609,39 @@ disabled look for disabled choices in the results dropdown
 		padding-left: 70px;
 		padding-right: 70px;
 	}
+}
+
+
+/* validaciones */
+.error-borderred {
+    border: 1px solid #ff0000;
+}
+
+.error-textred {
+    color: #ff0000;
+}
+
+.logo-small {
+	width: 198px; 
+	height: 66px; 
+}
+
+
+
+
+/* Oculta el logo en formato móvil (pantallas pequeñas) */
+@media screen and (max-width: 1200px) {
+	.logo-container {
+		display: none;
+	}
+}
+
+
+.descripcionMadrinas{
+	text-decoration:none;
+}
+
+
+.enlaceMadrinas{
+	text-decoration:none;
 }

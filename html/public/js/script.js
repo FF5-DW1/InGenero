@@ -1,7 +1,9 @@
 "use strict";
 
+
+
 (function () {
-	// Global variables
+	// variables
 	var userAgent = navigator.userAgent.toLowerCase(),
 			initialDate = new Date(),
 
@@ -751,6 +753,8 @@
 			}
 		}
 
+		
+
 		// Swiper
 		if (plugins.swiper.length) {
 			for (var i = 0; i < plugins.swiper.length; i++) {
@@ -1303,3 +1307,12 @@
 		}
 	});
 }());
+
+
+
+
+
+
+
+
+

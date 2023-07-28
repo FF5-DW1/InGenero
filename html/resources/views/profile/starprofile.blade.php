@@ -1,124 +1,103 @@
 @extends('layouts.app')
 
 @section('content')
-@php
-    $images = [];
-    if ($formprofile->profile_media){
-        $images =  explode("*", $formprofile->profile_media);
-    }
-@endphp
-<div>
-    <div class="bg-rose-600 p-4 mt-28">
-        <div class="max-w-2xl mx-auto bg-rose-600 overflow-hidden">
-            <section>
-                <div class="text-3xl text-white font-bold mb-2 justify-center mt-10 ">
-                    <h1>{{ $formprofile->name }}</h1>
-                </div>
-                @if (count($images) > 1)
-                    <div id="default-carousel" class="relative w-full" data-carousel>
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                            <!-- Item 1 -->
-                            @foreach ($images as $item)
-                                @if ($item) 
-                                    <div class="hidden ease-in-out" data-carousel-item>
-                                        <img src="{{ asset('img/' . $item) }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:w-1/2 md:w-full" alt="foto patricia">
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                        {{-- -- Slider indicators -->
-                        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div> --}}
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
+    {{-- @php
+        $images = [];
+        if ($formprofile->profile_media) {
+            $images = explode('*', $formprofile->profile_media);
+        }
+    @endphp --}}
+    <div class="falseoNavbarAdmin"></div>
+    <section class="bg-gray-7">
+        <div id="encabezadoPerfil" class="breadcrumbs-custom box-transform-wrap context-dark">
+            <div class="container">
+                <h3 class="breadcrumbs-custom-title">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</h3>
+                <div class="breadcrumbs-custom-decor"></div>
+            </div>
+            <br>
+            @if (!$formprofile->is_active)
+                        <p class="text-white">Este perfil esta inactivo</p>
+            @endif
+        </div>
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Inicio</a></li>
+                <li class="active">Perfil {{ $formprofile->name }} {{ $formprofile->last_name }}</li>
+            </ul>
+        </div>
+    </section>
+    <section id="contenedorPerfilIndividual">
+        <div class="contenedorPerfilIndividualInterno">
+            <section class="section section-last bg-default">
+                <div class="container-fluid container-inset-0 isotope-wrap contenedorImagenesDePerfil">
+                    <div class="row row-10 gutters-10 isotope contenedorDeContenedoresDeImagenes" data-isotope-layout="masonry" data-isotope-group="gallery"
+                        data-lightgallery="group">
+                        @foreach ($imagenes as $imagen)
+                            <div class="col-xs-1 col-sm-3 col-xl-4 isotope-item oh-desktop contenedorDeContenedoresDeImagenes-item">
+                                <article
+                                    class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft contenedorImagenesEstrellas">
+                                    <a class="thumbnail-mary-figure" href="{{ asset($imagen->ruta_imagen) }}"
+                                        data-lightgallery="item">
+                                        <img src="{{ asset($imagen->ruta_imagen) }}" alt="" width="310"
+                                            height="585" />
+                                    </a>
+                                </article>
+                            </div>
+                        @endforeach
                     </div>
-                @endif
-
-                @if (count($images) == 1)
-                <div class="flex justify-center mt-10">
-                    <img src="{{ asset('img/' . $images[0]) }}" alt="Foto de {{ $formprofile->name }}" class="h-90 w-90
-                    object-cover rounded m-2 sm:h-128 sm:w-128 md:h-160 md:w-160 lg:h-240 lg:w-240 xl:h-320 xl:w-320 2xl:h-400 2xl:w-400">
                 </div>
-                @endif
-            
-                
-
-                <!-- Characteristics list -->
-                <div class="px-2 py-4">
-                    <ul class="text-white">
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Nacionalidad: {{ $formprofile->nationality }} </span>
+            </section>
+            <!-- Información -->
+            <div class="mt-3">
+                <div class="col-md-6">
+                    <ul class="list-unstyled text-black">
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Idiomas:</span> {{ $formprofile->idiomas }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Fecha Nacimiento: {{ $formprofile->date_of_birth }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Fecha de Nacimiento:</span> {{ $formprofile->date_of_birth }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Altura: {{ $formprofile->height }} cms </span> 
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Altura:</span> {{ $formprofile->height }} cms
                         </li>
-                    
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Peso: {{ $formprofile->weight }} kg </span> 
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Peso:</span> {{ $formprofile->weight }} kg
                         </li>
-                
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Color de ojos: {{ $formprofile->eyes_color }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Color de ojos:</span> {{ $formprofile->eyes_color }}
                         </li>
-        
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Color de pelo: {{ $formprofile->hair_color }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Color de pelo:</span> {{ $formprofile->hair_color }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Info. Adicional: {{ $formprofile->additional_info }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Info. Adicional:</span> {{ $formprofile->additional_info }}
                         </li>
-                        <li class="mb-1">
-                            <span class="font-bold text-black">Habilidades artísticas: {{ $formprofile->artistic_skills }} </span>
+                        <li class="mb-3">
+                            <span class="font-weight-bold">Habilidades artísticas:</span>
+                            {{ $formprofile->artistic_skills }}
                         </li>
                     </ul>
                 </div>
-            </section>
-            <section>
-
-                    {{-- Video Perfil--}}
-                <div>
-                    <video class="w-full rounded-lg mt-10 mb-10" autoplay muted controls>
-                    <source src="video/video_patricia.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-                </div>
-
-                    {{-- Audio Perfil--}}
-                <div class="audio-player">
-                    <audio controls>
-                        <source src="audio/happyrock.mp3" type="audio/mp3">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </section>
-        </div> 
-            
-        {{-- Apoyar --}}         
-    </div>
-</div>
-
+            </div> <br>
+            <div class="col-md-6" style="max-width: 1220px">
+                @php
+                    $videoId = null;
+                    $url = $formprofile->video_url;
+                    if (strpos($url, 'vimeo.com/') !== false) {
+                        $videoId = substr($url, strrpos($url, '/') + 1);
+                    }
+                @endphp
+        
+                @if ($videoId)
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item rounded-lg shadow"
+                            src="https://player.vimeo.com/video/{{ $videoId }}" allowfullscreen></iframe>
+                    </div>
+                @else
+                    <p>No se encontró el enlace del video.</p>
+                @endif
+            </div>
+            <div class="falseoNavbarAdmin"></div>
+        </div>
+    </section>
 @endsection

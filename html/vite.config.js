@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [
     laravel({
       input: [
+        'node_modules/jquery/dist/jquery.js', 
         'public/css/style.css',
         'public/css/fonts.css',
         'public/css/bootstrap.css',
